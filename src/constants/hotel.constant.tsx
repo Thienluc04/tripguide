@@ -1,4 +1,11 @@
-import { BestPlace, City, Explore, Passion, Tour } from '@/types/hotel.type';
+import {
+  BestPlace,
+  City,
+  Explore,
+  Location,
+  Passion,
+  Tour,
+} from '@/types/hotel.type';
 
 export const listBestPlace: BestPlace[] = [
   {
@@ -176,5 +183,28 @@ export const listPassion: Passion[] = [
     title: 'Sports Trips',
     rating: 4.8,
     totalRating: 122,
+  },
+];
+
+export const listLocation: Location[] = [
+  {
+    title: 'Dubai',
+    description: 'Dubai Emirate, United Arab Emirates',
+  },
+  {
+    title: 'Doha',
+    description: 'Qatar',
+  },
+  {
+    title: 'Darling Harbour',
+    description: 'Sydney, New South Wales, Australia',
+  },
+  {
+    title: 'Dhaka',
+    description: 'Bangladesh',
+  },
+  {
+    title: 'Dubai International Airport',
+    description: 'Dubai, Dubai Emirate, United Arab Emirates',
   },
 ];

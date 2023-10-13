@@ -7,9 +7,7 @@ import {
   TrendCitiesSection,
 } from '@/components/hotel';
 
-interface HotelPageProps {}
-
-export default function HotelPage(props: HotelPageProps) {
+export default function HotelPage() {
   return (
     <div className="pt-[124px] flex flex-col gap-[70px]">
       <BestPlaceSection />

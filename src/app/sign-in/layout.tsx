@@ -1,3 +1,4 @@
+import { NavbarFilter } from '@/components/common';
 import { HotelHero } from '@/components/hotel';
 import { Metadata } from 'next';
 
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <HotelHero></HotelHero>
+      <HotelHero>
+        <NavbarFilter />
+      </HotelHero>
       {children}
     </>
   );

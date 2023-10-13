@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import { YellowStarIcon } from '../icons';
 import { listPassion } from '@/constants/hotel.constant';
 import { PassionItem } from './PassionItem';
 

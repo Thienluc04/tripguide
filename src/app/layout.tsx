@@ -1,8 +1,10 @@
-import { Header } from '@/components';
+import { Header } from '@/components/common';
 import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
 import { twMerge } from 'tailwind-merge';
 import './globals.scss';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const dmSans = DM_Sans({
   weight: ['700', '600', '500', '400'],
@@ -22,9 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={twMerge(dmSans.className, 'text-black44')}>
+        <ToastContainer />
         <Header />
         {children}
       </body>
     </html>
   );
 }
+
+// export default wrapper.withRedux(RootLayout);

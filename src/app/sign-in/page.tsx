@@ -1,5 +1,5 @@
 import { InputField, ModelAuth } from '@/components/auth';
-import { Button } from '@/components/button';
+import { Button } from '@/components/ui';
 import Link from 'next/link';
 
 interface SignInPageProps {}
@@ -28,7 +28,7 @@ export default function SignInPage(props: SignInPageProps) {
             Forgot your password?
           </Link>
         </div>
-        <Button type="submit" className="mb-5">
+        <Button variant="auth" size="full" type="submit" className="mb-5">
           Sign In
         </Button>
         <div className="flex text-sm gap-1 justify-center">

@@ -36,3 +36,19 @@ export interface Passion {
   rating: number;
   totalRating: number;
 }
+
+export interface Location {
+  title: string;
+  description: string;
+}
+
+export interface HotelParams {
+  location?: string;
+  checkInDate?: string;
+  checkOutDate?: string;
+  passenger?: {
+    adults?: number;
+    children?: number;
+    infants?: number;
+  };
+}

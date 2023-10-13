@@ -36,7 +36,7 @@ export function Header({ className }: HeaderProps) {
         <div className="w-[1px] h-8 bg-grayF3"></div>
 
         <Link href={'/sign-in'}>
-          <UserIcon className="w-8 h-8 rounded-full bg-grayF3 text-gray8B flex items-center justify-center cursor-pointer"></UserIcon>
+          <UserIcon className="w-8 h-8 rounded-full bg-grayF3 text-grayC3 flex items-center justify-center cursor-pointer"></UserIcon>
         </Link>
 
         {/* User logged */}

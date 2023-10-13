@@ -1,6 +1,6 @@
 import { InputField, ModelAuth } from '@/components/auth';
-import { Button } from '@/components/button';
 import { Checkbox } from '@/components/input';
+import { Button } from '@/components/ui';
 import Link from 'next/link';
 
 interface ISignUpPageProps {}
@@ -45,7 +45,9 @@ export default function SignUpPage(props: ISignUpPageProps) {
           </p>
         </div>
         <div className="mb-5">
-          <Button type="submit">Sign up</Button>
+          <Button variant="auth" size="full" type="submit">
+            Sign up
+          </Button>
         </div>
         <div className="flex text-sm gap-1 justify-center">
           <span>Already have an account?</span>

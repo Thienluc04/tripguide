@@ -18,3 +18,6 @@ export * from './YellowStarIcon';
 export * from './BuildingIcon';
 export * from './MoonIcon';
 export * from './SunIcon';
+export * from './DecrementIcon';
+export * from './IncrementIcon';
+export * from './ChevronTopIcon';

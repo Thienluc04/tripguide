@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { YellowStarIcon } from '@/components/icons';
-import { Button } from '@/components/button';
+import { Button } from '../ui';
 
 interface CityItemProps {
   image: string;
@@ -38,7 +38,10 @@ export function CityItem({
           ${price}
           <span className="text-gray9A text-base font-medium">/night</span>
         </div>
-        <Button className="rounded-md py-2 px-4 text-sm !shadow-none w-auto">
+        <Button
+          variant="primary"
+          className="rounded-md py-2 px-4 text-sm !shadow-none w-auto h-auto"
+        >
           Book Now
         </Button>
       </div>

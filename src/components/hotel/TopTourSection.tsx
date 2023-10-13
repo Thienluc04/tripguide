@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { ChevronLeftIcon, ChevronRightIcon } from '@/components/icons';
 import { listTour } from '@/constants/hotel.constant';
 import { TopTourItem } from './TopTourItem';

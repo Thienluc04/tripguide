@@ -1,4 +1,3 @@
-import { Button } from '@/components/button';
 import Image from 'next/image';
 import { MoonIcon, SunIcon } from '@/components/icons';
 import Link from 'next/link';
@@ -7,6 +6,7 @@ import {
   listServices,
   listSupport,
 } from '@/constants/footer.constant';
+import { Button } from '../ui';
 
 interface FooterProps {}
 
@@ -32,8 +32,8 @@ export function Footer(props: FooterProps) {
             className="flex-1 ml-3"
           />
           <Button
-            className="text-white rounded bg-black45 shadow-[0px_12px_20px_-5px_rgba(23,_23,_126,_0.10)] font-Roboto 
-            font-medium w-[130px] py-3"
+            variant="black"
+            className="font-Roboto font-medium w-[130px] py-3 h-auto"
           >
             Subscribe
           </Button>
