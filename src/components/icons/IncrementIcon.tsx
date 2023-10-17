@@ -5,7 +5,7 @@ interface IncrementIconProps extends ComponentProps<'span'> {}
 
 export function IncrementIcon({ className, ...props }: IncrementIconProps) {
   return (
-    <span className={cn('cursor-pointer', className)} {...props}>
+    <span className={cn(className)} {...props}>
       <svg
         width="32"
         height="33"

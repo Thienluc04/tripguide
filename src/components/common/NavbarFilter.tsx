@@ -91,22 +91,9 @@ export function NavbarFilter({
               title="Location"
               description="Where are you from?"
               className="w-[332px]"
+              listLocation={listLocation}
               type="location"
-            >
-              {listLocation.map((item) => (
-                <div key={item.title} className="flex gap-3 items-center">
-                  <AddressIcon className="text-grayC4"></AddressIcon>
-                  <div className="flex flex-col gap-1">
-                    <h3 className="text-grayE90 font-medium leading-6">
-                      {item.title}
-                    </h3>
-                    <p className="text-grayC3 text-sm leading-[21px]">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </FilterItem>
+            />
             <FilterItem
               type="date"
               title="Check in"

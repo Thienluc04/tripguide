@@ -1,8 +1,21 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@/components/icons';
+'use client';
+
 import { listTour } from '@/constants/hotel.constant';
+import Slider from 'react-slick';
 import { TopTourItem } from './TopTourItem';
+import { NextArrowSlick, PrevArrowSlick } from '@/components/common';
 
 interface TopTourSectionProps {}
+
+const settings = {
+  dots: false,
+  arrows: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  prevArrow: <PrevArrowSlick />,
+  nextArrow: <NextArrowSlick />,
+};
 
 export function TopTourSection(props: TopTourSectionProps) {
   return (
@@ -12,16 +25,8 @@ export function TopTourSection(props: TopTourSectionProps) {
           <h2 className="text-black text-5xl font-bold mb-3">Top Tour</h2>
           <p className="text-gray90">Keep calm & travel on</p>
         </div>
-        <div className="flex gap-[10px]">
-          <div className="w-9 h-9 rounded-full bg-grayF6 flex items-center justify-center text-grayC3">
-            <ChevronLeftIcon />
-          </div>
-          <div className="w-9 h-9 rounded-full bg-grayEC flex items-center justify-center text-gray8B">
-            <ChevronRightIcon />
-          </div>
-        </div>
       </div>
-      <div className="flex gap-[30px] mb-[70px]">
+      <Slider {...settings} className="overflow-hidden">
         {listTour.map((item, index) => (
           <TopTourItem
             key={index}
@@ -31,7 +36,7 @@ export function TopTourSection(props: TopTourSectionProps) {
             description={item.description}
           ></TopTourItem>
         ))}
-      </div>
+      </Slider>
     </section>
   );
 }

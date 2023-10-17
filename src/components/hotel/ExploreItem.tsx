@@ -23,7 +23,7 @@ export function ExploreItem({
   price,
 }: ExploreItemProps) {
   return (
-    <div className="p-[14px] rounded-[20px] border border-grayF3 bg-white w-[270px]">
+    <div className="p-[14px] rounded-[20px] border border-grayF3 bg-white w-[270px] transition-all hover:shadow-[0px_15px_45px_0px_rgba(102,_102,_102,_0.10)] mb-8">
       <Image
         src={image}
         alt="explore"

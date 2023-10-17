@@ -69,10 +69,25 @@ body {
 .container {
   max-width: 1170px;
   margin: 0 auto;
+  position: relative;
 }
 
 .calendar {
   .bg-primary {
     color: white;
+  }
+}
+
+.slick-slider {
+  .slick-track {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.slick-slider.explore {
+  .slick-track {
+    display: flex;
+    gap: 0;
   }
 }

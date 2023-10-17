@@ -69,7 +69,7 @@ export function PassengerItem({
     if (total < 10) {
       setPassengers((prev) => prev + 1);
     } else {
-      toast.error('Passengers must be less than 10');
+      toast.warning('Passengers must be less than 10');
     }
   };
 
@@ -87,9 +87,14 @@ export function PassengerItem({
           )}
           onClick={handleDecrementValue}
         ></DecrementIcon>
-        <span className="text-sm font-Roboto text-black90">{passengers}</span>
+        <span className="text-sm font-Roboto text-black90 w-3 text-center">
+          {passengers}
+        </span>
         <IncrementIcon
-          className="text-grayC4 transition-all"
+          className={cn(
+            'transition-all',
+            passengers < 10 ? 'text-grayC4 cursor-pointer' : 'text-grayEC'
+          )}
           onClick={handleIncrementValue}
         ></IncrementIcon>
       </div>

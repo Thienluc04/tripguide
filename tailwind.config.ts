@@ -33,9 +33,11 @@ const config: Config = {
         gray9A: '#92929A',
         grayB90: '#868B90',
         grayC4: '#B1B5C4',
+        gray5F7: '#F4F5F7',
         primary: '#316BFF',
         red: '#FF543D',
         orange: '#FFAF4E',
+        blueEA: '#E7E8EA',
       },
       fontFamily: {
         DmSans: 'DM Sans',

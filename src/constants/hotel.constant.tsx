@@ -91,6 +91,26 @@ export const listExplore: Explore[] = [
     roomsAvailable: 375,
     price: 210,
   },
+  {
+    image: '/images/explores/explore-3.png',
+    rating: 4.9,
+    totalRating: 147,
+    title: 'Comfort Space',
+    description: '1.2 km to Town Center',
+    address: 'Turkey, Mamaris',
+    roomsAvailable: 375,
+    price: 210,
+  },
+  {
+    image: '/images/explores/explore-4.png',
+    rating: 4.9,
+    totalRating: 147,
+    title: 'Comfort Space',
+    description: '1.2 km to Town Center',
+    address: 'Turkey, Mamaris',
+    roomsAvailable: 375,
+    price: 210,
+  },
 ];
 
 export const listCity: City[] = [
@@ -139,6 +159,24 @@ export const listCity: City[] = [
 ];
 
 export const listTour: Tour[] = [
+  {
+    image: '/images/tours/japan-tour.png ',
+    name: 'Japan',
+    title: 'Japan',
+    description: '10 Popular Places',
+  },
+  {
+    image: '/images/tours/bali-tour.png ',
+    name: 'Indonesia',
+    title: 'Bali',
+    description: '10 Popular Places',
+  },
+  {
+    image: '/images/tours/spain-tour.png ',
+    name: 'Barcelona',
+    title: 'Spain',
+    description: '10 Popular Places',
+  },
   {
     image: '/images/tours/japan-tour.png ',
     name: 'Japan',
