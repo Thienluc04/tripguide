@@ -1,21 +1,47 @@
 'use client';
 
-import { ComponentProps, HTMLInputTypeAttribute, useState } from 'react';
+import {
+  ChangeEvent,
+  ComponentProps,
+  HTMLInputTypeAttribute,
+  useState,
+} from 'react';
 import { twMerge } from 'tailwind-merge';
-import { CloseEyeIcon, OpenEyeIcon } from '@/components/icons';
+import { CloseEyeIcon, OpenEyeIcon, WarningIcon } from '@/components/icons';
+import { cn } from '@/lib/utils';
+import {
+  useController,
+  Control,
+  Path,
+  FieldValues,
+  PathValue,
+} from 'react-hook-form';
 
-interface InputFieldProps extends ComponentProps<'label'> {
+interface InputFieldProps<T extends FieldValues>
+  extends ComponentProps<'label'> {
+  name: Path<T>;
+  control: Control<T>;
   label: string;
   placeholder: string;
   type?: HTMLInputTypeAttribute;
+  messageError?: string;
 }
 
-export function InputField({
+export function InputField<T extends FieldValues>({
+  name,
+  control,
   label,
   placeholder,
   type = 'text',
   className = '',
-}: InputFieldProps) {
+  messageError,
+}: InputFieldProps<T>) {
+  const { field } = useController({
+    name,
+    control,
+    defaultValue: '' as PathValue<T, Path<T>>,
+  });
+
   const [showPass, setShowPass] = useState<boolean>(false);
 
   return (
@@ -24,8 +50,12 @@ export function InputField({
       <div className="flex relative">
         <input
           type={showPass ? 'text' : type}
-          className="rounded-lg h-12 w-full px-[14px] bg-grayF3"
+          className={cn(
+            'rounded-lg h-12 w-full px-[14px] bg-grayF3',
+            messageError && 'bg-white border-red57 border'
+          )}
           placeholder={placeholder}
+          {...field}
         />
         {type === 'password' && (
           <>
@@ -43,6 +73,12 @@ export function InputField({
           </>
         )}
       </div>
+      {messageError && (
+        <div className="flex gap-1">
+          <WarningIcon className="text-red57" />
+          <p className="text-[10px] font-medium text-red57">{messageError}</p>
+        </div>
+      )}
     </label>
   );
 }

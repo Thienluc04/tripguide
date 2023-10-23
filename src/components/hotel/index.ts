@@ -8,3 +8,4 @@ export * from './TopTourSection';
 export * from './TrendCitiesSection';
 export * from './CityItem';
 export * from './PassionSection';
+export * from './HotelItem';

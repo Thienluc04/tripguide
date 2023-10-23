@@ -6,3 +6,6 @@ export * from './Passenger';
 export * from './PassengerItem';
 export * from './PrevArrowSlick';
 export * from './NextArrowSlick';
+export * from './SidebarFilter';
+export * from './CheckboxFilter';
+export * from './SliderFilter';

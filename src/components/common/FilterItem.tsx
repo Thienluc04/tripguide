@@ -23,7 +23,6 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { twMerge } from 'tailwind-merge';
 
 interface FilterItemProps extends ComponentProps<'div'> {
   type: 'location' | 'date';

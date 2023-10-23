@@ -1,10 +1,10 @@
 'use client';
 
+import { UserIcon } from '@/components/icons';
 import Image from 'next/image';
 import Link from 'next/link';
-import { twMerge } from 'tailwind-merge';
 import { ComponentProps } from 'react';
-import { ArrowDownIcon, UserIcon } from '@/components/icons';
+import { twMerge } from 'tailwind-merge';
 
 interface HeaderProps extends ComponentProps<'div'> {}
 
@@ -12,7 +12,7 @@ export function Header({ className }: HeaderProps) {
   return (
     <div
       className={twMerge(
-        'px-10 py-5 flex justify-between items-center',
+        'px-10 py-5 flex justify-between items-center shadow-[0px_-1px_4px_0px_#E2E2EA]',
         className
       )}
     >

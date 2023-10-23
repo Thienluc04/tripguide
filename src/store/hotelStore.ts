@@ -9,6 +9,7 @@ interface HotelStore {
 export const useHotelStore: UseBoundStore<StoreApi<HotelStore>> = create(
   (set) => ({
     params: {
+      location: '',
       checkInDate: new Date().toLocaleDateString('en-GB'),
       checkOutDate: new Date().toLocaleDateString('en-GB'),
       passenger: {

@@ -52,3 +52,14 @@ export interface HotelParams {
     infants?: number;
   };
 }
+
+export interface Hotel {
+  image: string;
+  title: string;
+  rating: number;
+  totalRate: number;
+  location: string;
+  place: string;
+  date: string;
+  plane: string;
+}

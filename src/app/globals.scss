@@ -72,6 +72,11 @@ body {
   position: relative;
 }
 
+.hotel-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 .calendar {
   .bg-primary {
     color: white;
@@ -90,4 +95,44 @@ body {
     display: flex;
     gap: 0;
   }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.slider-thumb::before {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 32px;
+  border-radius: 10px;
+  background: #0b2541;
+  box-shadow: 0px 8px 17px rgba(15, 15, 15, 0.2);
+  color: #f9f9f9;
+  @apply font-Roboto leading-[18px] flex items-center justify-center;
+}
+
+.slider-thumb::after {
+  position: absolute;
+  content: '';
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid #0b2541;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 5px solid transparent;
 }

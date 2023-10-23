@@ -5,3 +5,5 @@ export * from './datepicker';
 export * from './datepicker-with-range';
 export * from './command';
 export * from './dialog';
+export * from './input';
+export * from './slider';
