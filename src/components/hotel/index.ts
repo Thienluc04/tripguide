@@ -9,3 +9,7 @@ export * from './TrendCitiesSection';
 export * from './CityItem';
 export * from './PassionSection';
 export * from './HotelItem';
+export * from './BookingDetails';
+export * from './HotelDetailsContent';
+export * from './RoomSuggest';
+export * from './LatestReview';

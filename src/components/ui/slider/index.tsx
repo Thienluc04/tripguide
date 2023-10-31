@@ -28,7 +28,7 @@ const Slider = React.forwardRef<
       <SliderPrimitive.Thumb
         className={cn(
           'relative block h-[18px] w-[18px] rounded-full border-[3px] border-white bg-primary shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
-          `{{ dotContent && slider-thumb before:content-["dotContent"]}}`
+          `slider-thumb before:content-['50']`
         )}
       />
     </SliderPrimitive.Root>

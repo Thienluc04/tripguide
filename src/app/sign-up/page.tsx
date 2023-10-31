@@ -1,7 +1,7 @@
 'use client';
 
 import { InputField, ModelAuth } from '@/components/auth';
-import { Checkbox } from '@/components/checkbox';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui';
 import Link from 'next/link';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
@@ -73,7 +73,7 @@ export default function SignUpPage() {
         ></InputField>
         <div className="flex gap-[14px] mb-5">
           <span className="pt-2">
-            <Checkbox></Checkbox>
+            <Checkbox />
           </span>
           <p className="max-w-[262px] text-sm">
             I’ve read and accepted{' '}

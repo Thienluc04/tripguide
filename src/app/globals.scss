@@ -27,10 +27,7 @@ textarea {
   outline: none;
 }
 button {
-  cursor: pointer;
-  background-color: transparent;
   outline: none;
-  border: 0;
 }
 body {
   min-height: 100vh;
@@ -74,6 +71,11 @@ body {
 
 .hotel-container {
   max-width: 1300px;
+  margin: 0 auto;
+}
+
+.detail-container {
+  max-width: 1240px;
   margin: 0 auto;
 }
 

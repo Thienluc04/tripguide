@@ -18,3 +18,10 @@ export const tabsLink: TabLink[] = [
     label: 'Car Rental',
   },
 ];
+
+export type creditCard =
+  | 'mastercard'
+  | 'paypal'
+  | 'visa'
+  | 'americanExpress'
+  | 'discover';

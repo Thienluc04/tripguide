@@ -1,17 +1,15 @@
-import { NavbarFilter, SidebarFilter } from '@/components/common';
+import { Breadcrumb, NavbarFilter, SidebarFilter } from '@/components/common';
 import { HotelItem } from '@/components/hotel';
-import { ChevronRightIcon } from '@/components/icons';
 import Image from 'next/image';
 
 export default function ListHotelPage() {
   return (
-    <div className="">
-      <div className="flex gap-2 items-center hotel-container !mt-10 !mb-20">
-        <p className="text-sm">Home</p>
-        <ChevronRightIcon />
-        <p className="text-grayC3 text-sm">Hotel list</p>
+    <div>
+      <div className="container">
+        <Breadcrumb list={['Home']} last="Hotel list" className="mb-[60px]" />
+        <NavbarFilter className="container !mb-[70px]" hiddenLinks />
       </div>
-      <NavbarFilter className="container !mb-[70px]" hiddenLinks />
+
       <div className="flex gap-10 hotel-container">
         <SidebarFilter />
         <div className="flex flex-col gap-[50px]">

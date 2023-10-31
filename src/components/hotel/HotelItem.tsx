@@ -8,7 +8,7 @@ import {
   PlaneIcon,
   SafetyIcon,
   WebsiteIcon,
-  WifiIcon,
+  WifiCrossIcon,
   YellowStarIcon,
 } from '@/components/icons';
 import Link from 'next/link';
@@ -64,7 +64,7 @@ export function HotelItem({ hotel }: HotelItemProps) {
         <div className="flex justify-between">
           <div className="flex flex-col gap-3">
             <div className="flex gap-4 items-center">
-              <WifiIcon className="text-gray8B" />
+              <WifiCrossIcon className="text-gray8B" />
               <span className="text-sm">Free Wifi</span>
             </div>
             <div className="flex gap-4 items-center">
