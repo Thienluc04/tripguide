@@ -76,7 +76,7 @@ export function PassengerItem({
   return (
     <div className="flex justify-between items-center">
       <div>
-        <h3 className="font-medium text-black90 leading-6 mb-1">{title}</h3>
+        <h3 className="font-medium text-gray90 leading-6 mb-1">{title}</h3>
         <p className="text-grayC3 text-sm">{description}</p>
       </div>
       <div className="flex items-center gap-3">
@@ -87,7 +87,7 @@ export function PassengerItem({
           )}
           onClick={handleDecrementValue}
         ></DecrementIcon>
-        <span className="text-sm font-Roboto text-black90 w-3 text-center">
+        <span className="text-sm font-Roboto text-gray90 w-3 text-center">
           {passengers}
         </span>
         <IncrementIcon

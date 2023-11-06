@@ -49,3 +49,6 @@ export * from './PencilWriteIcon';
 export * from './CircleTickIcon';
 export * from './UnionIcon';
 export * from './ThreeDotsIcon';
+export * from './LaptopIcon';
+export * from './TotalIcon';
+export * from './WalletIcon';

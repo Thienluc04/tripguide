@@ -1,17 +1,24 @@
 'use client';
+
 import { cn } from '@/lib/utils';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { ComponentProps, useState } from 'react';
 
-interface CheckboxProps {
+interface CheckboxProps extends ComponentProps<'input'> {
   label?: string;
 }
 
-export function Checkbox({ label }: CheckboxProps) {
+export function Checkbox({ label, className, ...props }: CheckboxProps) {
   const [checked, setChecked] = useState<boolean>(false);
 
   return (
-    <label className={cn('cursor-pointer', label && 'flex gap-3 items-center')}>
+    <label
+      className={cn(
+        'cursor-pointer',
+        label && 'flex gap-3 items-center',
+        className
+      )}
+    >
       <span>
         <input
           type="checkbox"
@@ -19,6 +26,7 @@ export function Checkbox({ label }: CheckboxProps) {
           name=""
           id=""
           className="hidden"
+          {...props}
           onChange={() => setChecked(!checked)}
         />
         <span

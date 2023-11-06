@@ -1,11 +1,4 @@
-import { ComponentProps } from 'react';
-
-interface TickIconProps extends ComponentProps<'svg'> {}
-
-export function TickIcon(props: TickIconProps) {
-  return (
-    <span>
-      <svg
+<svg
         width="8"
         height="6"
         viewBox="0 0 8 6"
@@ -18,6 +11,3 @@ export function TickIcon(props: TickIconProps) {
           fill="currentColor"
         />
       </svg>
-    </span>
-  );
-}
