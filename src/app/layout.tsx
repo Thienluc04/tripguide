@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={twMerge(dmSans.className, 'text-black44')}>
+      <body className={twMerge(dmSans.className, 'text-black44 bg-grayAFB')}>
         <ToastContainer />
         <Header />
         {children}
@@ -31,5 +31,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// export default wrapper.withRedux(RootLayout);

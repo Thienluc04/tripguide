@@ -52,3 +52,6 @@ export * from './ThreeDotsIcon';
 export * from './LaptopIcon';
 export * from './TotalIcon';
 export * from './WalletIcon';
+export * from './ArrowRightLong';
+export * from './ArrowLeftLong';
+export * from './PlaneHorizontalIcon';

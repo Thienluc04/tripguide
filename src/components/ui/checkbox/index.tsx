@@ -34,13 +34,13 @@ export function Checkbox({ label, className, ...props }: CheckboxProps) {
             checked
               ? 'text-white bg-primary'
               : 'border border-grayF3 bg-grayF6',
-            'inline-flex items-center justify-center w-4 h-4 p-1 rounded'
+            'inline-flex items-center justify-center w-4 h-4 rounded'
           )}
         >
           {checked && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-4 h-4"
+              className="w-3 h-3"
               viewBox="0 0 20 20"
               fill="currentColor"
             >

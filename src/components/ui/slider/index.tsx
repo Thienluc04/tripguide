@@ -13,6 +13,7 @@ const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & SliderProps
 >(({ className, dotContent, ...props }, ref) => {
+  if (!dotContent) return null;
   return (
     <SliderPrimitive.Root
       ref={ref}
@@ -26,9 +27,10 @@ const Slider = React.forwardRef<
         <SliderPrimitive.Range className="absolute h-full bg-primary" />
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb
+        data-dot={'$' + dotContent}
         className={cn(
           'relative block h-[18px] w-[18px] rounded-full border-[3px] border-white bg-primary shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
-          `slider-thumb before:content-['50']`
+          `slider-thumb`
         )}
       />
     </SliderPrimitive.Root>

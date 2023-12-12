@@ -13,11 +13,13 @@ import { Button } from '../ui';
 
 interface NavbarFilterProps extends ComponentProps<'div'> {
   hiddenLinks?: boolean;
+  type: 'hotel' | 'flight' | 'car';
 }
 
 export function NavbarFilter({
   hiddenLinks,
   className,
+  type,
 }: PropsWithChildren<NavbarFilterProps>) {
   const [openPassenger, setOpenPassenger] = useState<boolean>(false);
 
@@ -27,17 +29,32 @@ export function NavbarFilter({
   const { params } = useHotelStore();
 
   const handleSubmitFilter = () => {
-    router.push(
-      `/hotels/?location=${params.location}&checkInDate=${
-        params.checkInDate
-      }&checkOutDate=${params.checkOutDate}&passengers=${
-        params.passenger?.adults +
-        '.' +
-        params.passenger?.children +
-        '.' +
-        params.passenger?.infants
-      }`
-    );
+    if (type === 'hotel') {
+      router.push(
+        `/hotels/?location=${params.location}&checkInDate=${
+          params.checkInDate
+        }&checkOutDate=${params.checkOutDate}&passengers=${
+          params.passenger?.adults +
+          '.' +
+          params.passenger?.children +
+          '.' +
+          params.passenger?.infants
+        }`
+      );
+    }
+    if (type === 'flight') {
+      router.push(
+        `/flights/?location=${params.location}&checkInDate=${
+          params.checkInDate
+        }&checkOutDate=${params.checkOutDate}&passengers=${
+          params.passenger?.adults +
+          '.' +
+          params.passenger?.children +
+          '.' +
+          params.passenger?.infants
+        }`
+      );
+    }
   };
 
   return (
@@ -50,7 +67,12 @@ export function NavbarFilter({
       {openPassenger && <Passenger></Passenger>}
       <div className="flex gap-[50px] items-end">
         <div className="flex flex-col gap-7 flex-1">
-          <div className="flex items-center pb-7 justify-between w-full border-b border-b-grayF3">
+          <div
+            className={cn(
+              'flex items-center pb-0 justify-between w-full',
+              !hiddenLinks && 'border-b border-b-grayF3 pb-7'
+            )}
+          >
             {!hiddenLinks && (
               <div className="flex gap-8 items-center">
                 {tabsLink.map((item) => (
@@ -93,26 +115,63 @@ export function NavbarFilter({
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <FilterItem
-              title="Location"
-              description="Where are you from?"
-              className="w-[332px]"
-              listLocation={listLocation}
-              type="location"
-            />
-            <FilterItem
-              type="date"
-              title="Check in"
-              description="Add Date"
-              valueDate={params.checkInDate}
-            />
-            <FilterItem
-              type="date"
-              title="Check out"
-              description="Add Date"
-              arrowTurn={false}
-              valueDate={params.checkOutDate}
-            />
+            {type === 'hotel' && (
+              <>
+                <FilterItem
+                  title="Location"
+                  description="Where are you from?"
+                  className="w-[332px]"
+                  listLocation={listLocation}
+                  type="location"
+                />
+                <FilterItem
+                  type="date"
+                  title="Check in"
+                  description="Add Date"
+                  valueDate={params.checkInDate}
+                />
+                <FilterItem
+                  type="date"
+                  title="Check out"
+                  description="Add Date"
+                  arrowTurn={false}
+                  valueDate={params.checkOutDate}
+                />
+              </>
+            )}
+            {type === 'flight' && (
+              <>
+                <FilterItem
+                  title="Leaving From"
+                  description="Where are you from?"
+                  type="location"
+                  className="w-[260px]"
+                  listLocation={listLocation}
+                />
+                <FilterItem
+                  title="Going to"
+                  description="Going to?"
+                  type="location"
+                  className="w-[200px]"
+                  listLocation={listLocation}
+                />
+                <FilterItem
+                  title="Check in"
+                  description="Add date"
+                  type="date"
+                  className="w-[182px]"
+                  valueDate={params.checkInDate}
+                />
+                <FilterItem
+                  title="Check out"
+                  description="Add date"
+                  type="date"
+                  className="w-[182px]"
+                  arrowTurn={false}
+                  valueDate={params.checkOutDate}
+                />
+              </>
+            )}
           </div>
         </div>
         <Button variant="primary" onClick={handleSubmitFilter}>

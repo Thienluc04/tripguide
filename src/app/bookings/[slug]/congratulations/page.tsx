@@ -95,7 +95,7 @@ export default function HotelCongratulations() {
         </div>
       </div>
       <Link
-        href={'/'}
+        href="/"
         className="text-white font-bold h-12 rounded-[34px] bg-blueFE w-[205px] flex justify-center items-center"
       >
         Go To Your Home

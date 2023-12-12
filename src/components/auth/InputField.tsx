@@ -1,21 +1,16 @@
 'use client';
 
-import {
-  ChangeEvent,
-  ComponentProps,
-  HTMLInputTypeAttribute,
-  useState,
-} from 'react';
-import { twMerge } from 'tailwind-merge';
 import { CloseEyeIcon, OpenEyeIcon, WarningIcon } from '@/components/icons';
 import { cn } from '@/lib/utils';
+import { ComponentProps, HTMLInputTypeAttribute, useState } from 'react';
 import {
-  useController,
   Control,
-  Path,
   FieldValues,
+  Path,
   PathValue,
+  useController,
 } from 'react-hook-form';
+import { twMerge } from 'tailwind-merge';
 
 interface InputFieldProps<T extends FieldValues>
   extends ComponentProps<'label'> {
@@ -63,12 +58,12 @@ export function InputField<T extends FieldValues>({
               <OpenEyeIcon
                 className="absolute right-[14px] top-2/4 -translate-y-2/4 text-grayC3 cursor-pointer"
                 onClick={() => setShowPass(true)}
-              ></OpenEyeIcon>
+              />
             ) : (
               <CloseEyeIcon
                 className="absolute right-[14px] top-2/4 -translate-y-2/4 text-grayC3 cursor-pointer"
                 onClick={() => setShowPass(false)}
-              ></CloseEyeIcon>
+              />
             )}
           </>
         )}

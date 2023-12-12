@@ -1,11 +1,16 @@
 import { listCity } from '@/constants/hotel.constant';
 import { CityItem } from '.';
+import { ComponentProps } from 'react';
+import { cn } from '@/lib/utils';
 
-interface TrendCitiesSectionProps {}
+interface TrendCitiesSectionProps extends ComponentProps<'section'> {}
 
-export function TrendCitiesSection(props: TrendCitiesSectionProps) {
+export function TrendCitiesSection({
+  className,
+  ...props
+}: TrendCitiesSectionProps) {
   return (
-    <div className="bg-[#F5F5F5] py-[60px]">
+    <section className={cn('bg-[#F5F5F5] py-[60px]', className)} {...props}>
       <h2 className="text-black29 text-5xl font-bold text-center mb-4">
         Trending cites
       </h2>
@@ -24,6 +29,6 @@ export function TrendCitiesSection(props: TrendCitiesSectionProps) {
           ></CityItem>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

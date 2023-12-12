@@ -24,7 +24,7 @@ export function Breadcrumb({
           <ChevronRightIcon />
         </p>
       ))}
-      <p className="text-grayC3 text-sm">{last}</p>
+      <p className="text-gray8B text-sm">{last}</p>
     </div>
   );
 }

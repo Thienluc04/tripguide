@@ -1,11 +1,13 @@
 import { listPassion } from '@/constants/hotel.constant';
 import { PassionItem } from './PassionItem';
+import { ComponentProps } from 'react';
+import { cn } from '@/lib/utils';
 
-interface PassionSectionProps {}
+interface PassionSectionProps extends ComponentProps<'section'> {}
 
-export function PassionSection(props: PassionSectionProps) {
+export function PassionSection({ className, ...props }: PassionSectionProps) {
   return (
-    <div className="container">
+    <section className={cn('container', className)} {...props}>
       <h2 className="text-black text-5xl font-bold mb-3">
         Travel Your Passion
       </h2>
@@ -23,6 +25,6 @@ export function PassionSection(props: PassionSectionProps) {
           ></PassionItem>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

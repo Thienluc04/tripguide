@@ -16,4 +16,4 @@ export * from './FindItem';
 export * from './Breadcrumb';
 export * from './TourUpdateItem';
 export * from './CreditCard';
-export * from './SvgIcon';
+export * from './SearchFilter';

@@ -27,7 +27,7 @@ import {
 interface FilterItemProps extends ComponentProps<'div'> {
   type: 'location' | 'date';
   arrowTurn?: boolean;
-  title: 'Location' | 'Check in' | 'Check out';
+  title: string;
   description: string;
   valueDate?: string;
   setValueDate?: Dispatch<SetStateAction<Date>>;
@@ -134,7 +134,7 @@ export function FilterItem({
               mode="single"
               selected={date}
               onSelect={setDate}
-              className="rounded-[20px] border bg-white calendar border-grayF6 shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)]"
+              className="rounded-[20px] min-w-[250px] border bg-white calendar border-grayF6 shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)]"
             />
           </div>
         )}

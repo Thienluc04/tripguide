@@ -1,11 +1,16 @@
 import { listBestPlace } from '@/constants/hotel.constant';
 import { BestPlaceItem } from '@/components/hotel';
+import { ComponentProps } from 'react';
+import { cn } from '@/lib/utils';
 
-interface BestPlaceSectionProps {}
+interface BestPlaceSectionProps extends ComponentProps<'section'> {}
 
-export function BestPlaceSection(props: BestPlaceSectionProps) {
+export function BestPlaceSection({
+  className,
+  ...props
+}: BestPlaceSectionProps) {
   return (
-    <section className="container pt-6">
+    <section className={cn('container pt-6', className)} {...props}>
       <h2 className="text-5xl font-bold text-black2F text-center mb-3">
         Search a best place in the world
       </h2>

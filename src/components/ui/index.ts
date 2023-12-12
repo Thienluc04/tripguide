@@ -9,3 +9,6 @@ export * from './input';
 export * from './slider';
 export * from './checkbox';
 export * from './textarea';
+export * from './label';
+export * from './select';
+export * from './input-with-label';

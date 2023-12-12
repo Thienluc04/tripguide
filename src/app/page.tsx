@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       <HotelHero>
-        <NavbarFilter />
+        <NavbarFilter type="hotel" />
       </HotelHero>
     </main>
   );

@@ -1,15 +1,14 @@
 'use client';
 
 import { Input, Slider } from '@/components/ui';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 
 interface SliderFilterProps {
   min?: number;
   max?: number;
   step?: number;
   value: number;
-  onChangeSlider: (value: number[]) => void;
-  onChangeInput: (e: ChangeEvent<HTMLInputElement>) => void;
+  setValue: Dispatch<SetStateAction<number>>;
   title: string;
 }
 
@@ -18,8 +17,7 @@ export function SliderFilter({
   max = 150,
   step = 1,
   value,
-  onChangeSlider,
-  onChangeInput,
+  setValue,
   title,
 }: SliderFilterProps) {
   return (
@@ -32,14 +30,23 @@ export function SliderFilter({
           min={min}
           step={step}
           dotContent={value}
-          onValueChange={onChangeSlider}
+          onValueChange={(value) => {
+            setValue(value[0]);
+          }}
           className="w-full"
         ></Slider>
         <Input
           value={value}
           max={max}
           min={min}
-          onChange={onChangeInput}
+          onChange={(e) => {
+            if (
+              Number(e.target.value) >= min &&
+              Number(e.target.value) <= max
+            ) {
+              setValue(Number(e.target.value));
+            }
+          }}
           type="number"
           className="w-[60px] h-8 border-2 border-grayC3"
         ></Input>

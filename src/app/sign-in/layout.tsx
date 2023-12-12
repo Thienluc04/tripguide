@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <>
       <HotelHero>
-        <NavbarFilter />
+        <NavbarFilter type="hotel" />
       </HotelHero>
       {children}
     </>

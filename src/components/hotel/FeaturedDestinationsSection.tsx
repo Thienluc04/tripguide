@@ -1,12 +1,15 @@
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { ComponentProps } from 'react';
 
-interface FeaturedDestinationsSectionProps {}
+interface FeaturedDestinationsSectionProps extends ComponentProps<'section'> {}
 
-export function FeaturedDestinationsSection(
-  props: FeaturedDestinationsSectionProps
-) {
+export function FeaturedDestinationsSection({
+  className,
+  ...props
+}: FeaturedDestinationsSectionProps) {
   return (
-    <section className="container">
+    <section className={cn('container', className)} {...props}>
       <h2 className="text-black text-5xl font-bold mb-3">
         Featured Destinations
       </h2>

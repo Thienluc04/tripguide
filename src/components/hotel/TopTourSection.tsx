@@ -4,8 +4,10 @@ import { listTour } from '@/constants/hotel.constant';
 import Slider from 'react-slick';
 import { TopTourItem } from './TopTourItem';
 import { NextArrowSlick, PrevArrowSlick } from '@/components/common';
+import { ComponentProps } from 'react';
+import { cn } from '@/lib/utils';
 
-interface TopTourSectionProps {}
+interface TopTourSectionProps extends ComponentProps<'section'> {}
 
 const settings = {
   dots: false,
@@ -17,9 +19,9 @@ const settings = {
   nextArrow: <NextArrowSlick />,
 };
 
-export function TopTourSection(props: TopTourSectionProps) {
+export function TopTourSection({ className, ...props }: TopTourSectionProps) {
   return (
-    <section className="container">
+    <section className={cn('container', className)} {...props}>
       <div className="flex justify-between items-center mb-[60px]">
         <div>
           <h2 className="text-black text-5xl font-bold mb-3">Top Tour</h2>

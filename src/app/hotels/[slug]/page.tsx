@@ -12,9 +12,36 @@ import {
   YellowStarIcon,
 } from '@/components/icons';
 import { Button, Textarea } from '@/components/ui';
+import { TrendItem } from '@/types/general.type';
 import Image from 'next/image';
 
 export default function HotelDetailPage() {
+  const listTrending: TrendItem[] = [
+    {
+      image: '/images/hotels/trending-1.png',
+      name: 'Hotel Sea Crown',
+      rating: 4.8,
+      totalReviews: 122,
+    },
+    {
+      image: '/images/hotels/trending-2.png',
+      name: 'Long Beach Hotel',
+      rating: 4.8,
+      totalReviews: 122,
+    },
+    {
+      image: '/images/hotels/trending-3.png',
+      name: 'Hotel The Cox Today',
+      rating: 4.8,
+      totalReviews: 122,
+    },
+    {
+      image: '/images/hotels/trending-4.png',
+      name: 'Vivanta Goa, Panaji',
+      rating: 4.8,
+      totalReviews: 122,
+    },
+  ];
   return (
     <>
       <div className="detail-container">
@@ -153,7 +180,7 @@ export default function HotelDetailPage() {
           <span className="text-black font-medium leading-6">View All</span>
         </Button>
       </div>
-      <TrendingSection className="!mb-[70px]" />
+      <TrendingSection data={listTrending} className="!mb-[70px]" />
       <FindSection />
     </>
   );
