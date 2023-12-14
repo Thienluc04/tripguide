@@ -50,7 +50,9 @@ export function BookingDetailSidebar({
       </div>
       <div className="inline-block">
         <p className="text-gray8B font-medium leading-6 mb-4">
-          1 bedroom + 1 private room
+          {bookingType === 'flight'
+            ? '1 Baggoge  +  Meals'
+            : '1 bedroom + 1 private room'}
         </p>
         <div className="w-[170px] h-[1px] bg-grayEE mb-5"></div>
       </div>

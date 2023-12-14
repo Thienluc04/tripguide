@@ -1,3 +1,5 @@
+'use client';
+
 import { Breadcrumb } from '@/components/common';
 import {
   CalendarIcon,
@@ -6,10 +8,29 @@ import {
   WalletIcon,
   YellowStarIcon,
 } from '@/components/icons';
+import { BookingType } from '@/types/general.type';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function HotelCongratulations() {
+  const [bookingType, setBookingType] = useState<BookingType>('');
+
+  const { slug } = useParams();
+
+  useEffect(() => {
+    if (slug.includes('hotel')) {
+      setBookingType('hotel');
+    }
+    if (slug.includes('flight')) {
+      setBookingType('flight');
+    }
+    if (slug.includes('car')) {
+      setBookingType('car');
+    }
+  }, [slug]);
+
   return (
     <div className="container">
       <Breadcrumb
@@ -23,7 +44,20 @@ export default function HotelCongratulations() {
       </h1>
       <div className="h-[1px] w-[822px] bg-grayF3 mb-9"></div>
       <h2 className="text-black2F text-[34px] font-bold leading-[44px] mb-7">
-        Switzerland Hotels and Places to Stay
+        {bookingType === 'flight' ? (
+          <div className="flex items-center gap-5">
+            <span>AKL</span>
+            <Image
+              src={'/images/flights/plane-trip.png'}
+              alt="plane-trip"
+              width={218}
+              height={50}
+            />
+            <span>SGN</span>
+          </div>
+        ) : (
+          'Switzerland Hotels and Places to Stay'
+        )}
       </h2>
       <div className="flex justify-between items-end mb-[30px]">
         <div className="w-[380px]">
@@ -35,7 +69,9 @@ export default function HotelCongratulations() {
               </p>
             </div>
             <p className="text-sm font-medium text-black45">
-              1 bad room + Private room
+              {bookingType === 'flight'
+                ? '1 Baggoge  +  Meals'
+                : '1 bad room + Private room'}
             </p>
           </div>
           <div className="h-[1px] w-full bg-grayF4 mb-6"></div>
@@ -87,10 +123,15 @@ export default function HotelCongratulations() {
         </div>
         <div>
           <Image
-            src={'/images/hotels/booked.png'}
+            src={
+              bookingType === 'flight'
+                ? '/images/flights/plane-detail.png'
+                : '/images/hotels/booked.png'
+            }
             alt="book-img"
             width={670}
             height={403}
+            className="rounded-[20px]"
           />
         </div>
       </div>
