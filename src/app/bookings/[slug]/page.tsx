@@ -1,11 +1,14 @@
 'use client';
 
+import {
+  BookingDetailContent,
+  BookingDetailSidebar,
+} from '@/components/booking';
 import { Breadcrumb } from '@/components/common';
 import { BookingType } from '@/types/general.type';
 import { getListDetailBooking } from '@/utils/general.util';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { BookingDetailContent, BookingDetailSidebar } from './components';
 
 export default function BookingDetail() {
   const [bookingType, setBookingType] = useState<BookingType>('');

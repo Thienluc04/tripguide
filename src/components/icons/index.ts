@@ -55,3 +55,7 @@ export * from './WalletIcon';
 export * from './ArrowRightLong';
 export * from './ArrowLeftLong';
 export * from './PlaneHorizontalIcon';
+export * from './SterlingPoundIcon';
+export * from './HeadphoneIcon';
+export * from './TagIcon';
+export * from './BestShieldIcon';

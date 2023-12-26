@@ -31,7 +31,8 @@ interface FilterItemProps extends ComponentProps<'div'> {
   description: string;
   valueDate?: string;
   setValueDate?: Dispatch<SetStateAction<Date>>;
-  listLocation?: Location[];
+  listLocation?: Location[] | string[];
+  styleContent?: string;
 }
 
 export function FilterItem({
@@ -44,12 +45,12 @@ export function FilterItem({
   valueDate,
   setValueDate,
   listLocation,
+  styleContent = '',
   ...props
 }: PropsWithChildren<FilterItemProps>) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [value, setValue] = useState<string>('');
-
   const { params, setParams } = useHotelStore();
 
   useEffect(() => {
@@ -92,8 +93,10 @@ export function FilterItem({
         </PopoverTrigger>
         {type === 'location' && (
           <PopoverContent
-            className="p-2 rounded-[20px] mt-1 bg-white z-10 pr-[50px] flex flex-col gap-5 border border-grayF6
-            shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10] w-[402px] ml-16"
+            className={cn(
+              'p-2 rounded-[20px] mt-1 bg-white z-10 pr-[50px] flex flex-col gap-5 border border-grayF6 shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10] w-[402px] ml-16',
+              styleContent
+            )}
           >
             <Command>
               <CommandInput
@@ -102,34 +105,63 @@ export function FilterItem({
               />
               <CommandEmpty>No location found</CommandEmpty>
               <CommandGroup>
-                {listLocation?.map((item) => (
-                  <CommandItem
-                    key={item.title}
-                    className={cn(
-                      'flex gap-3 items-center rounded-lg cursor-pointer',
-                      item.title === value && 'bg-grayF3'
-                    )}
-                    onSelect={() => {
-                      setValue(item.title === value ? '' : item.title);
-                    }}
-                  >
-                    <AddressIcon className="text-grayC4"></AddressIcon>
-                    <div className="flex flex-col gap-1">
-                      <h3 className="text-grayE90 font-medium leading-6">
-                        {item.title}
-                      </h3>
-                      <p className="text-grayC3 text-sm leading-[21px]">
-                        {item.description}
-                      </p>
-                    </div>
-                  </CommandItem>
-                ))}
+                {listLocation?.map((item, index) => {
+                  if (typeof item !== 'string') {
+                    return (
+                      <CommandItem
+                        key={item.title}
+                        className={cn(
+                          'flex gap-3 items-center rounded-lg cursor-pointer',
+                          item.title === value && 'bg-grayF3'
+                        )}
+                        onSelect={() => {
+                          setValue(item.title === value ? '' : item.title);
+                        }}
+                      >
+                        <AddressIcon className="text-grayC4"></AddressIcon>
+                        <div className="flex flex-col gap-1">
+                          <h3 className="text-grayE90 font-medium leading-6">
+                            {item.title}
+                          </h3>
+                          <p className="text-grayC3 text-sm leading-[21px]">
+                            {item.description}
+                          </p>
+                        </div>
+                      </CommandItem>
+                    );
+                  } else {
+                    return (
+                      <CommandItem
+                        key={index}
+                        className={cn(
+                          'flex gap-3 items-center rounded-lg cursor-pointer',
+                          item === value && 'bg-grayF3'
+                        )}
+                        onSelect={() => {
+                          setValue(item === value ? '' : item);
+                        }}
+                      >
+                        <AddressIcon className="text-grayC4"></AddressIcon>
+                        <div className="flex flex-col gap-1">
+                          <p className="text-grayE90 font-medium leading-6">
+                            {item}
+                          </p>
+                        </div>
+                      </CommandItem>
+                    );
+                  }
+                })}
               </CommandGroup>
             </Command>
           </PopoverContent>
         )}
         {!children && type === 'date' && isOpen && (
-          <div className="absolute left-0 right-0 w-full mt-1 h-[352px] top-full z-10">
+          <div
+            className={cn(
+              'absolute left-0 right-0 w-full mt-1 h-[352px] top-full z-10',
+              styleContent
+            )}
+          >
             <Calendar
               mode="single"
               selected={date}
