@@ -3,6 +3,7 @@
 import { ChevronDownIcon, ChevronTopIcon } from '@/components/icons';
 import { tabsLink } from '@/constants/general.constant';
 import { listLocation } from '@/constants/hotel.constant';
+import { listLocation as listLocationCar } from '@/constants/car.constant';
 import { cn } from '@/lib/utils';
 import { useHotelStore } from '@/store/hotelStore';
 import Link from 'next/link';
@@ -99,19 +100,21 @@ export function NavbarFilter({
                 </span>
                 <ChevronDownIcon className="text-gray8B"></ChevronDownIcon>
               </div>
-              <div
-                className="flex gap-[10px] items-center cursor-pointer"
-                onClick={() => setOpenPassenger(!openPassenger)}
-              >
-                <span className="text-lg font-medium text-black44">
-                  1 passenger
-                </span>
-                {openPassenger ? (
-                  <ChevronTopIcon className="text-gray8B"></ChevronTopIcon>
-                ) : (
-                  <ChevronDownIcon className="text-gray8B"></ChevronDownIcon>
-                )}
-              </div>
+              {type !== 'car' && (
+                <div
+                  className="flex gap-[10px] items-center cursor-pointer"
+                  onClick={() => setOpenPassenger(!openPassenger)}
+                >
+                  <span className="text-lg font-medium text-black44">
+                    1 passenger
+                  </span>
+                  {openPassenger ? (
+                    <ChevronTopIcon className="text-gray8B"></ChevronTopIcon>
+                  ) : (
+                    <ChevronDownIcon className="text-gray8B"></ChevronDownIcon>
+                  )}
+                </div>
+              )}
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -154,6 +157,41 @@ export function NavbarFilter({
                   type="location"
                   className="w-[200px]"
                   listLocation={listLocation}
+                />
+                <FilterItem
+                  title="Check in"
+                  description="Add date"
+                  type="date"
+                  className="w-[182px]"
+                  valueDate={params.checkInDate}
+                />
+                <FilterItem
+                  title="Check out"
+                  description="Add date"
+                  type="date"
+                  className="w-[182px]"
+                  arrowTurn={false}
+                  valueDate={params.checkOutDate}
+                />
+              </>
+            )}
+            {type === 'car' && (
+              <>
+                <FilterItem
+                  title="Pick up from"
+                  description="Where are you from?"
+                  type="location"
+                  className="w-[260px]"
+                  listLocation={listLocationCar}
+                  styleContent="w-[248px]"
+                />
+                <FilterItem
+                  title="Pick up to"
+                  description="Going to"
+                  type="location"
+                  className="w-[200px]"
+                  listLocation={listLocationCar}
+                  styleContent="w-[230px]"
                 />
                 <FilterItem
                   title="Check in"
