@@ -8,11 +8,13 @@ import {
   WalletIcon,
   YellowStarIcon,
 } from '@/components/icons';
-import { BookingType } from '@/types/general.type';
+import { BookingType } from '@/types/general';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+
+import planeTrip from '@images/flights/plane-trip.png';
 
 export default function HotelCongratulations() {
   const [bookingType, setBookingType] = useState<BookingType>('');
@@ -47,12 +49,7 @@ export default function HotelCongratulations() {
         {bookingType === 'flight' ? (
           <div className="flex items-center gap-5">
             <span>AKL</span>
-            <Image
-              src={'/images/flights/plane-trip.png'}
-              alt="plane-trip"
-              width={218}
-              height={50}
-            />
+            <Image src={planeTrip} alt="plane-trip" width={218} height={50} />
             <span>SGN</span>
           </div>
         ) : (

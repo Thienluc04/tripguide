@@ -2,6 +2,15 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { ComponentProps } from 'react';
 
+import destinations1 from '@images/destinations/destinations-1.png';
+import destinations2 from '@images/destinations/destinations-2.png';
+import destinations3 from '@images/destinations/destinations-3.png';
+import destinations4 from '@images/destinations/destinations-4.png';
+import destinations5 from '@images/destinations/destinations-5.png';
+import destinations6 from '@images/destinations/destinations-6.png';
+import smallAvatar1 from '@images/destinations/small-avatar-1.png';
+import smallAvatar2 from '@images/destinations/small-avatar-2.png';
+
 interface FeaturedDestinationsSectionProps extends ComponentProps<'section'> {}
 
 export function FeaturedDestinationsSection({
@@ -27,7 +36,7 @@ export function FeaturedDestinationsSection({
               }}
             ></div>
             <Image
-              src={'/images/destinations/destinations-1.png'}
+              src={destinations1}
               alt="destinations-1"
               width={870}
               height={280}
@@ -44,7 +53,7 @@ export function FeaturedDestinationsSection({
                 </h3>
                 <div className="flex gap-2 items-center">
                   <Image
-                    src={'/images/destinations/small-avatar-1.png'}
+                    src={smallAvatar1}
                     alt="small-avatar-1"
                     width={28}
                     height={28}
@@ -64,7 +73,7 @@ export function FeaturedDestinationsSection({
                 }}
               ></div>
               <Image
-                src={'/images/destinations/destinations-2.png'}
+                src={destinations2}
                 alt="destinations-2"
                 width={408}
                 height={408}
@@ -81,7 +90,7 @@ export function FeaturedDestinationsSection({
                   </h3>
                   <div className="flex gap-2 items-center">
                     <Image
-                      src={'/images/destinations/small-avatar-2.png'}
+                      src={smallAvatar2}
                       alt="small-avatar-2"
                       width={28}
                       height={28}
@@ -100,7 +109,7 @@ export function FeaturedDestinationsSection({
                 }}
               ></div>
               <Image
-                src={'/images/destinations/destinations-3.png'}
+                src={destinations3}
                 alt="destinations-3"
                 width={408}
                 height={408}
@@ -117,7 +126,7 @@ export function FeaturedDestinationsSection({
                   </h3>
                   <div className="flex gap-2 items-center">
                     <Image
-                      src={'/images/destinations/small-avatar-2.png'}
+                      src={smallAvatar2}
                       alt="small-avatar-2"
                       width={28}
                       height={28}
@@ -139,7 +148,7 @@ export function FeaturedDestinationsSection({
               }}
             ></div>
             <Image
-              src={'/images/destinations/destinations-4.png'}
+              src={destinations4}
               alt="destinations-4"
               width={270}
               height={220}
@@ -156,7 +165,7 @@ export function FeaturedDestinationsSection({
                 </h3>
                 <div className="flex gap-2 items-center">
                   <Image
-                    src={'/images/destinations/small-avatar-2.png'}
+                    src={smallAvatar2}
                     alt="small-avatar-2"
                     width={14}
                     height={14}
@@ -175,7 +184,7 @@ export function FeaturedDestinationsSection({
               }}
             ></div>
             <Image
-              src={'/images/destinations/destinations-5.png'}
+              src={destinations5}
               alt="destinations-5"
               width={270}
               height={220}
@@ -192,7 +201,7 @@ export function FeaturedDestinationsSection({
                 </h3>
                 <div className="flex gap-2 items-center">
                   <Image
-                    src={'/images/destinations/small-avatar-2.png'}
+                    src={smallAvatar2}
                     alt="small-avatar-2"
                     width={14}
                     height={14}
@@ -211,7 +220,7 @@ export function FeaturedDestinationsSection({
               }}
             ></div>
             <Image
-              src={'/images/destinations/destinations-6.png'}
+              src={destinations6}
               alt="destinations-6"
               width={270}
               height={220}
@@ -228,7 +237,7 @@ export function FeaturedDestinationsSection({
                 </h3>
                 <div className="flex gap-2 items-center">
                   <Image
-                    src={'/images/destinations/small-avatar-2.png'}
+                    src={smallAvatar2}
                     alt="small-avatar-2"
                     width={14}
                     height={14}

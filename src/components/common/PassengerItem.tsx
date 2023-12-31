@@ -1,56 +1,42 @@
 'use client';
 
-import { useHotelStore } from '@/store/hotelStore';
-import { DecrementIcon, IncrementIcon } from '../icons';
-import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { DecrementIcon, IncrementIcon } from '../icons';
 
 interface PassengerItemProps {
   title: string;
   description: string;
   name: 'adults' | 'children' | 'infants';
+  onChangePassenger?: (passenger: number) => void;
+  params: HotelParams | FlightParams;
 }
 
 export function PassengerItem({
   title,
   description,
   name,
+  onChangePassenger,
+  params,
 }: PassengerItemProps) {
-  const { params, setParams } = useHotelStore((state) => state);
-
   const [passengers, setPassengers] = useState<number>(0);
 
   useEffect(() => {
     if (name === 'adults') {
-      setPassengers(params.passenger?.adults as number);
+      setPassengers(params?.passenger?.adults as number);
     }
     if (name === 'children') {
-      setPassengers(params.passenger?.children as number);
+      setPassengers(params?.passenger?.children as number);
     }
     if (name === 'infants') {
-      setPassengers(params.passenger?.infants as number);
+      setPassengers(params?.passenger?.infants as number);
     }
   }, []);
 
   useEffect(() => {
-    if (name === 'adults') {
-      setParams({
-        ...params,
-        passenger: { ...params.passenger, adults: passengers },
-      });
-    }
-    if (name === 'children') {
-      setParams({
-        ...params,
-        passenger: { ...params.passenger, children: passengers },
-      });
-    }
-    if (name === 'infants') {
-      setParams({
-        ...params,
-        passenger: { ...params.passenger, infants: passengers },
-      });
+    if (onChangePassenger) {
+      onChangePassenger(passengers);
     }
   }, [passengers]);
 

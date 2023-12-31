@@ -12,7 +12,7 @@ import {
   YellowStarIcon,
 } from '@/components/icons';
 import Link from 'next/link';
-import { Hotel } from '@/types/hotel.type';
+import { Hotel } from '@/types/hotel';
 
 interface HotelItemProps {
   hotel: Hotel;

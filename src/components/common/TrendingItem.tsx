@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import { YellowStarIcon } from '@/components/icons';
 
+import avatar from '@images/avatar.png';
+import avatar2 from '@images/avatar-2.png';
+import avatar3 from '@images/avatar-3.png';
+import avatar4 from '@images/avatar-4.png';
+import avatar5 from '@images/avatar-5.png';
+
 interface TrendingItemProps {
   image: string;
   name: string;
@@ -33,35 +39,35 @@ export function TrendingItem({
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <Image
-            src={'/images/avatar-2.png'}
+            src={avatar2}
             alt="avatar"
             width={24}
             height={24}
             className="border border-white rounded-full"
           />
           <Image
-            src={'/images/avatar.png'}
+            src={avatar}
             alt="avatar"
             width={24}
             height={24}
             className="-ml-1 border border-white rounded-full"
           />
           <Image
-            src={'/images/avatar-3.png'}
+            src={avatar3}
             alt="avatar"
             width={24}
             height={24}
             className="-ml-1 border border-white rounded-full"
           />
           <Image
-            src={'/images/avatar-4.png'}
+            src={avatar4}
             alt="avatar"
             width={24}
             height={24}
             className="-ml-1 border border-white rounded-full"
           />
           <Image
-            src={'/images/avatar-5.png'}
+            src={avatar5}
             alt="avatar"
             width={24}
             height={24}

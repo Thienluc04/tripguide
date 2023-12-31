@@ -63,7 +63,7 @@ export function CheckboxFilter({
           See More
         </Link>
       )}
-      {!last && <div className="h-[1px] bg-grayC3 mt-4"></div>}
+      {!last && <div className="h-[1px] bg-grayF2 mt-4"></div>}
     </div>
   );
 }

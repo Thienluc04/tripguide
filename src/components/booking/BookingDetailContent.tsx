@@ -3,11 +3,14 @@
 import { CreditCard, TourUpdateItem } from '@/components/common';
 import { ThreeDotsIcon, TickIcon, UnionIcon } from '@/components/icons';
 import { Checkbox, Input } from '@/components/ui';
-import { CreditCardType } from '@/types/general.type';
+import { CreditCardType } from '@/types/general';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+
+import mastercardIcon from '@images/mastercard-icon.png';
+import visaIcon from '@images/visa-icon.png';
 
 interface BookingDetailContentProps {}
 
@@ -84,7 +87,7 @@ export function BookingDetailContent(props: BookingDetailContentProps) {
               Holder Name
             </p>
             <Image
-              src={'/images/mastercard-icon.png'}
+              src={mastercardIcon}
               alt="mastercard-icon"
               width={34}
               height={20}
@@ -104,7 +107,7 @@ export function BookingDetailContent(props: BookingDetailContentProps) {
               Holder Name
             </p>
             <Image
-              src={'/images/visa-icon.png'}
+              src={visaIcon}
               alt="visa-icon"
               width={34}
               height={20}

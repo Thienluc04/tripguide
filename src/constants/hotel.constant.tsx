@@ -5,7 +5,7 @@ import {
   Location,
   Passion,
   Tour,
-} from '@/types/hotel.type';
+} from '@/types/hotel';
 
 export const listBestPlace: BestPlace[] = [
   {

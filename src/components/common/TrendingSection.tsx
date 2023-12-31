@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 import { cn } from '@/lib/utils';
 import { TrendingItem } from '.';
-import { TrendItem } from '@/types/general.type';
+import { TrendItem } from '@/types/general';
 
 interface TrendingSectionProps extends ComponentProps<'div'> {
   title?: string;

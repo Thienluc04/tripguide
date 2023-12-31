@@ -1,23 +1,23 @@
 import { ReactElement } from 'react';
 
-export interface TabLink {
+interface TabLink {
   path: string;
   icon: ReactElement;
   label: string;
 }
 
-export interface TrendItem {
+interface TrendItem {
   image: string;
   name: string;
   rating: number;
   totalReviews: number;
 }
 
-export type CreditCardType =
+type CreditCardType =
   | 'mastercard'
   | 'paypal'
   | 'visa'
   | 'americanExpress'
   | 'discover';
 
-export type BookingType = 'hotel' | 'flight' | 'car' | '';
+type BookingType = 'hotel' | 'flight' | 'car' | '';

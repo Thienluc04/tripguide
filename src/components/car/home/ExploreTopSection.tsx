@@ -1,5 +1,9 @@
 import Image from 'next/image';
 
+import explore1 from '@images/cars/explore-top-1.png';
+import explore2 from '@images/cars/explore-top-2.png';
+import explore3 from '@images/cars/explore-top-3.png';
+
 interface ExploreTopSectionProps {}
 
 export function ExploreTopSection(props: ExploreTopSectionProps) {
@@ -13,12 +17,7 @@ export function ExploreTopSection(props: ExploreTopSectionProps) {
       </p>
       <div className="flex gap-10 justify-center">
         <div className="relative">
-          <Image
-            src={'/images/cars/explore-top-1.png'}
-            alt="explore-top"
-            width={364}
-            height={495}
-          />
+          <Image src={explore1} alt="explore-top" width={364} height={495} />
           <div className="absolute bottom-10 left-[30px] right-[30px]">
             <h3 className="text-white text-[34px] font-bold mb-[10px]">
               Paris
@@ -29,12 +28,7 @@ export function ExploreTopSection(props: ExploreTopSectionProps) {
           </div>
         </div>
         <div className="relative">
-          <Image
-            src={'/images/cars/explore-top-2.png'}
-            alt="explore-top"
-            width={364}
-            height={495}
-          />
+          <Image src={explore2} alt="explore-top" width={364} height={495} />
           <div className="absolute bottom-10 left-[30px] right-[30px]">
             <h3 className="text-white text-[34px] font-bold mb-[10px]">
               London
@@ -45,12 +39,7 @@ export function ExploreTopSection(props: ExploreTopSectionProps) {
           </div>
         </div>
         <div className="relative">
-          <Image
-            src={'/images/cars/explore-top-3.png'}
-            alt="explore-top"
-            width={364}
-            height={495}
-          />
+          <Image src={explore3} alt="explore-top" width={364} height={495} />
           <div className="absolute bottom-10 left-[30px] right-[30px]">
             <h3 className="text-white text-[34px] font-bold mb-[10px]">
               London

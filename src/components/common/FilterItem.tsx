@@ -13,8 +13,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui';
 import { cn } from '@/lib/utils';
-import { useHotelStore } from '@/store/hotelStore';
-import { Location } from '@/types/hotel.type';
+import { Location } from '@/types/hotel';
 import {
   ComponentProps,
   Dispatch,
@@ -33,6 +32,8 @@ interface FilterItemProps extends ComponentProps<'div'> {
   setValueDate?: Dispatch<SetStateAction<Date>>;
   listLocation?: Location[] | string[];
   styleContent?: string;
+  onSetDate?: (date: string) => void;
+  onSetLocation?: (location: string) => void;
 }
 
 export function FilterItem({
@@ -46,25 +47,24 @@ export function FilterItem({
   setValueDate,
   listLocation,
   styleContent = '',
+  onSetDate,
+  onSetLocation,
   ...props
 }: PropsWithChildren<FilterItemProps>) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [value, setValue] = useState<string>('');
-  const { params, setParams } = useHotelStore();
 
   useEffect(() => {
-    if (date && title === 'Check in') {
-      setParams({ ...params, checkInDate: date.toLocaleDateString('en-GB') });
-    }
-    if (date && title === 'Check out') {
-      setParams({ ...params, checkOutDate: date.toLocaleDateString('en-GB') });
+    if (onSetDate && date) {
+      onSetDate(date.toLocaleDateString('en-GB'));
     }
   }, [date]);
 
   useEffect(() => {
-    if (value.length > 0) {
-      setParams({ ...params, location: value });
+    if (value.length > 0 && onSetLocation) {
+      // setParams({ ...params, location: value });
+      onSetLocation(value);
     }
   }, [value]);
 

@@ -1,5 +1,5 @@
 import { CarIcon, FlightIcon, HotelIcon } from '@/components/icons';
-import { TabLink } from '@/types/general.type';
+import { TabLink } from '@/types/general';
 
 export const tabsLink: TabLink[] = [
   {

@@ -1,4 +1,4 @@
-import { BookingType } from '@/types/general.type';
+import { BookingType } from '@/types/general';
 
 export const getListDetailBooking = (type: BookingType) => {
   return [

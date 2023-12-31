@@ -12,8 +12,13 @@ import {
   YellowStarIcon,
 } from '@/components/icons';
 import { Button, Textarea } from '@/components/ui';
-import { TrendItem } from '@/types/general.type';
+import { TrendItem } from '@/types/general';
 import Image from 'next/image';
+
+import hotelDetail1 from '@images/hotels/detail-1.png';
+import hotelDetail2 from '@images/hotels/detail-2.png';
+import hotelDetail3 from '@images/hotels/detail-3.png';
+import hotelDetail4 from '@images/hotels/detail-4.png';
 
 export default function HotelDetailPage() {
   const listTrending: TrendItem[] = [
@@ -67,7 +72,7 @@ export default function HotelDetailPage() {
         </div>
         <div className="flex gap-3 mb-10">
           <Image
-            src={'/images/hotels/detail-1.png'}
+            src={hotelDetail1}
             alt="hotel-detail"
             width={742}
             height={632}
@@ -75,20 +80,20 @@ export default function HotelDetailPage() {
           />
           <div className="flex flex-col gap-3 justify-between">
             <Image
-              src={'/images/hotels/detail-2.png'}
+              src={hotelDetail2}
               alt="hotel-detail"
               width={482}
               height={200}
               className="rounded-tr-3xl"
             />
             <Image
-              src={'/images/hotels/detail-3.png'}
+              src={hotelDetail3}
               alt="hotel-detail"
               width={482}
               height={200}
             />
             <Image
-              src={'/images/hotels/detail-4.png'}
+              src={hotelDetail4}
               alt="hotel-detail"
               width={482}
               height={200}

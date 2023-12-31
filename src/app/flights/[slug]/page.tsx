@@ -1,7 +1,7 @@
 import { Breadcrumb, NavbarFilter, TrendingSection } from '@/components/common';
 import { FlightDetailSidebar } from '@/components/flight';
 import { FlightDetailContent } from '@/components/flight/detail';
-import { TrendItem } from '@/types/general.type';
+import { TrendItem } from '@/types/general';
 
 interface FlightDetailPageProps {}
 

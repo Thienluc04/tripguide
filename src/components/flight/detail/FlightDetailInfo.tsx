@@ -1,5 +1,8 @@
 import Image from 'next/image';
 
+import emirates from '@images/flights/emirates.png';
+import planeTrip from '@images/flights/plane-trip.png';
+
 interface FlightDetailInfoProps {}
 
 export function FlightDetailInfo(props: FlightDetailInfoProps) {
@@ -21,12 +24,7 @@ export function FlightDetailInfo(props: FlightDetailInfoProps) {
       <div className="h-[1px] bg-grayF3 mb-[30px]"></div>
       <div className="flex gap-[50px] items-center mb-10">
         <div className="flex gap-5 items-center">
-          <Image
-            src={'/images/flights/emirates.png'}
-            alt="emirates"
-            width={50}
-            height={34}
-          />
+          <Image src={emirates} alt="emirates" width={50} height={34} />
           <div>
             <h3 className="font-medium text-lg mb-[10px]">IndiGo</h3>
             <p className="text-gray8B text-lg">GE-965 320</p>
@@ -43,12 +41,7 @@ export function FlightDetailInfo(props: FlightDetailInfoProps) {
         </div>
         <div>
           <p className="text-gray8B font-medium leading-6">05 hrs 20 mins</p>
-          <Image
-            src={'/images/flights/plane-trip.png'}
-            alt="plane-trip"
-            width={130}
-            height={22}
-          />
+          <Image src={planeTrip} alt="plane-trip" width={130} height={22} />
         </div>
         <div>
           <h3 className="text-2xl font-medium leading-9">01.05</h3>
@@ -90,12 +83,7 @@ export function FlightDetailInfo(props: FlightDetailInfoProps) {
       </div>
       <div className="flex gap-[50px] items-center mb-10">
         <div className="flex gap-5 items-center">
-          <Image
-            src={'/images/flights/emirates.png'}
-            alt="emirates"
-            width={50}
-            height={34}
-          />
+          <Image src={emirates} alt="emirates" width={50} height={34} />
           <div>
             <h3 className="font-medium text-lg mb-[10px]">IndiGo</h3>
             <p className="text-gray8B text-lg">GE-965 320</p>
@@ -112,12 +100,7 @@ export function FlightDetailInfo(props: FlightDetailInfoProps) {
         </div>
         <div>
           <p className="text-gray8B font-medium leading-6">05 hrs 20 mins</p>
-          <Image
-            src={'/images/flights/plane-trip.png'}
-            alt="plane-trip"
-            width={130}
-            height={22}
-          />
+          <Image src={planeTrip} alt="plane-trip" width={130} height={22} />
         </div>
         <div>
           <h3 className="text-2xl font-medium leading-9">01.05</h3>

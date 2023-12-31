@@ -1,7 +1,11 @@
 import { YellowStarIcon } from '@/components/icons';
-import { BookingType } from '@/types/general.type';
+import { BookingType } from '@/types/general';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import planeTrip from '@images/flights/plane-trip.png';
+import planeDetail from '@images/flights/plane-detail.png';
+import payment from '@images/hotels/payment.png';
 
 interface BookingDetailSidebarProps {
   bookingType?: BookingType;
@@ -20,12 +24,7 @@ export function BookingDetailSidebar({
       {bookingType === 'flight' && (
         <div className="flex gap-5 items-center mb-[14px]">
           <p className="text-black44 text-xl font-bold">AKL</p>
-          <Image
-            src={'/images/flights/plane-trip.png'}
-            alt="plane-trip"
-            width={130}
-            height={20}
-          />
+          <Image src={planeTrip} alt="plane-trip" width={130} height={20} />
           <p className="text-black44 text-xl font-bold">SGN</p>
         </div>
       )}
@@ -37,11 +36,7 @@ export function BookingDetailSidebar({
       </div>
       <div className="mb-8">
         <Image
-          src={
-            bookingType === 'flight'
-              ? '/images/flights/plane-detail.png'
-              : '/images/hotels/payment.png'
-          }
+          src={bookingType === 'flight' ? planeDetail : payment}
           className="rounded-xl"
           alt="hotel"
           width={326}

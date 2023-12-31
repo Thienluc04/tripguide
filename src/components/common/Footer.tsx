@@ -8,6 +8,8 @@ import {
 } from '@/constants/footer.constant';
 import { Button } from '../ui';
 
+import logo from '@images/logo.png';
+
 interface FooterProps {}
 
 export function Footer(props: FooterProps) {
@@ -43,12 +45,7 @@ export function Footer(props: FooterProps) {
         <div className="container flex justify-between">
           <div className="w-[254px]">
             <Link href={'/'} className="flex gap-[10px] items-center mb-5">
-              <Image
-                src={'/images/logo.png'}
-                alt="logo"
-                width={40}
-                height={38}
-              ></Image>
+              <Image src={logo} alt="logo" width={40} height={38}></Image>
               <h2 className="font-OpenSans text-xl font-bold">TripGuide</h2>
             </Link>
             <p className="text-gray8B mb-6 leading-6">

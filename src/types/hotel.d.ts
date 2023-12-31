@@ -1,10 +1,10 @@
-export interface BestPlace {
+interface BestPlace {
   image: string;
   title: string;
   description: string;
 }
 
-export interface Explore {
+interface Explore {
   image: string;
   rating: number;
   totalRating: number;
@@ -15,7 +15,7 @@ export interface Explore {
   price: number;
 }
 
-export interface City {
+interface City {
   image: string;
   title: string;
   rating: number;
@@ -23,26 +23,26 @@ export interface City {
   price: number;
 }
 
-export interface Tour {
+interface Tour {
   image: string;
   name: string;
   title: string;
   description: string;
 }
 
-export interface Passion {
+interface Passion {
   image: string;
   title: string;
   rating: number;
   totalRating: number;
 }
 
-export interface Location {
+interface Location {
   title: string;
   description: string;
 }
 
-export interface HotelParams {
+interface HotelParams {
   location?: string;
   checkInDate?: string;
   checkOutDate?: string;
@@ -53,7 +53,7 @@ export interface HotelParams {
   };
 }
 
-export interface Hotel {
+interface Hotel {
   image: string;
   title: string;
   rating: number;

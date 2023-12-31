@@ -12,6 +12,11 @@ import { HotelItem } from '@/components/hotel';
 import Image from 'next/image';
 import { useState } from 'react';
 
+import loadingImage from '@images/loading.png';
+import hotelFirst from '@images/hotels/hotel-1.png';
+import hotelSecond from '@images/hotels/hotel-2.png';
+import hotelThird from '@images/hotels/hotel-3.png';
+
 const listPopular: string[] = [
   'Hotels',
   'Breakfast and Dinner',
@@ -80,7 +85,7 @@ export default function ListHotelPage() {
         <div className="flex flex-col gap-[50px]">
           <HotelItem
             hotel={{
-              image: '/images/hotels/hotel-1.png',
+              image: hotelFirst,
               title: 'Zuich, Switzerland',
               rating: 4.8,
               totalRate: 122,
@@ -92,7 +97,7 @@ export default function ListHotelPage() {
           />
           <HotelItem
             hotel={{
-              image: '/images/hotels/hotel-2.png',
+              image: hotelSecond,
               title: 'Zuich, Switzerland',
               rating: 4.8,
               totalRate: 122,
@@ -104,7 +109,7 @@ export default function ListHotelPage() {
           />
           <HotelItem
             hotel={{
-              image: '/images/hotels/hotel-3.png',
+              image: hotelThird,
               title: 'Zuich, Switzerland',
               rating: 4.8,
               totalRate: 122,
@@ -115,12 +120,7 @@ export default function ListHotelPage() {
             }}
           />
           <div className="rounded-3xl flex gap-4 items-center justify-center mx-auto border border-grayC3 w-[176px] p-[10px]">
-            <Image
-              src={'/images/loading.png'}
-              alt="loading"
-              width={18}
-              height={18}
-            />
+            <Image src={loadingImage} alt="loading" width={18} height={18} />
             <span className="font-medium leading-6 text-black">View All</span>
           </div>
         </div>

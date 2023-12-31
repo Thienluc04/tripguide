@@ -1,5 +1,12 @@
 import Image from 'next/image';
 
+import ourBrands1 from '@images/cars/our-brands-1.png';
+import ourBrands2 from '@images/cars/our-brands-2.png';
+import ourBrands3 from '@images/cars/our-brands-3.png';
+import ourBrands4 from '@images/cars/our-brands-4.png';
+import ourBrands5 from '@images/cars/our-brands-5.png';
+import ourBrands6 from '@images/cars/our-brands-6.png';
+
 interface OurBrandsSectionProps {}
 
 export function OurBrandsSection(props: OurBrandsSectionProps) {
@@ -13,42 +20,12 @@ export function OurBrandsSection(props: OurBrandsSectionProps) {
         meetings, corporate events, press & influencers
       </p>
       <div className="flex items-center gap-[80px]">
-        <Image
-          src={'/images/cars/our-brands-1.png'}
-          alt="our-brands"
-          width={90}
-          height={28}
-        />
-        <Image
-          src={'/images/cars/our-brands-2.png'}
-          alt="our-brands"
-          width={90}
-          height={28}
-        />
-        <Image
-          src={'/images/cars/our-brands-3.png'}
-          alt="our-brands"
-          width={90}
-          height={28}
-        />
-        <Image
-          src={'/images/cars/our-brands-4.png'}
-          alt="our-brands"
-          width={90}
-          height={28}
-        />
-        <Image
-          src={'/images/cars/our-brands-5.png'}
-          alt="our-brands"
-          width={90}
-          height={28}
-        />
-        <Image
-          src={'/images/cars/our-brands-6.png'}
-          alt="our-brands"
-          width={90}
-          height={28}
-        />
+        <Image src={ourBrands1} alt="our-brands" width={90} height={28} />
+        <Image src={ourBrands2} alt="our-brands" width={90} height={28} />
+        <Image src={ourBrands3} alt="our-brands" width={90} height={28} />
+        <Image src={ourBrands4} alt="our-brands" width={90} height={28} />
+        <Image src={ourBrands5} alt="our-brands" width={90} height={28} />
+        <Image src={ourBrands6} alt="our-brands" width={90} height={28} />
       </div>
     </div>
   );

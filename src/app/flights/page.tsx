@@ -11,6 +11,8 @@ import { FlightItem } from '@/components/flight';
 import Image from 'next/image';
 import { useState } from 'react';
 
+import imageLoading from '@images/loading.png';
+
 const listPopular: string[] = [
   'Non Stop',
   'IndiGo (10)',
@@ -40,7 +42,7 @@ export default function ListFlightPage(props: ListFlightPageProps) {
         <div className="container">
           <Breadcrumb
             list={['Home']}
-            last="Flight"
+            last="Flights"
             className="mt-0 pt-10 -mb-14"
           />
           <NavbarFilter
@@ -85,12 +87,7 @@ export default function ListFlightPage(props: ListFlightPageProps) {
             <FlightItem />
             <FlightItem />
             <div className="rounded-3xl flex mt-[10px] gap-4 items-center justify-center mx-auto border border-grayC3 w-[176px] p-[10px]">
-              <Image
-                src={'/images/loading.png'}
-                alt="loading"
-                width={18}
-                height={18}
-              />
+              <Image src={imageLoading} alt="loading" width={18} height={18} />
               <span className="font-medium leading-6 text-black">View All</span>
             </div>
           </div>

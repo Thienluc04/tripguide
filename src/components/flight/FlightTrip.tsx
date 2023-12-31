@@ -3,6 +3,8 @@ import { ArrowLeftLong, ArrowRightLong } from '../icons';
 import { FlightTime } from '.';
 import Link from 'next/link';
 
+import emirates from '@images/flights/emirates.png';
+
 interface FlightTripProps {
   type: 'trip' | 'trip-return';
 }
@@ -17,12 +19,7 @@ export function FlightTrip({ type }: FlightTripProps) {
         Dubai Thu, 19 Aug
       </h3>
       <div className="flex gap-[50px] items-center">
-        <Image
-          src={'/images/flights/emirates.png'}
-          alt="amirates"
-          width={52}
-          height={35}
-        />
+        <Image src={emirates} alt="amirates" width={52} height={35} />
         <div>
           <p className="text-2xl font-medium leading-9 text-black2F mb-1">
             DAC

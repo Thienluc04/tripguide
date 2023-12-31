@@ -49,6 +49,7 @@ const config: Config = {
         grayE8: '#E8E8E8',
         gray6F: '#65676F',
         grayF2: '#F2F2F2',
+        gray91: '#919191',
         primary: '#316BFF',
         red: '#FF543D',
         red57: '#EB5757',
@@ -64,6 +65,8 @@ const config: Config = {
         green: '#38B245',
         green82: '#03A782',
         greenA6: '#BDDBA6',
+        green53: '#219653',
+        green1A: '#27AE601A'
       },
       fontFamily: {
         DmSans: 'DM Sans',

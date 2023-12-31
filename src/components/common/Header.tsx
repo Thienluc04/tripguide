@@ -6,6 +6,10 @@ import Link from 'next/link';
 import { ComponentProps } from 'react';
 import { twMerge } from 'tailwind-merge';
 
+import logo from '@images/logo.png';
+import flagUSA from '@images/usa-flag.png';
+import avatar from '@images/avatar.png';
+
 interface HeaderProps extends ComponentProps<'div'> {}
 
 export function Header({ className }: HeaderProps) {
@@ -17,22 +21,12 @@ export function Header({ className }: HeaderProps) {
       )}
     >
       <Link href={'/'} className="flex gap-[10px] items-center">
-        <Image
-          src={'/images/logo.png'}
-          alt="logo"
-          width={40}
-          height={38}
-        ></Image>
+        <Image src={logo} alt="logo" width={40} height={38}></Image>
         <h2 className="font-OpenSans text-xl font-bold">TripGuide</h2>
       </Link>
       <div className="flex gap-4 items-center">
         <h3 className="text-gray8B font-Roboto text-sm font-bold">USD</h3>
-        <Image
-          src={'/images/usa-flag.png'}
-          width={20}
-          height={20}
-          alt="usa-flag"
-        ></Image>
+        <Image src={flagUSA} width={20} height={20} alt="usa-flag"></Image>
         <div className="w-[1px] h-8 bg-grayF3"></div>
 
         <Link href={'/sign-in'}>
@@ -41,7 +35,7 @@ export function Header({ className }: HeaderProps) {
 
         {/* User logged */}
         {/* <Image
-          src={'/images/avatar.png'}
+          src={avatar}
           alt="avatar"
           width={32}
           height={32}

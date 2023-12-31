@@ -5,7 +5,7 @@ import {
   BookingDetailSidebar,
 } from '@/components/booking';
 import { Breadcrumb } from '@/components/common';
-import { BookingType } from '@/types/general.type';
+import { BookingType } from '@/types/general';
 import { getListDetailBooking } from '@/utils/general.util';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';

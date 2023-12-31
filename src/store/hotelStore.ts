@@ -1,4 +1,3 @@
-import { HotelParams } from '@/types/hotel.type';
 import { create, UseBoundStore, StoreApi } from 'zustand';
 
 interface HotelStore {
