@@ -47,7 +47,7 @@ export function CarItem({ image, name }: CarItemProps) {
             <p className="leading-6 text-gray8B">per day</p>
           </div>
           <Link
-            href={""}
+            href={"/car-rentals/1"}
             className="rounded-lg bg-blueFE px-6 py-3 font-bold text-white"
           >
             Reserve deal

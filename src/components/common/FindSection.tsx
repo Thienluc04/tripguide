@@ -1,18 +1,24 @@
-import { cn } from '@/lib/utils';
-import { ComponentProps } from 'react';
-import { FindItem } from '.';
+import { cn } from "@/lib/utils";
+import { ComponentProps } from "react";
+import { FindItem } from ".";
 
-interface FindSectionProps extends ComponentProps<'div'> {}
+interface FindSectionProps extends ComponentProps<"div"> {
+  title?: string;
+}
 
-export function FindSection({ className, ...props }: FindSectionProps) {
+export function FindSection({
+  className,
+  title = "Find 250+ Hotels",
+  ...props
+}: FindSectionProps) {
   return (
-    <div className={cn('container', className)} {...props}>
-      <div className="flex justify-between items-center mb-[66px]">
-        <h2 className="text-black text-[36px] font-bold leading-[44px]">
-          Find 250+ Hotels
+    <div className={cn("container", className)} {...props}>
+      <div className="mb-[66px] flex items-center justify-between">
+        <h2 className="text-[36px] font-bold leading-[44px] text-black">
+          {title}
         </h2>
-        <div className="flex gap-8 items-center">
-          <div className="text-white text-sm font-bold py-[6px] px-6 rounded-3xl bg-blueE6">
+        <div className="flex items-center gap-8">
+          <div className="rounded-3xl bg-blueE6 px-6 py-[6px] text-sm font-bold text-white">
             Popular
           </div>
           <div className="text-sm">Guest Ratings</div>

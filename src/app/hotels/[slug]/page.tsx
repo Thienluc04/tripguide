@@ -1,48 +1,48 @@
-import { Breadcrumb, FindSection, TrendingSection } from '@/components/common';
+import { Breadcrumb, FindSection, TrendingSection } from "@/components/common";
 import {
   HotelDetailsContent,
   LatestReview,
   RoomSuggest,
-} from '@/components/hotel';
+} from "@/components/hotel";
 import {
   AddressIcon,
   CircleLoading,
   YellowEmptyStar,
   YellowHalfStar,
   YellowStarIcon,
-} from '@/components/icons';
-import { Button, Textarea } from '@/components/ui';
-import { TrendItem } from '@/types/general';
-import Image from 'next/image';
+} from "@/components/icons";
+import { Button, Textarea } from "@/components/ui";
+import { TrendItem } from "@/types/general";
+import Image from "next/image";
 
-import hotelDetail1 from '@images/hotels/detail-1.png';
-import hotelDetail2 from '@images/hotels/detail-2.png';
-import hotelDetail3 from '@images/hotels/detail-3.png';
-import hotelDetail4 from '@images/hotels/detail-4.png';
+import hotelDetail1 from "@images/hotels/detail-1.png";
+import hotelDetail2 from "@images/hotels/detail-2.png";
+import hotelDetail3 from "@images/hotels/detail-3.png";
+import hotelDetail4 from "@images/hotels/detail-4.png";
 
 export default function HotelDetailPage() {
   const listTrending: TrendItem[] = [
     {
-      image: '/images/hotels/trending-1.png',
-      name: 'Hotel Sea Crown',
+      image: "/images/hotels/trending-1.png",
+      name: "Hotel Sea Crown",
       rating: 4.8,
       totalReviews: 122,
     },
     {
-      image: '/images/hotels/trending-2.png',
-      name: 'Long Beach Hotel',
+      image: "/images/hotels/trending-2.png",
+      name: "Long Beach Hotel",
       rating: 4.8,
       totalReviews: 122,
     },
     {
-      image: '/images/hotels/trending-3.png',
-      name: 'Hotel The Cox Today',
+      image: "/images/hotels/trending-3.png",
+      name: "Hotel The Cox Today",
       rating: 4.8,
       totalReviews: 122,
     },
     {
-      image: '/images/hotels/trending-4.png',
-      name: 'Vivanta Goa, Panaji',
+      image: "/images/hotels/trending-4.png",
+      name: "Vivanta Goa, Panaji",
       rating: 4.8,
       totalReviews: 122,
     },
@@ -51,26 +51,26 @@ export default function HotelDetailPage() {
     <>
       <div className="detail-container">
         <Breadcrumb
-          list={['Home', 'Home list']}
-          last="Home details"
+          list={["Home", "Hotel list"]}
+          last="Hotel details"
           className="mb-[18px]"
         />
-        <h1 className="text-5xl font-bold leading-[70px] text-black25 mb-7">
+        <h1 className="mb-7 text-5xl font-bold leading-[70px] text-black25">
           Switzerland Hotels and Places to Stay
         </h1>
-        <div className="flex gap-[22px] mb-11">
-          <div className="flex gap-[10px] items-center">
+        <div className="mb-11 flex gap-[22px]">
+          <div className="flex items-center gap-[10px]">
             <YellowStarIcon />
             <p className="text-sm text-black45">
               4.8 <span className="text-gray8B">(122 reviews)</span>
             </p>
           </div>
-          <div className="flex gap-[10px] items-center">
+          <div className="flex items-center gap-[10px]">
             <AddressIcon className="text-gray8B" />
             <p className="text-sm text-gray8B">Zuich town, Switzerland</p>
           </div>
         </div>
-        <div className="flex gap-3 mb-10">
+        <div className="mb-10 flex gap-3">
           <Image
             src={hotelDetail1}
             alt="hotel-detail"
@@ -78,7 +78,7 @@ export default function HotelDetailPage() {
             height={632}
             className="rounded-l-3xl"
           />
-          <div className="flex flex-col gap-3 justify-between">
+          <div className="flex flex-col justify-between gap-3">
             <Image
               src={hotelDetail2}
               alt="hotel-detail"
@@ -101,20 +101,20 @@ export default function HotelDetailPage() {
             />
           </div>
         </div>
-        <div className="flex gap-4 items-center mb-5">
-          <span className="bg-[rgba(56,_178,_69,_0.10)] text-green text-sm px-1 h-[26px] rounded flex items-center justify-center">
+        <div className="mb-5 flex items-center gap-4">
+          <span className="flex h-[26px] items-center justify-center rounded bg-[rgba(56,_178,_69,_0.10)] px-1 text-sm text-green">
             5.0
           </span>
-          <span className="bg-[rgba(253,_151,_4,_0.10)] text-orange04 text-sm px-2 h-[26px] rounded flex items-center justify-center">
+          <span className="flex h-[26px] items-center justify-center rounded bg-[rgba(253,_151,_4,_0.10)] px-2 text-sm text-orange04">
             Perfect
           </span>
-          <span className="bg-[#EAEEFA] text-blueA7 text-sm px-4 h-[26px] rounded flex items-center justify-center">
+          <span className="flex h-[26px] items-center justify-center rounded bg-[#EAEEFA] px-4 text-sm text-blueA7">
             Hotels
           </span>
-          <span className="bg-[#FCEBF1] text-[#E96594] text-sm px-5 h-[26px] rounded flex items-center justify-center">
+          <span className="flex h-[26px] items-center justify-center rounded bg-[#FCEBF1] px-5 text-sm text-[#E96594]">
             Building
           </span>
-          <span className="bg-[#FBEEE8] text-[#DC6E3D] text-sm px-4 h-[26px] rounded flex items-center justify-center">
+          <span className="flex h-[26px] items-center justify-center rounded bg-[#FBEEE8] px-4 text-sm text-[#DC6E3D]">
             Top value
           </span>
           <div className="flex gap-2">
@@ -128,8 +128,8 @@ export default function HotelDetailPage() {
         <HotelDetailsContent />
       </div>
       <div className="h-[2px] bg-grayF6"></div>
-      <div className="max-w-[970px] mx-auto my-[70px]">
-        <h2 className="text-black2F text-5xl font-bold leading-[60px] mb-5">
+      <div className="mx-auto my-[70px] max-w-[970px]">
+        <h2 className="mb-5 text-5xl font-bold leading-[60px] text-black2F">
           Select Room
         </h2>
         <div className="flex flex-col gap-[30px]">
@@ -138,12 +138,12 @@ export default function HotelDetailPage() {
           <RoomSuggest price={201} title="Premium Bedroom" />
         </div>
       </div>
-      <div className="max-w-[970px] mx-auto mb-[70px]">
-        <div className="flex justify-between items-center mb-5">
+      <div className="mx-auto mb-[70px] max-w-[970px]">
+        <div className="mb-5 flex items-center justify-between">
           <h2 className="text-[34px] font-bold leading-[44px] text-black33">
             Attach your Review
           </h2>
-          <div className="flex gap-2 items-center">
+          <div className="flex items-center gap-2">
             <YellowStarIcon />
             <YellowStarIcon />
             <YellowStarIcon />
@@ -154,21 +154,21 @@ export default function HotelDetailPage() {
         <form className="mb-[60px]">
           <Textarea
             placeholder="Write your detailed review here..."
-            className="rounded-xl border-2 border-grayF3 bg-grayF6 h-[134px] w-full px-[30px] py-6 resize-none text-lg mb-5"
+            className="mb-5 h-[134px] w-full resize-none rounded-xl border-2 border-grayF3 bg-grayF6 px-[30px] py-6 text-lg"
           />
-          <div className="flex gap-5 justify-end">
+          <div className="flex justify-end gap-5">
             <Button
               variant="secondary"
-              className="text-base border border-grayF3 bg-grayF6 text-gray8B font-medium leading-7 h-[42px] w-[100px] rounded-[10px]"
+              className="h-[42px] w-[100px] rounded-[10px] border border-grayF3 bg-grayF6 text-base font-medium leading-7 text-gray8B"
             >
               Cancel
             </Button>
-            <Button className="text-base font-medium leading-7 h-[42px] w-[100px] rounded-[10px]">
+            <Button className="h-[42px] w-[100px] rounded-[10px] text-base font-medium leading-7">
               Submit
             </Button>
           </div>
         </form>
-        <h3 className="text-2xl font-semibold leading-8 text-black33 mb-9">
+        <h3 className="mb-9 text-2xl font-semibold leading-8 text-black33">
           Latest Reviews
         </h3>
         <div className="flex flex-col gap-[30px]">
@@ -177,12 +177,12 @@ export default function HotelDetailPage() {
           <LatestReview imageAuthor="/images/hotels/author-review-3.png" />
         </div>
         <Button
-          className="flex items-center justify-center gap-4 h-[46px] w-[176px] p-0 border border-grayC3 shadow-none rounded-full mt-10 mx-auto"
+          className="mx-auto mt-10 flex h-[46px] w-[176px] items-center justify-center gap-4 rounded-full border border-grayC3 p-0 shadow-none"
           type="submit"
           variant="outline"
         >
           <CircleLoading />
-          <span className="text-black font-medium leading-6">View All</span>
+          <span className="font-medium leading-6 text-black">View All</span>
         </Button>
       </div>
       <TrendingSection data={listTrending} className="!mb-[70px]" />

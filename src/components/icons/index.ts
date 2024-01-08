@@ -62,3 +62,6 @@ export * from "./BestShieldIcon";
 export * from "./PeopleIcon";
 export * from "./GasolineIcon";
 export * from "./MileageIcon";
+export * from "./ClockIcon";
+export * from "./FeatureIcon";
+export * from "./SelectionIcon";
