@@ -91,7 +91,7 @@ export function SidebarCarDetail(props: SidebarCarDetailProps) {
         </p>
         <div className="flex justify-center">
           <Link
-            href={"bookings/car-1"}
+            href={"/bookings/car-1"}
             className="rounded-full bg-blueE6 px-8 py-3 font-bold text-white"
           >
             Reserve this car

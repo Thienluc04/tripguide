@@ -65,3 +65,7 @@ export * from "./MileageIcon";
 export * from "./ClockIcon";
 export * from "./FeatureIcon";
 export * from "./SelectionIcon";
+export * from "./ProfileIcon";
+export * from "./SuitCaseIcon";
+export * from "./CardIcon";
+export * from "./NotificationIcon";

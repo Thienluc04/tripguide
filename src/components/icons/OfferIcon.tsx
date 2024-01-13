@@ -1,16 +1,17 @@
-import { ComponentProps } from 'react';
+import { ComponentProps } from "react";
 
-interface OfferIconProps extends ComponentProps<'span'> {}
+interface OfferIconProps extends ComponentProps<"svg"> {}
 
 export function OfferIcon(props: OfferIconProps) {
   return (
-    <span {...props}>
+    <span>
       <svg
         width={14}
         height={14}
         viewBox="0 0 14 14"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        {...props}
       >
         <path
           fillRule="evenodd"

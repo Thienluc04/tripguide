@@ -5,11 +5,11 @@ import {
   PassionSection,
   TopTourSection,
   TrendCitiesSection,
-} from '@/components/hotel';
+} from "@/components/hotel";
 
 export default function HotelPage() {
   return (
-    <div className="pt-[124px] flex flex-col gap-[70px] bg-grayFB">
+    <div className="flex flex-col gap-[70px] bg-grayFB pt-[124px]">
       <BestPlaceSection />
       <FeaturedDestinationsSection />
       <TopTourSection />

@@ -1,64 +1,81 @@
-'use client';
+"use client";
 
-import { Breadcrumb } from '@/components/common';
+import { Breadcrumb } from "@/components/common";
 import {
   CalendarIcon,
   LaptopIcon,
   TotalIcon,
   WalletIcon,
   YellowStarIcon,
-} from '@/components/icons';
-import { BookingType } from '@/types/general';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+} from "@/components/icons";
+import { BookingType } from "@/types/general";
+import Image from "next/image";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
-import planeTrip from '@images/flights/plane-trip.png';
+import planeTrip from "@images/flights/plane-trip.png";
+import planeDetail from "@images/flights/plane-detail.png";
+import hotelBooked from "@images/hotels/booked.png";
+import congratulationCar from "@images/cars/congratulation-car.png";
 
 export default function HotelCongratulations() {
-  const [bookingType, setBookingType] = useState<BookingType>('');
+  const [bookingType, setBookingType] = useState<BookingType>("");
 
   const { slug } = useParams();
 
   useEffect(() => {
-    if (slug.includes('hotel')) {
-      setBookingType('hotel');
+    if (slug.includes("hotel")) {
+      setBookingType("hotel");
     }
-    if (slug.includes('flight')) {
-      setBookingType('flight');
+    if (slug.includes("flight")) {
+      setBookingType("flight");
     }
-    if (slug.includes('car')) {
-      setBookingType('car');
+    if (slug.includes("car")) {
+      setBookingType("car");
     }
   }, [slug]);
 
+  if (!bookingType) return null;
   return (
     <div className="container">
       <Breadcrumb
-        list={['Home', 'Hotel list', 'Hotel details', 'Confirm and pay']}
+        list={[
+          "Home",
+          bookingType === "hotel"
+            ? "Hotel list"
+            : bookingType === "car"
+              ? "Car List"
+              : "Flight list",
+          bookingType === "hotel"
+            ? "Hotel Details"
+            : bookingType === "car"
+              ? "Car Details"
+              : "Flight Details",
+          "Confirm and pay",
+        ]}
         last="Congratulations"
         className="mb-[70px]"
       />
-      <h2 className="text-2xl font-bold mb-5">Congratulations!</h2>
-      <h1 className="text-5xl font-medium leading-[60px] mb-6">
+      <h2 className="mb-5 text-2xl font-bold">Congratulations!</h2>
+      <h1 className="mb-6 text-5xl font-medium leading-[60px]">
         Your trip has been booked!
       </h1>
-      <div className="h-[1px] w-[822px] bg-grayF3 mb-9"></div>
-      <h2 className="text-black2F text-[34px] font-bold leading-[44px] mb-7">
-        {bookingType === 'flight' ? (
+      <div className="mb-9 h-[1px] w-[822px] bg-grayF3"></div>
+      <h2 className="mb-7 text-[34px] font-bold leading-[44px] text-black2F">
+        {bookingType === "flight" ? (
           <div className="flex items-center gap-5">
             <span>AKL</span>
             <Image src={planeTrip} alt="plane-trip" width={218} height={50} />
             <span>SGN</span>
           </div>
         ) : (
-          'Switzerland Hotels and Places to Stay'
+          "Switzerland Hotels and Places to Stay"
         )}
       </h2>
-      <div className="flex justify-between items-end mb-[30px]">
+      <div className="mb-[30px] flex items-end justify-between">
         <div className="w-[380px]">
-          <div className="flex justify-between items-center mb-6">
+          <div className="mb-6 flex items-center gap-9">
             <div className="flex gap-2">
               <YellowStarIcon />
               <p className="text-sm font-medium text-black45">
@@ -66,64 +83,66 @@ export default function HotelCongratulations() {
               </p>
             </div>
             <p className="text-sm font-medium text-black45">
-              {bookingType === 'flight'
-                ? '1 Baggoge  +  Meals'
-                : '1 bad room + Private room'}
+              {bookingType !== "hotel"
+                ? "1 Baggoge  +  Meals"
+                : "1 bad room + Private room"}
             </p>
           </div>
-          <div className="h-[1px] w-full bg-grayF4 mb-6"></div>
-          <div className="flex gap-6 mb-[30px]">
-            <div className="rounded-xl bg-grayF6 py-2 px-5 pb-3 flex-1">
-              <h3 className="text-black45 text-sm font-medium">Dates</h3>
-              <p className="text-gray8B font-medium leading-6">
+          <div className="mb-6 h-[1px] w-full bg-grayF4"></div>
+          <div className="mb-[30px] flex gap-6">
+            <div className="flex-1 rounded-xl bg-grayF6 px-5 py-2 pb-3">
+              <h3 className="text-sm font-medium text-black45">Dates</h3>
+              <p className="font-medium leading-6 text-gray8B">
                 May 15 - 22, 2021
               </p>
             </div>
-            <div className="rounded-xl bg-grayF6 py-2 px-5 pb-3 flex-1">
-              <h3 className="text-black45 text-sm font-medium">Travelers</h3>
-              <p className="text-gray8B font-medium leading-6">1 Passenger</p>
+            <div className="flex-1 rounded-xl bg-grayF6 px-5 py-2 pb-3">
+              <h3 className="text-sm font-medium text-black45">Travelers</h3>
+              <p className="font-medium leading-6 text-gray8B">1 Passenger</p>
             </div>
           </div>
-          <div className="rounded-[10px] border border-grayEF bg-gray4F6 py-5 px-6">
-            <h2 className="text-black2F text-[28px] font-bold leading-10 mb-6">
+          <div className="rounded-[10px] border border-grayEF bg-gray4F6 px-6 py-5">
+            <h2 className="mb-6 text-[28px] font-bold leading-10 text-black2F">
               Reserve details
             </h2>
-            <div className="flex justify-between mb-[22px] items-center">
-              <div className="flex gap-3 text-gray90 items-center">
+            <div className="mb-[22px] flex items-center justify-between">
+              <div className="flex items-center gap-3 text-gray90">
                 <LaptopIcon />
                 <span className="font-medium leading-6">Booking code</span>
               </div>
-              <p className="text-black45 font-medium leading-6">FD_158456</p>
+              <p className="font-medium leading-6 text-black45">FD_158456</p>
             </div>
-            <div className="flex justify-between mb-[22px] items-center">
-              <div className="flex gap-3 text-gray90 items-center">
+            <div className="mb-[22px] flex items-center justify-between">
+              <div className="flex items-center gap-3 text-gray90">
                 <CalendarIcon />
                 <span className="font-medium leading-6">Date</span>
               </div>
-              <p className="text-black45 font-medium leading-6">30 Apr, 2021</p>
+              <p className="font-medium leading-6 text-black45">30 Apr, 2021</p>
             </div>
-            <div className="flex justify-between mb-[22px] items-center">
-              <div className="flex gap-3 text-gray90 items-center">
+            <div className="mb-[22px] flex items-center justify-between">
+              <div className="flex items-center gap-3 text-gray90">
                 <TotalIcon />
                 <span className="font-medium leading-6">Total</span>
               </div>
-              <p className="text-black45 font-medium leading-6">$833</p>
+              <p className="font-medium leading-6 text-black45">$833</p>
             </div>
-            <div className="flex justify-between mb-[22px] items-center">
-              <div className="flex gap-3 text-gray90 items-center">
+            <div className="mb-[22px] flex items-center justify-between">
+              <div className="flex items-center gap-3 text-gray90">
                 <WalletIcon />
                 <span className="font-medium leading-6">Payment method</span>
               </div>
-              <p className="text-black45 font-medium leading-6">Credit card</p>
+              <p className="font-medium leading-6 text-black45">Credit card</p>
             </div>
           </div>
         </div>
         <div>
           <Image
             src={
-              bookingType === 'flight'
-                ? '/images/flights/plane-detail.png'
-                : '/images/hotels/booked.png'
+              bookingType === "flight"
+                ? planeDetail
+                : bookingType === "car"
+                  ? congratulationCar
+                  : hotelBooked
             }
             alt="book-img"
             width={670}
@@ -134,7 +153,7 @@ export default function HotelCongratulations() {
       </div>
       <Link
         href="/"
-        className="text-white font-bold h-12 rounded-[34px] bg-blueFE w-[205px] flex justify-center items-center"
+        className="flex h-12 w-[205px] items-center justify-center rounded-[34px] bg-blueFE font-bold text-white"
       >
         Go To Your Home
       </Link>
