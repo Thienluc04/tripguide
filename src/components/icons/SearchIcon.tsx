@@ -1,16 +1,17 @@
-import { ComponentProps } from 'react';
+import { ComponentProps } from "react";
 
-interface SearchIconProps extends ComponentProps<'span'> {}
+interface SearchIconProps extends ComponentProps<"svg"> {}
 
 export function SearchIcon(props: SearchIconProps) {
   return (
-    <span {...props}>
+    <span>
       <svg
         width={16}
         height={17}
         viewBox="0 0 16 17"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        {...props}
       >
         <path
           fillRule="evenodd"

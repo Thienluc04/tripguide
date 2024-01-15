@@ -41,7 +41,7 @@ body {
 }
 
 .tab-active::before {
-  content: '';
+  content: "";
   position: absolute;
   top: calc(100% + 28px);
   left: 0;
@@ -56,7 +56,7 @@ body {
   width: 30px;
   height: 30px;
   z-index: 10;
-  @apply absolute rounded-full right-0 top-2/4;
+  @apply absolute right-0 top-2/4 rounded-full;
 }
 
 .btn-primary-shadow {
@@ -107,7 +107,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type='number'] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -120,12 +120,12 @@ input[type='number'] {
   border-radius: 10px;
   background: #0b2541;
   box-shadow: 0px 8px 17px rgba(15, 15, 15, 0.2);
-  @apply font-Roboto leading-[18px] flex items-center justify-center text-xs font-medium text-white px-3 py-2;
+  @apply flex items-center justify-center px-3 py-2 font-Roboto text-xs font-medium leading-[18px] text-white;
 }
 
 .slider-thumb::after {
   position: absolute;
-  content: '';
+  content: "";
   top: -10px;
   left: 50%;
   transform: translateX(-50%);
@@ -135,4 +135,12 @@ input[type='number'] {
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
   border-bottom: 5px solid transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply rounded bg-grayC3;
 }

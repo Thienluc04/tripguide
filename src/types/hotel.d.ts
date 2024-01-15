@@ -37,7 +37,7 @@ interface Passion {
   totalRating: number;
 }
 
-interface Location {
+interface LocationHotel {
   title: string;
   description: string;
 }
@@ -54,7 +54,7 @@ interface HotelParams {
 }
 
 interface Hotel {
-  image: string;
+  image: string | StaticImageData;
   title: string;
   rating: number;
   totalRate: number;

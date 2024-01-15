@@ -1,16 +1,17 @@
-import { ComponentProps } from 'react';
+import { ComponentProps } from "react";
 
-interface CloseIconProps extends ComponentProps<'span'> {}
+interface CloseIconProps extends ComponentProps<"svg"> {}
 
-export function CloseIcon({ className = '' }: CloseIconProps) {
+export function CloseIcon(props: CloseIconProps) {
   return (
-    <span className={className}>
+    <span>
       <svg
         width="38"
         height="38"
         viewBox="0 0 38 38"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        {...props}
       >
         <circle cx="19" cy="19" r="18.5" fill="white" stroke="#E7ECF3" />
         <path

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { AddressIcon, ArrowTurnIcon } from '@/components/icons';
+import { AddressIcon, ArrowTurnIcon } from "@/components/icons";
 import {
   Calendar,
   Command,
@@ -11,9 +11,8 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui';
-import { cn } from '@/lib/utils';
-import { Location } from '@/types/hotel';
+} from "@/components/ui";
+import { cn } from "@/lib/utils";
 import {
   ComponentProps,
   Dispatch,
@@ -21,16 +20,16 @@ import {
   SetStateAction,
   useEffect,
   useState,
-} from 'react';
+} from "react";
 
-interface FilterItemProps extends ComponentProps<'div'> {
-  type: 'location' | 'date';
+interface FilterItemProps extends ComponentProps<"div"> {
+  type: "location" | "date";
   arrowTurn?: boolean;
   title: string;
   description: string;
   valueDate?: string;
   setValueDate?: Dispatch<SetStateAction<Date>>;
-  listLocation?: Location[] | string[];
+  listLocation?: LocationHotel[] | string[];
   styleContent?: string;
   onSetDate?: (date: string) => void;
   onSetLocation?: (location: string) => void;
@@ -46,24 +45,23 @@ export function FilterItem({
   valueDate,
   setValueDate,
   listLocation,
-  styleContent = '',
+  styleContent = "",
   onSetDate,
   onSetLocation,
   ...props
 }: PropsWithChildren<FilterItemProps>) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [date, setDate] = useState<Date | undefined>(new Date());
-  const [value, setValue] = useState<string>('');
+  const [value, setValue] = useState<string>("");
 
   useEffect(() => {
     if (onSetDate && date) {
-      onSetDate(date.toLocaleDateString('en-GB'));
+      onSetDate(date.toLocaleDateString("en-GB"));
     }
   }, [date]);
 
   useEffect(() => {
     if (value.length > 0 && onSetLocation) {
-      // setParams({ ...params, location: value });
       onSetLocation(value);
     }
   }, [value]);
@@ -74,14 +72,14 @@ export function FilterItem({
         <PopoverTrigger asChild>
           <div
             className={cn(
-              'rounded-lg border border-blueEA bg-gray5F7 px-6 flex flex-col justify-center h-[70px] w-[250px] cursor-pointer',
-              className
+              "flex h-[70px] w-[250px] cursor-pointer flex-col justify-center rounded-lg border border-blueEA bg-gray5F7 px-6",
+              className,
             )}
             onClick={() => setIsOpen(!isOpen)}
             {...props}
           >
-            <h3 className="text-lg font-medium mb-[6px]">{title}</h3>
-            <span className="text-grayC3 leading-6">
+            <h3 className="mb-[6px] text-lg font-medium">{title}</h3>
+            <span className="leading-6 text-grayC3">
               {value || description}
             </span>
             {arrowTurn && (
@@ -91,31 +89,31 @@ export function FilterItem({
             )}
           </div>
         </PopoverTrigger>
-        {type === 'location' && (
+        {type === "location" && (
           <PopoverContent
             className={cn(
-              'p-2 rounded-[20px] mt-1 bg-white z-10 pr-[50px] flex flex-col gap-5 border border-grayF6 shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10] w-[402px] ml-16',
-              styleContent
+              "shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10] z-10 ml-16 mt-1 flex w-[402px] flex-col gap-5 rounded-[20px] border border-grayF6 bg-white p-2 pr-[50px]",
+              styleContent,
             )}
           >
             <Command>
               <CommandInput
-                className="px-3 py-2 text-base h-auto"
+                className="h-auto px-3 py-2 text-base"
                 placeholder={description}
               />
               <CommandEmpty>No location found</CommandEmpty>
               <CommandGroup>
                 {listLocation?.map((item, index) => {
-                  if (typeof item !== 'string') {
+                  if (typeof item !== "string") {
                     return (
                       <CommandItem
                         key={item.title}
                         className={cn(
-                          'flex gap-3 items-center rounded-lg cursor-pointer',
-                          item.title === value && 'bg-grayF3'
+                          "flex cursor-pointer items-center gap-3 rounded-lg",
+                          item.title === value && "bg-grayF3",
                         )}
                         onSelect={() => {
-                          setValue(item.title === value ? '' : item.title);
+                          setValue(item.title === value ? "" : item.title);
                         }}
                       >
                         <AddressIcon className="text-grayC4"></AddressIcon>
@@ -123,7 +121,7 @@ export function FilterItem({
                           <h3 className="text-grayE90 font-medium leading-6">
                             {item.title}
                           </h3>
-                          <p className="text-grayC3 text-sm leading-[21px]">
+                          <p className="text-sm leading-[21px] text-grayC3">
                             {item.description}
                           </p>
                         </div>
@@ -134,11 +132,11 @@ export function FilterItem({
                       <CommandItem
                         key={index}
                         className={cn(
-                          'flex gap-3 items-center rounded-lg cursor-pointer',
-                          item === value && 'bg-grayF3'
+                          "flex cursor-pointer items-center gap-3 rounded-lg",
+                          item === value && "bg-grayF3",
                         )}
                         onSelect={() => {
-                          setValue(item === value ? '' : item);
+                          setValue(item === value ? "" : item);
                         }}
                       >
                         <AddressIcon className="text-grayC4"></AddressIcon>
@@ -155,18 +153,18 @@ export function FilterItem({
             </Command>
           </PopoverContent>
         )}
-        {!children && type === 'date' && isOpen && (
+        {!children && type === "date" && isOpen && (
           <div
             className={cn(
-              'absolute left-0 right-0 w-full mt-1 h-[352px] top-full z-10',
-              styleContent
+              "absolute left-0 right-0 top-full z-10 mt-1 h-[352px] w-full",
+              styleContent,
             )}
           >
             <Calendar
               mode="single"
               selected={date}
               onSelect={setDate}
-              className="rounded-[20px] min-w-[250px] border bg-white calendar border-grayF6 shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)]"
+              className="calendar min-w-[250px] rounded-[20px] border border-grayF6 bg-white shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)]"
             />
           </div>
         )}

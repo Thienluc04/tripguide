@@ -5,87 +5,43 @@ import Link from "next/link";
 import { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 
+import { cn } from "@/lib/utils";
 import avatar from "@images/avatar.png";
+
+import flagUSA from "@images/header/usa-flag.png";
 import logo from "@images/logo.png";
-import flagUSA from "@images/usa-flag.png";
+
+import {
+  listCurrency,
+  listLanguage,
+  listNoti,
+  listOptions,
+} from "@/constants/header.constant";
 import {
   ArrowDownIcon,
-  CardIcon,
+  CircleTickIcon,
   NotificationIcon,
-  ProfileIcon,
-  SuitCaseIcon,
-  TagIcon,
-  UserIcon,
+  SearchIcon,
+  XIcon,
 } from "../icons";
-import { SignOutIcon } from "../icons/SignOutIcon";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "../ui";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown";
-import notiAvatar1 from "@images/header/noti-avatar-1.png";
-import notiAvatar2 from "@images/header/noti-avatar-2.png";
-import notiAvatar3 from "@images/header/noti-avatar-3.png";
-import notiAvatar4 from "@images/header/noti-avatar-4.png";
-import { cn } from "@/lib/utils";
-import { spawn } from "child_process";
 
 interface HeaderProps extends ComponentProps<"div"> {}
-
-const listOptions: OptionHeader[] = [
-  {
-    icon: <ProfileIcon width={16} height={16} />,
-    name: "My Profile",
-  },
-  {
-    icon: <UserIcon width={16} height={16} />,
-    name: "Manage account",
-  },
-  {
-    icon: <SuitCaseIcon width={16} height={16} />,
-    name: "Bookings",
-  },
-  {
-    icon: <CardIcon width={16} height={16} />,
-    name: "My wallet",
-  },
-  {
-    icon: <TagIcon className="rotate-[270deg]" width={16} height={16} />,
-    name: "My rewards",
-  },
-  {
-    icon: <SignOutIcon width={16} height={16} />,
-    name: "Sign out",
-  },
-];
-
-const listNoti: NotiHeader[] = [
-  {
-    avatar: notiAvatar1,
-    title: "You Booked and earn 8 point for on custoner creation Steve Mathew ",
-    unseen: false,
-    date: "4 weeks ago",
-  },
-  {
-    avatar: notiAvatar2,
-    title: "You Booked and earn 8 point for on custoner creation Steve Mathew ",
-    unseen: true,
-    date: "4 weeks ago",
-  },
-  {
-    avatar: notiAvatar3,
-    title: "You Booked and earn 8 point for on custoner creation Steve Mathew ",
-    unseen: false,
-    date: "18 hours ago",
-  },
-  {
-    avatar: notiAvatar4,
-    title: "You Booked and earn 8 point for on custoner creation Steve Mathew ",
-    unseen: false,
-    date: "22 hours ago",
-  },
-];
 
 export function Header({ className }: HeaderProps) {
   return (
@@ -100,8 +56,91 @@ export function Header({ className }: HeaderProps) {
         <h2 className="font-OpenSans text-xl font-bold">TripGuide</h2>
       </Link>
       <div className="flex items-center gap-4">
-        <h3 className="font-Roboto text-sm font-bold text-gray8B">USD</h3>
-        <Image src={flagUSA} width={20} height={20} alt="usa-flag"></Image>
+        <Popover>
+          <PopoverTrigger className="cursor-pointer">
+            <h3 className="font-Roboto text-sm font-bold text-gray8B">USD</h3>
+          </PopoverTrigger>
+          <PopoverContent className="mt-2 max-h-[416px] w-[340px] rounded-2xl border border-grayF3 bg-white px-5 py-6 shadow-[0px_32px_60px_-32px_rgba(0,_0,_0,_0.10)]">
+            <Command>
+              <div className="mb-2 flex items-center justify-end">
+                <XIcon className="cursor-pointer text-grayC3" />
+              </div>
+              <div className="mb-3 flex items-center rounded-lg bg-grayF6 px-5">
+                <SearchIcon className="text-grayC3" width={16} height={16} />
+                <div className="ml-4 mr-3 h-[10px] w-[1px] bg-grayF3"></div>
+                <div className="flex-1">
+                  <CommandInput placeholder="Search language" />
+                </div>
+              </div>
+              <CommandEmpty>No currency found</CommandEmpty>
+              <CommandGroup>
+                <div className="custom-scrollbar flex max-h-[288px] flex-col gap-[10px] overflow-auto px-2">
+                  {listCurrency.map((item, index) => (
+                    <CommandItem
+                      key={index}
+                      className={cn(
+                        "flex cursor-pointer items-center justify-between rounded-lg px-3 py-[10px] transition-all hover:bg-grayF6",
+                        item.active && "bg-grayF6",
+                      )}
+                    >
+                      <div className="flex items-center gap-2">
+                        <p className="text-lg font-medium">{item.name}</p>
+                        <span className="text-lg text-gray8B">
+                          ({item.description})
+                        </span>
+                      </div>
+                      {item.active && <CircleTickIcon />}
+                    </CommandItem>
+                  ))}
+                </div>
+              </CommandGroup>
+            </Command>
+          </PopoverContent>
+        </Popover>
+        <Popover>
+          <PopoverTrigger asChild className="cursor-pointer">
+            <Image src={flagUSA} width={20} height={20} alt="usa-flag"></Image>
+          </PopoverTrigger>
+          <PopoverContent className="mt-2 max-h-[416px] w-[340px] rounded-2xl border border-grayF3 bg-white px-5 py-6 shadow-[0px_32px_60px_-32px_rgba(0,_0,_0,_0.10)]">
+            <Command>
+              <div className="mb-2 flex items-center justify-end">
+                <XIcon className="cursor-pointer text-grayC3" />
+              </div>
+              <div className="mb-3 flex items-center px-5">
+                <SearchIcon className="text-grayC3" width={16} height={16} />
+                <div className="ml-4 mr-3 h-[10px] w-[1px] bg-grayF3"></div>
+                <div className="flex-1">
+                  <CommandInput placeholder="Search language" />
+                </div>
+              </div>
+              <CommandEmpty>No language found</CommandEmpty>
+              <CommandGroup>
+                <div className="custom-scrollbar flex max-h-[288px] flex-col gap-[10px] overflow-auto px-2">
+                  {listLanguage.map((item, index) => (
+                    <CommandItem
+                      key={index}
+                      className={cn(
+                        "flex cursor-pointer items-center justify-between rounded-lg px-3 py-[10px] transition-all hover:bg-grayF6",
+                        item.active && "bg-grayF6",
+                      )}
+                    >
+                      <div className="flex items-center gap-3">
+                        <Image
+                          src={item.flag}
+                          alt="flag"
+                          width={28}
+                          height={28}
+                        />
+                        <span className="text-lg font-medium">{item.name}</span>
+                      </div>
+                      {item.active && <CircleTickIcon />}
+                    </CommandItem>
+                  ))}
+                </div>
+              </CommandGroup>
+            </Command>
+          </PopoverContent>
+        </Popover>
         <DropdownMenu>
           <DropdownMenuTrigger className="relative cursor-pointer">
             <NotificationIcon className="text-gray8B" />
@@ -112,7 +151,7 @@ export function Header({ className }: HeaderProps) {
               10
             </span>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="z-10 mr-4 flex flex-col gap-5 rounded-[20px] border border-grayF3 bg-white py-5 shadow-[0px_20px_40px_0px_rgba(0,_0,_0,_0.10)]">
+          <DropdownMenuContent className="z-10 mr-4 mt-2 flex flex-col gap-5 rounded-[20px] border border-grayF3 bg-white py-5 shadow-[0px_20px_40px_0px_rgba(0,_0,_0,_0.10)]">
             {listNoti.map((item, index) => (
               <DropdownMenuItem
                 key={index}

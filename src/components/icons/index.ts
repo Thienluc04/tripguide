@@ -69,3 +69,5 @@ export * from "./ProfileIcon";
 export * from "./SuitCaseIcon";
 export * from "./CardIcon";
 export * from "./NotificationIcon";
+export * from "./XIcon";
+export * from "./SignOutIcon";
