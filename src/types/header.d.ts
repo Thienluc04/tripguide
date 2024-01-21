@@ -1,6 +1,7 @@
 interface OptionHeader {
   icon: ReactNode;
   name: string;
+  href?: string;
 }
 
 interface NotiHeader {

@@ -21,22 +21,27 @@ export const listOptions: OptionHeader[] = [
   {
     icon: <ProfileIcon width={16} height={16} />,
     name: "My Profile",
+    href: "/profile",
   },
   {
     icon: <UserIcon width={16} height={16} />,
     name: "Manage account",
+    href: "/manage-account",
   },
   {
     icon: <SuitCaseIcon width={16} height={16} />,
     name: "Bookings",
+    href: "/bookings",
   },
   {
     icon: <CardIcon width={16} height={16} />,
     name: "My wallet",
+    href: "/my-wallet",
   },
   {
     icon: <TagIcon className="rotate-[270deg]" width={16} height={16} />,
     name: "My rewards",
+    href: "/my-rewards",
   },
   {
     icon: <SignOutIcon width={16} height={16} />,

@@ -50,6 +50,7 @@ const config: Config = {
         gray6F: "#65676F",
         grayF2: "#F2F2F2",
         gray91: "#919191",
+        grayE1: "#DEDFE1",
         primary: "#316BFF",
         red: "#FF543D",
         red57: "#EB5757",

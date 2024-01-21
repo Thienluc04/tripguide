@@ -40,14 +40,25 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown";
+import { useRouter } from "next/navigation";
 
 interface HeaderProps extends ComponentProps<"div"> {}
 
 export function Header({ className }: HeaderProps) {
+  const router = useRouter();
+
+  const handleClickOption = (item: OptionHeader) => {
+    if (item.href) {
+      router.push(item.href);
+    } else {
+      console.log("sign out");
+    }
+  };
+
   return (
     <div
       className={twMerge(
-        "flex items-center justify-between px-10 py-5 shadow-[0px_-1px_4px_0px_#E2E2EA]",
+        "flex items-center justify-between bg-white px-10 py-5 shadow-[0px_-1px_4px_0px_#E2E2EA]",
         className,
       )}
     >
@@ -194,7 +205,6 @@ export function Header({ className }: HeaderProps) {
         </Link> */}
 
         {/* User logged */}
-
         <DropdownMenu>
           <DropdownMenuTrigger className="flex cursor-pointer items-center gap-2">
             <Image src={avatar} alt="avatar" width={32} height={32}></Image>
@@ -206,6 +216,8 @@ export function Header({ className }: HeaderProps) {
               <DropdownMenuItem
                 key={index}
                 className="flex cursor-pointer items-center gap-5 p-0"
+                onClick={() => handleClickOption(item)}
+                aria-hidden
               >
                 <div className="text-gray90">{item.icon}</div>
                 <p className="text-black2F">{item.name}</p>

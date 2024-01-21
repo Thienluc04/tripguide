@@ -71,3 +71,8 @@ export * from "./CardIcon";
 export * from "./NotificationIcon";
 export * from "./XIcon";
 export * from "./SignOutIcon";
+export * from "./PencilIcon";
+export * from "./HouseIcon";
+export * from "./MailIcon";
+export * from "./BirthdayIcon";
+export * from "./MaleIcon";
