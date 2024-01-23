@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { listTour } from '@/constants/hotel.constant';
-import Slider from 'react-slick';
-import { TopTourItem } from './TopTourItem';
-import { NextArrowSlick, PrevArrowSlick } from '@/components/common';
-import { ComponentProps } from 'react';
-import { cn } from '@/lib/utils';
+import { listTour } from "@/constants/hotel.const";
+import Slider from "react-slick";
+import { TopTourItem } from "./TopTourItem";
+import { NextArrowSlick, PrevArrowSlick } from "@/components/common";
+import { ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
-interface TopTourSectionProps extends ComponentProps<'section'> {}
+interface TopTourSectionProps extends ComponentProps<"section"> {}
 
 const settings = {
   dots: false,
@@ -21,10 +21,10 @@ const settings = {
 
 export function TopTourSection({ className, ...props }: TopTourSectionProps) {
   return (
-    <section className={cn('container', className)} {...props}>
-      <div className="flex justify-between items-center mb-[60px]">
+    <section className={cn("container", className)} {...props}>
+      <div className="mb-[60px] flex items-center justify-between">
         <div>
-          <h2 className="text-black text-5xl font-bold mb-3">Top Tour</h2>
+          <h2 className="mb-3 text-5xl font-bold text-black">Top Tour</h2>
           <p className="text-gray90">Keep calm & travel on</p>
         </div>
       </div>

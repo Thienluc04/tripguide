@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import { ChevronDownIcon, ChevronTopIcon } from '@/components/icons';
-import { tabsLink } from '@/constants/general.constant';
-import { listLocation } from '@/constants/hotel.constant';
-import { listLocation as listLocationCar } from '@/constants/car.constant';
-import { cn } from '@/lib/utils';
-import { useHotelStore } from '@/store/hotelStore';
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { ComponentProps, PropsWithChildren, useState } from 'react';
-import { FilterItem, Passenger } from '.';
-import { Button } from '../ui';
-import { useFlightStore } from '@/store/flightStore';
-import { useCarStore } from '@/store/carStore';
+import { ChevronDownIcon, ChevronTopIcon } from "@/components/icons";
+import { tabsLink } from "@/constants/general.const";
+import { listLocation } from "@/constants/hotel.const";
+import { listLocation as listLocationCar } from "@/constants/car.const";
+import { cn } from "@/lib/utils";
+import { useHotelStore } from "@/store/hotelStore";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { ComponentProps, PropsWithChildren, useState } from "react";
+import { FilterItem, Passenger } from ".";
+import { Button } from "../ui";
+import { useFlightStore } from "@/store/flightStore";
+import { useCarStore } from "@/store/carStore";
 
-interface NavbarFilterProps extends ComponentProps<'div'> {
+interface NavbarFilterProps extends ComponentProps<"div"> {
   hiddenLinks?: boolean;
-  type: 'hotel' | 'flight' | 'car';
+  type: "hotel" | "flight" | "car";
 }
 
 export function NavbarFilter({
@@ -34,20 +34,20 @@ export function NavbarFilter({
   const { params: carParams, setParams: setCarParams } = useCarStore();
 
   const handleSubmitFilter = () => {
-    if (type === 'hotel') {
+    if (type === "hotel") {
       router.push(
         `/hotels/?location=${hotelParams.location}&checkInDate=${
           hotelParams.checkInDate
         }&checkOutDate=${hotelParams.checkOutDate}&passengers=${
           hotelParams.passenger?.adults +
-          '.' +
+          "." +
           hotelParams.passenger?.children +
-          '.' +
+          "." +
           hotelParams.passenger?.infants
-        }`
+        }`,
       );
     }
-    if (type === 'flight') {
+    if (type === "flight") {
       router.push(
         `/flights/?from=${flightParams.from}&to=${
           flightParams.to
@@ -55,16 +55,16 @@ export function NavbarFilter({
           flightParams.checkOutDate
         }&passengers=${
           flightParams.passenger?.adults +
-          '.' +
+          "." +
           flightParams.passenger?.children +
-          '.' +
+          "." +
           flightParams.passenger?.infants
-        }`
+        }`,
       );
     }
-    if (type === 'car') {
+    if (type === "car") {
       router.push(
-        `/car-rentals/?from=${carParams.from}&to=${carParams.to}&checkInDate=${carParams.checkInDate}&checkOutDate=${carParams.checkOutDate}`
+        `/car-rentals/?from=${carParams.from}&to=${carParams.to}&checkInDate=${carParams.checkInDate}&checkOutDate=${carParams.checkOutDate}`,
       );
     }
   };
@@ -72,35 +72,35 @@ export function NavbarFilter({
   return (
     <div
       className={cn(
-        'rounded-[20px] px-[60px] py-[30px] bg-white shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)] relative',
-        className
+        "relative rounded-[20px] bg-white px-[60px] py-[30px] shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)]",
+        className,
       )}
     >
       {openPassenger && (
         <Passenger
           type={type}
-          params={type === 'hotel' ? hotelParams : flightParams}
-          setParams={type === 'hotel' ? setHotelParams : setFlightParams}
+          params={type === "hotel" ? hotelParams : flightParams}
+          setParams={type === "hotel" ? setHotelParams : setFlightParams}
         />
       )}
-      <div className="flex gap-[50px] items-end">
-        <div className="flex flex-col gap-7 flex-1">
+      <div className="flex items-end gap-[50px]">
+        <div className="flex flex-1 flex-col gap-7">
           <div
             className={cn(
-              'flex items-center pb-0 justify-between w-full',
-              !hiddenLinks && 'border-b border-b-grayF3 pb-7'
+              "flex w-full items-center justify-between pb-0",
+              !hiddenLinks && "border-b border-b-grayF3 pb-7",
             )}
           >
             {!hiddenLinks && (
-              <div className="flex gap-8 items-center">
+              <div className="flex items-center gap-8">
                 {tabsLink.map((item) => (
                   <Link
                     href={item.path}
                     className={cn(
                       item.path === path
-                        ? 'text-black44 tab-active'
-                        : 'text-gray8B',
-                      'flex gap-2 items-center'
+                        ? "tab-active text-black44"
+                        : "text-gray8B",
+                      "flex items-center gap-2",
                     )}
                     key={item.path}
                   >
@@ -110,16 +110,16 @@ export function NavbarFilter({
                 ))}
               </div>
             )}
-            <div className="flex gap-6 items-center">
-              <div className="flex gap-[10px] items-center">
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-[10px]">
                 <span className="text-lg font-medium text-black44">
                   Round trip
                 </span>
                 <ChevronDownIcon className="text-gray8B"></ChevronDownIcon>
               </div>
-              {type !== 'car' && (
+              {type !== "car" && (
                 <div
-                  className="flex gap-[10px] items-center cursor-pointer"
+                  className="flex cursor-pointer items-center gap-[10px]"
                   onClick={() => setOpenPassenger(!openPassenger)}
                 >
                   <span className="text-lg font-medium text-black44">
@@ -135,7 +135,7 @@ export function NavbarFilter({
             </div>
           </div>
           <div className="flex items-center gap-2">
-            {type === 'hotel' && (
+            {type === "hotel" && (
               <>
                 <FilterItem
                   title="Location"
@@ -168,7 +168,7 @@ export function NavbarFilter({
                 />
               </>
             )}
-            {type === 'flight' && (
+            {type === "flight" && (
               <>
                 <FilterItem
                   title="Leaving From"
@@ -213,7 +213,7 @@ export function NavbarFilter({
                 />
               </>
             )}
-            {type === 'car' && (
+            {type === "car" && (
               <>
                 <FilterItem
                   title="Pick up from"

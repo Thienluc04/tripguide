@@ -15,6 +15,7 @@ const config: Config = {
       },
       colors: {
         black: "#141416",
+        black00: "#000",
         black29: "#222529",
         black44: "#3B3E44",
         black2F: "#23262F",
@@ -51,6 +52,7 @@ const config: Config = {
         grayF2: "#F2F2F2",
         gray91: "#919191",
         grayE1: "#DEDFE1",
+        grayA7: "#8897A7",
         primary: "#316BFF",
         red: "#FF543D",
         red57: "#EB5757",
@@ -63,6 +65,7 @@ const config: Config = {
         blueFD: "#CED9FD",
         blueFE: "#3B71FE",
         blueFF: "#878CFF",
+        blue53: "#243B53",
         green: "#38B245",
         green82: "#03A782",
         greenA6: "#BDDBA6",

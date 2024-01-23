@@ -16,7 +16,7 @@ import {
   listLanguage,
   listNoti,
   listOptions,
-} from "@/constants/header.constant";
+} from "@/constants/header.const";
 import {
   ArrowDownIcon,
   CircleTickIcon,

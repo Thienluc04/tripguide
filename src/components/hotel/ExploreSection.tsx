@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { ExploreItem } from '@/components/hotel';
-import { listExplore } from '@/constants/hotel.constant';
-import Slider from 'react-slick';
-import { NextArrowSlick, PrevArrowSlick } from '../common';
-import { ComponentProps } from 'react';
-import { cn } from '@/lib/utils';
+import { ExploreItem } from "@/components/hotel";
+import { listExplore } from "@/constants/hotel.const";
+import Slider from "react-slick";
+import { NextArrowSlick, PrevArrowSlick } from "../common";
+import { ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
-interface ExploreSectionProps extends ComponentProps<'section'> {}
+interface ExploreSectionProps extends ComponentProps<"section"> {}
 
 const settings = {
   dots: false,
@@ -21,16 +21,16 @@ const settings = {
 
 export function ExploreSection({ className, ...props }: ExploreSectionProps) {
   return (
-    <section className={cn('container', className)} {...props}>
-      <div className="flex justify-between items-center mb-12">
+    <section className={cn("container", className)} {...props}>
+      <div className="mb-12 flex items-center justify-between">
         <div>
-          <h2 className="text-black text-5xl font-bold mb-3">
+          <h2 className="mb-3 text-5xl font-bold text-black">
             Explore The World
           </h2>
           <p className="text-gray90">10,788 beautiful places to go</p>
         </div>
       </div>
-      <Slider {...settings} className="overflow-hidden cursor-default explore">
+      <Slider {...settings} className="explore cursor-default overflow-hidden">
         {listExplore.map((item, index) => (
           <ExploreItem
             key={index}

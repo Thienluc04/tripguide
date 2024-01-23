@@ -76,3 +76,5 @@ export * from "./HouseIcon";
 export * from "./MailIcon";
 export * from "./BirthdayIcon";
 export * from "./MaleIcon";
+export * from "./DesktopIcon";
+export * from "./MobileIcon";

@@ -1,16 +1,17 @@
-import { ComponentProps } from 'react';
+import { ComponentProps } from "react";
 
-interface CalendarIconProps extends ComponentProps<'span'> {}
+interface CalendarIconProps extends ComponentProps<"svg"> {}
 
 export function CalendarIcon(props: CalendarIconProps) {
   return (
-    <span {...props}>
+    <span>
       <svg
         width={21}
         height={20}
         viewBox="0 0 21 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        {...props}
       >
         <path
           fillRule="evenodd"
