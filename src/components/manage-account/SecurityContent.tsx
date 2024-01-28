@@ -5,7 +5,7 @@ interface SecurityContentProps {}
 
 export function SecurityContent(props: SecurityContentProps) {
   return (
-    <>
+    <div className="mt-[70px]">
       <div className="mb-[50px] border-b border-grayF3 pb-[50px]">
         <h2 className="mb-3 text-2xl font-medium leading-9 text-black">
           Login
@@ -68,7 +68,7 @@ export function SecurityContent(props: SecurityContentProps) {
               <p className="mb-1 text-xs text-gray8B">
                 May 14, 2021 at 08:36pm
               </p>
-              <h3 className="text-black00 text-sm font-bold">
+              <h3 className="text-sm font-bold text-black00">
                 Windows 10 Chrome
               </h3>
             </div>
@@ -87,7 +87,7 @@ export function SecurityContent(props: SecurityContentProps) {
               <p className="mb-1 text-xs text-gray8B">
                 May 14, 2021 at 08:36pm
               </p>
-              <h3 className="text-black00 text-sm font-bold">
+              <h3 className="text-sm font-bold text-black00">
                 Windows 10 Mozilla Firefox
               </h3>
             </div>
@@ -106,7 +106,7 @@ export function SecurityContent(props: SecurityContentProps) {
               <p className="mb-1 text-xs text-gray8B">
                 May 14, 2021 at 08:36pm
               </p>
-              <h3 className="text-black00 text-sm font-bold">
+              <h3 className="text-sm font-bold text-black00">
                 Android 10 Chrome
               </h3>
             </div>
@@ -119,6 +119,6 @@ export function SecurityContent(props: SecurityContentProps) {
           </Button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,39 +1,41 @@
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import { CircleTickIcon } from '../icons/CircleTickIcon';
-import { ComponentProps } from 'react';
+import Image from "next/image";
+import { ThreeDotsIcon, UnionIcon } from "../icons";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { cn } from "@/lib/utils";
 
-interface CreditCardProps extends ComponentProps<'div'> {
-  active?: boolean;
-  type: 'mastercard' | 'paypal' | 'visa' | 'americanExpress' | 'discover';
-  heightImage: number;
-  widthImage: number;
+interface CreditCardProps {
+  cardNumber: string;
+  holderName: string;
+  imageCard: string | StaticImport;
+  className?: string;
 }
 
 export function CreditCard({
-  active = false,
-  type,
-  heightImage,
-  widthImage,
-  ...props
+  cardNumber,
+  holderName,
+  imageCard,
+  className,
 }: CreditCardProps) {
   return (
     <div
       className={cn(
-        'w-[96px] h-12 rounded-md bg-white border border-grayE6 flex items-center justify-center cursor-pointer transition-all relative',
-        active &&
-          'shadow-[0px_3px_24px_0px_rgba(0,_0,_0,_0.10)] bg-[rgba(47,_128,_237,_0.05)] border-primary'
+        "flex w-[335px] flex-col justify-between rounded-[20px] bg-greenA6 p-6",
+        className,
       )}
-      {...props}
     >
-      {active && <CircleTickIcon className="absolute -top-1 -right-1" />}
-      <Image
-        src={`/images/${type}.png`}
-        alt="credit-card"
-        loading="lazy"
-        width={widthImage}
-        height={heightImage}
-      />
+      <div className="mb-6 flex items-center justify-between">
+        <UnionIcon />
+        <ThreeDotsIcon />
+      </div>
+      <div>
+        <p className="font-medium leading-[30px] text-black52">{cardNumber}</p>
+        <div className="flex items-center justify-between">
+          <p className="font-medium leading-[30px] text-black52">
+            {holderName}
+          </p>
+          <Image src={imageCard} alt="credit-card" width={34} height={20} />
+        </div>
+      </div>
     </div>
   );
 }

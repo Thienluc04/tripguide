@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement } from "react";
 
 interface TabLink {
   path: string;
@@ -13,11 +13,11 @@ interface TrendItem {
   totalReviews: number;
 }
 
-type CreditCardType =
-  | 'mastercard'
-  | 'paypal'
-  | 'visa'
-  | 'americanExpress'
-  | 'discover';
+type PaymentItemType =
+  | "mastercard"
+  | "paypal"
+  | "visa"
+  | "americanExpress"
+  | "discover";
 
-type BookingType = 'hotel' | 'flight' | 'car' | '';
+type BookingType = "hotel" | "flight" | "car" | "";

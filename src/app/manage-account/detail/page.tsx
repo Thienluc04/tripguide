@@ -2,7 +2,11 @@
 
 import { ChevronLeftIcon } from "@/components/icons";
 import {
+  NotificationsContent,
+  PaymentContent,
   PersonalInfoContent,
+  PreferenceContent,
+  PrivacyContent,
   SecurityContent,
 } from "@/components/manage-account";
 import { listNavItem } from "@/constants/manage-account.const";
@@ -49,7 +53,7 @@ export default function ManageAccountDetail(props: ManageAccountDetailProps) {
         <div className="h-3 w-[1px] bg-grayC3"></div>
         <p className="leading-6 text-grayC3">Personal Information</p>
       </div>
-      <div className="mb-[70px] flex items-center gap-16 border-b border-grayF3">
+      <div className="flex items-center gap-16 border-b border-grayF3">
         {listNavItem.map((item, index) => (
           <div
             key={index}
@@ -67,6 +71,10 @@ export default function ManageAccountDetail(props: ManageAccountDetailProps) {
       <div className="w-[740px]">
         {currentTag === "personal-info" && <PersonalInfoContent />}
         {currentTag === "security" && <SecurityContent />}
+        {currentTag === "notifications" && <NotificationsContent />}
+        {currentTag === "payment-payout" && <PaymentContent />}
+        {currentTag === "privacy-sharing" && <PrivacyContent />}
+        {currentTag === "preference" && <PreferenceContent />}
       </div>
     </div>
   );

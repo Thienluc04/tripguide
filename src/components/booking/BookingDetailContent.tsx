@@ -1,21 +1,21 @@
 "use client";
 
-import { CreditCard, TourUpdateItem } from "@/components/common";
+import { CreditCard, PaymentItem, TourUpdateItem } from "@/components/common";
 import { ThreeDotsIcon, TickIcon, UnionIcon } from "@/components/icons";
 import { Checkbox, Input } from "@/components/ui";
-import { CreditCardType } from "@/types/general";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+import { PaymentItemType } from "@/types/general";
 import mastercardIcon from "@images/mastercard-icon.png";
 import visaIcon from "@images/visa-icon.png";
 
 interface BookingDetailContentProps {}
 
 export function BookingDetailContent(props: BookingDetailContentProps) {
-  const [creditCard, setCreditCard] = useState<CreditCardType>("mastercard");
+  const [creditCard, setCreditCard] = useState<PaymentItemType>("mastercard");
 
   const pathname = usePathname();
 
@@ -35,35 +35,35 @@ export function BookingDetailContent(props: BookingDetailContentProps) {
           Credit Cards
         </h2>
         <div className="mb-[30px] flex gap-3">
-          <CreditCard
+          <PaymentItem
             type="mastercard"
             widthImage={40}
             heightImage={40}
             active={creditCard === "mastercard"}
             onClick={() => setCreditCard("mastercard")}
           />
-          <CreditCard
+          <PaymentItem
             type="paypal"
             widthImage={72}
             heightImage={24}
             active={creditCard === "paypal"}
             onClick={() => setCreditCard("paypal")}
           />
-          <CreditCard
+          <PaymentItem
             type="visa"
             widthImage={46}
             heightImage={26}
             active={creditCard === "visa"}
             onClick={() => setCreditCard("visa")}
           />
-          <CreditCard
+          <PaymentItem
             type="americanExpress"
             widthImage={69}
             heightImage={28}
             active={creditCard === "americanExpress"}
             onClick={() => setCreditCard("americanExpress")}
           />
-          <CreditCard
+          <PaymentItem
             type="discover"
             widthImage={46}
             heightImage={30}
@@ -74,52 +74,25 @@ export function BookingDetailContent(props: BookingDetailContentProps) {
         <div className="mb-10 h-[2px] bg-grayF6"></div>
       </div>
       <div className="mb-10 flex gap-5">
-        <div className="w-[335px] rounded-[20px] bg-blueFD p-6">
-          <div className="mb-6 flex items-center justify-between">
-            <UnionIcon />
-            <ThreeDotsIcon />
-          </div>
-          <p className="font-medium leading-[30px] text-black52">
-            8948 xxxx xxxx 7894
-          </p>
-          <div className="flex items-center justify-between">
-            <p className="font-medium leading-[30px] text-black52">
-              Holder Name
-            </p>
-            <Image
-              src={mastercardIcon}
-              alt="mastercard-icon"
-              width={34}
-              height={20}
-            ></Image>
-          </div>
-        </div>
-        <div className="w-[335px] rounded-[20px] bg-greenA6 p-6">
-          <div className="mb-6 flex items-center justify-between">
-            <UnionIcon />
-            <ThreeDotsIcon />
-          </div>
-          <p className="font-medium leading-[30px] text-black52">
-            8948 xxxx xxxx 7894
-          </p>
-          <div className="flex items-center justify-between">
-            <p className="font-medium leading-[30px] text-black52">
-              Holder Name
-            </p>
-            <Image
-              src={visaIcon}
-              alt="visa-icon"
-              width={34}
-              height={20}
-            ></Image>
-          </div>
-        </div>
+        <CreditCard
+          cardNumber="8948 xxxx xxxx 7894"
+          holderName="Holder Name"
+          imageCard={mastercardIcon}
+          className="bg-blueFD"
+        />
+        <CreditCard
+          cardNumber="8948 xxxx xxxx 7894"
+          holderName="Holder Name"
+          imageCard={visaIcon}
+        />
       </div>
       <div className="mb-5 max-w-[470px]">
         <h3 className="mb-3 leading-6 text-black45">Card Number</h3>
         <Input
           defaultValue={"5884 6241 4444 3333"}
-          icon={<TickIcon className="text-blueFF" width={14} height={10} />}
+          iconRight={
+            <TickIcon className="text-blueFF" width={14} height={10} />
+          }
           className="h-[50px] rounded-[10px] border-grayEA bg-grayF6"
         />
       </div>
