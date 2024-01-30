@@ -1,18 +1,18 @@
-import { SearchIcon } from '../icons';
-import { Input } from '../ui';
+import { SearchIcon } from "../icons";
+import { Input } from "../ui";
 
 interface SearchFilterProps {}
 
 export function SearchFilter(props: SearchFilterProps) {
   return (
     <div>
-      <h3 className="text-lg font-medium text-black33 mb-3">
+      <h3 className="mb-3 text-lg font-medium text-black33">
         Search location or property
       </h3>
       <Input
-        className="px-5 py-4 rounded-[10px] border border-grayF3 bg-white h-auto"
+        className="h-auto rounded-[10px] border border-grayF3 bg-white px-5 py-4"
         placeholder="Search location or property"
-        icon={<SearchIcon className="text-grayC4" />}
+        iconRight={<SearchIcon className="text-grayC4" />}
       />
     </div>
   );

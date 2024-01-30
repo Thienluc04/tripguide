@@ -44,12 +44,10 @@ export default function ManageAccountDetail(props: ManageAccountDetailProps) {
   return (
     <div className="container">
       <div className="mb-[50px] mt-10 flex items-center gap-3">
-        <div className="flex items-center gap-2">
+        <Link href={"/manage-account"} className="flex items-center gap-2">
           <ChevronLeftIcon />
-          <Link href={"/manage-account"} className="leading-6">
-            Back
-          </Link>
-        </div>
+          <span className="leading-6">Back</span>
+        </Link>
         <div className="h-3 w-[1px] bg-grayC3"></div>
         <p className="leading-6 text-grayC3">Personal Information</p>
       </div>
