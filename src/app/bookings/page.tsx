@@ -1,5 +1,6 @@
 "use client";
 
+import { TotalBookingContent } from "@/components/booking";
 import { ChevronLeftIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -54,6 +55,7 @@ export default function BookingPage() {
             Cancelled (1)
           </div>
         </div>
+        {navActive === "total" && <TotalBookingContent />}
       </div>
     </div>
   );
