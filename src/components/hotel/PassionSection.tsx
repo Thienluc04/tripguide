@@ -8,10 +8,10 @@ interface PassionSectionProps extends ComponentProps<"section"> {}
 export function PassionSection({ className, ...props }: PassionSectionProps) {
   return (
     <section className={cn("container", className)} {...props}>
-      <h2 className="mb-3 text-5xl font-bold text-black">
+      <h2 className="mb-3 text-5xl font-bold text-black dark:text-white">
         Travel Your Passion
       </h2>
-      <p className="mb-[42px] text-gray8B">
+      <p className="mb-[42px] text-2xl font-medium text-gray8B">
         Most Brilliant reasons Entrada should be your one-stop-shop!
       </p>
       <div className="flex gap-[30px]">

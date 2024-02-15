@@ -24,10 +24,12 @@ export function ExploreSection({ className, ...props }: ExploreSectionProps) {
     <section className={cn("container", className)} {...props}>
       <div className="mb-12 flex items-center justify-between">
         <div>
-          <h2 className="mb-3 text-5xl font-bold text-black">
+          <h2 className="mb-3 text-5xl font-bold text-black dark:text-white">
             Explore The World
           </h2>
-          <p className="text-gray90">10,788 beautiful places to go</p>
+          <p className="text-gray90 dark:text-grayC3">
+            10,788 beautiful places to go
+          </p>
         </div>
       </div>
       <Slider {...settings} className="explore cursor-default overflow-hidden">

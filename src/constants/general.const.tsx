@@ -1,20 +1,20 @@
-import { CarIcon, FlightIcon, HotelIcon } from '@/components/icons';
-import { TabLink } from '@/types/general';
+import { CarIcon, FlightIcon, HotelIcon } from "@/components/icons";
+import { TabLink } from "@/types/general";
 
 export const tabsLink: TabLink[] = [
   {
-    path: '/hotel',
+    path: "/hotel",
     icon: <HotelIcon></HotelIcon>,
-    label: 'Hotel',
+    label: "Hotel",
   },
   {
-    path: '/flight',
+    path: "/flight",
     icon: <FlightIcon></FlightIcon>,
-    label: 'Flight',
+    label: "Flight",
   },
   {
-    path: '/car-rental',
+    path: "/car-rental",
     icon: <CarIcon></CarIcon>,
-    label: 'Car Rental',
+    label: "Car Rental",
   },
 ];

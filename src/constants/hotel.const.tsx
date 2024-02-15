@@ -149,39 +149,43 @@ export const listCity: City[] = [
   },
 ];
 
+import japanTour from "@images/tours/japan-tour.png";
+import baliTour from "@images/tours/bali-tour.png";
+import spainTour from "@images/tours/spain-tour.png";
+
 export const listTour: Tour[] = [
   {
-    image: "/images/tours/japan-tour.png ",
+    image: japanTour,
     name: "Japan",
     title: "Japan",
     description: "10 Popular Places",
   },
   {
-    image: "/images/tours/bali-tour.png ",
+    image: baliTour,
     name: "Indonesia",
     title: "Bali",
     description: "10 Popular Places",
   },
   {
-    image: "/images/tours/spain-tour.png ",
+    image: spainTour,
     name: "Barcelona",
     title: "Spain",
     description: "10 Popular Places",
   },
   {
-    image: "/images/tours/japan-tour.png ",
+    image: japanTour,
     name: "Japan",
     title: "Japan",
     description: "10 Popular Places",
   },
   {
-    image: "/images/tours/bali-tour.png ",
+    image: baliTour,
     name: "Indonesia",
     title: "Bali",
     description: "10 Popular Places",
   },
   {
-    image: "/images/tours/spain-tour.png ",
+    image: spainTour,
     name: "Barcelona",
     title: "Spain",
     description: "10 Popular Places",

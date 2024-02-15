@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { cn } from '@/lib/utils';
-import clsx from 'clsx';
-import { ComponentProps, useState } from 'react';
+import { cn } from "@/lib/utils";
+import clsx from "clsx";
+import { ComponentProps, useState } from "react";
 
-interface CheckboxProps extends ComponentProps<'input'> {
+interface CheckboxProps extends ComponentProps<"input"> {
   label?: string;
 }
 
@@ -12,35 +12,29 @@ export function Checkbox({ label, className, ...props }: CheckboxProps) {
   const [checked, setChecked] = useState<boolean>(false);
 
   return (
-    <label
-      className={cn(
-        'cursor-pointer',
-        label && 'flex gap-3 items-center',
-        className
-      )}
-    >
+    <label className={cn("cursor-pointer", label && "flex items-center gap-3")}>
       <span>
         <input
           type="checkbox"
           checked={checked}
           name=""
           id=""
-          className="hidden"
+          className={cn("hidden", className)}
           {...props}
           onChange={() => setChecked(!checked)}
         />
         <span
           className={clsx(
             checked
-              ? 'text-white bg-primary'
-              : 'border border-grayF3 bg-grayF6',
-            'inline-flex items-center justify-center w-4 h-4 rounded'
+              ? "bg-primary text-white"
+              : "border border-grayF3 bg-grayF6 dark:border-black44 dark:bg-black29",
+            "inline-flex h-4 w-4 items-center justify-center rounded",
           )}
         >
           {checked && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-3 h-3"
+              className="h-3 w-3"
               viewBox="0 0 20 20"
               fill="currentColor"
             >

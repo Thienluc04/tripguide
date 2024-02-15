@@ -24,8 +24,10 @@ export function TopTourSection({ className, ...props }: TopTourSectionProps) {
     <section className={cn("container", className)} {...props}>
       <div className="mb-[60px] flex items-center justify-between">
         <div>
-          <h2 className="mb-3 text-5xl font-bold text-black">Top Tour</h2>
-          <p className="text-gray90">Keep calm & travel on</p>
+          <h2 className="mb-3 text-5xl font-bold text-black dark:text-white">
+            Top Tour
+          </h2>
+          <p className="text-gray90 dark:text-grayC3">Keep calm & travel on</p>
         </div>
       </div>
       <Slider {...settings} className="overflow-hidden">

@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { InputField, ModelAuth } from '@/components/auth';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Button } from '@/components/ui';
-import Link from 'next/link';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+import { InputField, ModelAuth } from "@/components/auth";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui";
+import Link from "next/link";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 const SignUpSchema = z.object({
-  firstName: z.string().min(1, 'This field is required'),
-  lastName: z.string().min(1, 'This field is required'),
-  email: z.string().email('This email is invalid'),
-  password: z.string().min(8, 'Password must have at least 8 characters'),
+  firstName: z.string().min(1, "This field is required"),
+  lastName: z.string().min(1, "This field is required"),
+  email: z.string().email("This email is invalid"),
+  password: z.string().min(8, "Password must have at least 8 characters"),
 });
 
 type SignUpSchemaType = z.infer<typeof SignUpSchema>;
@@ -23,7 +23,7 @@ export default function SignUpPage() {
     handleSubmit,
     formState: { isValid, errors },
   } = useForm<SignUpSchemaType>({
-    mode: 'onSubmit',
+    mode: "onSubmit",
     resolver: zodResolver(SignUpSchema),
   });
 
@@ -35,13 +35,13 @@ export default function SignUpPage() {
   return (
     <ModelAuth title="Let’s go" className="w-[520px]">
       <form autoComplete="false" onSubmit={handleSubmit(handleSignUp)}>
-        <div className="flex gap-[14px] mb-5">
+        <div className="mb-5 flex gap-[14px]">
           <InputField
             name="firstName"
             control={control}
             label="First name"
             placeholder="First name"
-            className="flex-1 w-full"
+            className="w-full flex-1"
             messageError={errors.firstName && String(errors?.firstName.message)}
           ></InputField>
           <InputField
@@ -49,7 +49,7 @@ export default function SignUpPage() {
             control={control}
             label="Last name"
             placeholder="Last name"
-            className="flex-1 w-full"
+            className="w-full flex-1"
             messageError={errors.lastName && String(errors?.lastName.message)}
           ></InputField>
         </div>
@@ -71,12 +71,12 @@ export default function SignUpPage() {
           className="mb-5"
           messageError={errors.password && String(errors?.password.message)}
         ></InputField>
-        <div className="flex gap-[14px] mb-5">
+        <div className="mb-5 flex gap-[14px]">
           <span className="pt-2">
             <Checkbox />
           </span>
-          <p className="max-w-[262px] text-sm">
-            I’ve read and accepted{' '}
+          <p className="max-w-[262px] text-sm dark:text-grayF3">
+            I’ve read and accepted{" "}
             <span className="text-primary">
               Terms of Service and Privacy Policy
             </span>
@@ -87,9 +87,9 @@ export default function SignUpPage() {
             Sign up
           </Button>
         </div>
-        <div className="flex text-sm gap-1 justify-center">
-          <span>Already have an account?</span>
-          <Link href={'/sign-in'} className="text-primary font-medium">
+        <div className="flex justify-center gap-1 text-sm">
+          <span className="dark:text-grayC3">Already have an account?</span>
+          <Link href={"/sign-in"} className="font-medium text-primary">
             Sign in
           </Link>
         </div>

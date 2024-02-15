@@ -72,19 +72,24 @@ export function FilterItem({
         <PopoverTrigger asChild>
           <div
             className={cn(
-              "flex h-[70px] w-[250px] cursor-pointer flex-col justify-center rounded-lg border border-blueEA bg-gray5F7 px-6",
+              "flex h-[70px] w-[250px] cursor-pointer flex-col justify-center rounded-lg border border-blueEA bg-gray5F7 px-6 dark:border-black54 dark:bg-black44",
               className,
             )}
             onClick={() => setIsOpen(!isOpen)}
             {...props}
           >
-            <h3 className="mb-[6px] text-lg font-medium">{title}</h3>
-            <span className="leading-6 text-grayC3">
+            <h3 className="mb-[6px] text-lg font-medium dark:text-grayFD">
+              {title}
+            </h3>
+            <span className="leading-6 text-grayC3 dark:text-gray8B">
               {value || description}
             </span>
             {arrowTurn && (
               <div className="arrow-turn">
-                <ArrowTurnIcon></ArrowTurnIcon>
+                <ArrowTurnIcon
+                  className="text-grayC4 dark:bg-black4B dark:text-grayF6"
+                  fillCircle="black4B"
+                />
               </div>
             )}
           </div>
@@ -92,13 +97,13 @@ export function FilterItem({
         {type === "location" && (
           <PopoverContent
             className={cn(
-              "shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10] z-10 ml-16 mt-1 flex w-[402px] flex-col gap-5 rounded-[20px] border border-grayF6 bg-white p-2 pr-[50px]",
+              "shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10] z-10 ml-16 mt-1 flex w-[402px] flex-col gap-5 rounded-[20px] border border-grayF6 bg-white p-2 pr-[50px] dark:border-black54 dark:bg-black44",
               styleContent,
             )}
           >
             <Command>
               <CommandInput
-                className="h-auto px-3 py-2 text-base"
+                className="h-auto px-3 py-2 text-base dark:text-grayFD"
                 placeholder={description}
               />
               <CommandEmpty>No location found</CommandEmpty>
@@ -118,7 +123,7 @@ export function FilterItem({
                       >
                         <AddressIcon className="text-grayC4"></AddressIcon>
                         <div className="flex flex-col gap-1">
-                          <h3 className="text-grayE90 font-medium leading-6">
+                          <h3 className="font-medium leading-6 text-gray90 dark:text-grayF3">
                             {item.title}
                           </h3>
                           <p className="text-sm leading-[21px] text-grayC3">
@@ -141,7 +146,7 @@ export function FilterItem({
                       >
                         <AddressIcon className="text-grayC4"></AddressIcon>
                         <div className="flex flex-col gap-1">
-                          <p className="text-grayE90 font-medium leading-6">
+                          <p className="font-medium leading-6 text-gray90 dark:text-grayF3">
                             {item}
                           </p>
                         </div>
@@ -164,7 +169,7 @@ export function FilterItem({
               mode="single"
               selected={date}
               onSelect={setDate}
-              className="calendar min-w-[250px] rounded-[20px] border border-grayF6 bg-white shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)]"
+              className="calendar min-w-[250px] rounded-[20px] border border-grayF6 bg-white shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)] dark:border-black44 dark:bg-black29"
             />
           </div>
         )}

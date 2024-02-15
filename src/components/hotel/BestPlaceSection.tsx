@@ -11,10 +11,10 @@ export function BestPlaceSection({
 }: BestPlaceSectionProps) {
   return (
     <section className={cn("container pt-6", className)} {...props}>
-      <h2 className="mb-3 text-center text-5xl font-bold text-black2F">
+      <h2 className="mb-3 text-center text-5xl font-bold text-black2F dark:text-grayF6">
         Search a best place in the world
       </h2>
-      <p className="mx-auto mb-[65px] max-w-[594px] text-center leading-6 text-gray8B">
+      <p className="mx-auto mb-[65px] max-w-[594px] text-center leading-6 text-gray8B dark:text-gray90">
         Whether you’re looking for places for a vacation. We are here to Guide
         you about the details you need to check in and ease your trips in
         advance
@@ -26,7 +26,7 @@ export function BestPlaceSection({
             title={item.title}
             description={item.description}
             image={item.image}
-          ></BestPlaceItem>
+          />
         ))}
       </div>
     </section>

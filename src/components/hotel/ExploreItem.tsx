@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { AddressIcon, BuildingIcon, YellowStarIcon } from '@/components/icons';
+import Image from "next/image";
+import { AddressIcon, BuildingIcon, YellowStarIcon } from "@/components/icons";
 
 interface ExploreItemProps {
   image: string;
@@ -23,7 +23,7 @@ export function ExploreItem({
   price,
 }: ExploreItemProps) {
   return (
-    <div className="p-[14px] rounded-[20px] border border-grayF3 bg-white w-[270px] transition-all hover:shadow-[0px_15px_45px_0px_rgba(102,_102,_102,_0.10)] mb-8">
+    <div className="mb-8 w-[270px] rounded-[20px] border border-grayF3 bg-white p-[14px] transition-all hover:shadow-[0px_15px_45px_0px_rgba(102,_102,_102,_0.10)] dark:border-black44 dark:bg-black29">
       <Image
         src={image}
         alt="explore"
@@ -31,29 +31,34 @@ export function ExploreItem({
         height={152}
         className="mb-5"
       ></Image>
-      <div className="flex gap-2 items-center mb-3">
+      <div className="mb-3 flex items-center gap-2">
         <YellowStarIcon></YellowStarIcon>
-        <p className="text-sm font-medium">
-          {rating} <span className="text-gray8B">({totalRating})</span>
+        <p className="text-sm font-medium dark:text-grayF3">
+          {rating}{" "}
+          <span className="text-gray8B dark:text-grayC3">({totalRating})</span>
         </p>
       </div>
       <div className="flex justify-between">
         <div>
-          <h3 className="text-xl font-bold mb-2">{title}</h3>
-          <p className="text-gray8B text-sm font-medium mb-4">{description}</p>
-          <div className="flex gap-[10px] mb-2">
-            <AddressIcon className="text-grayC3"></AddressIcon>
-            <span className="text-sm text-gray8B">{address}</span>
+          <h3 className="mb-2 text-xl font-bold dark:text-grayFD">{title}</h3>
+          <p className="mb-4 text-sm font-medium text-gray8B dark:text-grayC3">
+            {description}
+          </p>
+          <div className="mb-2 flex gap-[10px]">
+            <AddressIcon className="text-grayC3 dark:text-grayF3" />
+            <span className="text-sm text-gray8B dark:text-grayC3">
+              {address}
+            </span>
           </div>
-          <div className="flex gap-[10px] mb-2">
-            <BuildingIcon className="text-grayC3"></BuildingIcon>
-            <span className="text-sm text-gray8B">
+          <div className="mb-2 flex gap-[10px]">
+            <BuildingIcon className="text-grayC3 dark:text-grayF3" />
+            <span className="text-sm text-gray8B dark:text-grayC3">
               Rooms available: {roomsAvailable}
             </span>
           </div>
         </div>
         <div>
-          <span className="text-primary text-lg font-medium py-1 px-[10px] bg-[rgba(49,_107,_255,_0.20)] rounded-md">
+          <span className="rounded-md bg-[rgba(49,_107,_255,_0.20)] px-[10px] py-1 text-lg font-medium text-primary">
             ${price}
           </span>
         </div>

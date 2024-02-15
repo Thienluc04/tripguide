@@ -10,11 +10,14 @@ export function TrendCitiesSection({
   ...props
 }: TrendCitiesSectionProps) {
   return (
-    <section className={cn("bg-[#F5F5F5] py-[60px]", className)} {...props}>
-      <h2 className="mb-4 text-center text-5xl font-bold text-black29">
+    <section
+      className={cn("dark:bg-black1B bg-[#F5F5F5]  py-[60px]", className)}
+      {...props}
+    >
+      <h2 className="mb-4 text-center text-5xl font-bold text-black29 dark:text-white">
         Trending cites
       </h2>
-      <p className="mb-[50px] text-center text-2xl">
+      <p className="mb-[50px] text-center text-2xl dark:text-grayC3">
         The most searched for cities on TripGuide
       </p>
       <div className="mx-auto flex max-w-[1098px] flex-wrap items-center justify-center gap-x-[30px] gap-y-[35px]">

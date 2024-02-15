@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { InputField, ModelAuth } from '@/components/auth';
-import { Button } from '@/components/ui';
-import { zodResolver } from '@hookform/resolvers/zod';
-import Link from 'next/link';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { z } from 'zod';
+import { InputField, ModelAuth } from "@/components/auth";
+import { Button } from "@/components/ui";
+import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { z } from "zod";
 
 const SignInSchema = z.object({
-  email: z.string().email('This email is invalid'),
-  password: z.string().min(8, 'Password must have at least 8 characters'),
+  email: z.string().email("This email is invalid"),
+  password: z.string().min(8, "Password must have at least 8 characters"),
 });
 
 type SignInSchemaType = z.infer<typeof SignInSchema>;
@@ -20,7 +20,7 @@ export default function SignInPage() {
     handleSubmit,
     formState: { isValid, errors },
   } = useForm<SignInSchemaType>({
-    mode: 'onSubmit',
+    mode: "onSubmit",
     resolver: zodResolver(SignInSchema),
   });
 
@@ -40,7 +40,7 @@ export default function SignInPage() {
           type="email"
           className="mb-5"
           messageError={errors.email && String(errors?.email.message)}
-        ></InputField>
+        />
         <InputField
           name="password"
           control={control}
@@ -49,10 +49,10 @@ export default function SignInPage() {
           type="password"
           className="mb-3"
           messageError={errors.password && String(errors?.password.message)}
-        ></InputField>
-        <div className="text-right mb-5">
+        />
+        <div className="mb-5 text-right">
           <Link
-            href={'/pass-recovery'}
+            href={"/pass-recovery"}
             className="text-sm font-medium text-primary"
           >
             Forgot your password?
@@ -61,9 +61,9 @@ export default function SignInPage() {
         <Button variant="auth" size="full" type="submit" className="mb-5">
           Sign In
         </Button>
-        <div className="flex text-sm gap-1 justify-center">
-          <span>Don’t have an account?</span>
-          <Link href={'/sign-up'} className="text-primary font-medium">
+        <div className="flex justify-center gap-1 text-sm">
+          <span className="text-grayF6">Don’t have an account?</span>
+          <Link href={"/sign-up"} className="font-medium text-primary">
             Sign up
           </Link>
         </div>

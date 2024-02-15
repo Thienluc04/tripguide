@@ -1,16 +1,16 @@
-import { ComponentProps } from 'react';
-import { ExploreWorldItem } from '.';
+import { ComponentProps } from "react";
+import { ExploreWorldItem } from ".";
 
-interface ExploreWorldSectionProps extends ComponentProps<'section'> {}
+interface ExploreWorldSectionProps extends ComponentProps<"section"> {}
 
 export function ExploreWorldSection(props: ExploreWorldSectionProps) {
   return (
     <section className="container">
       <div className="mb-[26px]">
-        <h2 className="text-black2F text-[40px] font-bold leading-[60px] mb-3">
+        <h2 className="mb-3 text-[40px] font-bold leading-[60px] text-black2F dark:text-grayF6">
           Explore World
         </h2>
-        <p className="text-gray8B text-lg font-medium">
+        <p className="text-lg font-medium text-gray8B dark:text-gray90">
           10,788 beautiful places to go
         </p>
       </div>

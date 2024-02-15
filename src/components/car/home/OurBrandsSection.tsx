@@ -1,31 +1,68 @@
-import Image from 'next/image';
+"use client";
 
-import ourBrands1 from '@images/cars/our-brands-1.png';
-import ourBrands2 from '@images/cars/our-brands-2.png';
-import ourBrands3 from '@images/cars/our-brands-3.png';
-import ourBrands4 from '@images/cars/our-brands-4.png';
-import ourBrands5 from '@images/cars/our-brands-5.png';
-import ourBrands6 from '@images/cars/our-brands-6.png';
+import Image, { StaticImageData } from "next/image";
+
+import ourBrands1 from "@images/cars/our-brands-1.png";
+import ourBrands2 from "@images/cars/our-brands-2.png";
+import ourBrands3 from "@images/cars/our-brands-3.png";
+import ourBrands4 from "@images/cars/our-brands-4.png";
+import ourBrands5 from "@images/cars/our-brands-5.png";
+import ourBrands6 from "@images/cars/our-brands-6.png";
+
+import ourBrandsDark1 from "@images/cars/our-brands-1-dark.png";
+import ourBrandsDark2 from "@images/cars/our-brands-2-dark.png";
+import ourBrandsDark3 from "@images/cars/our-brands-3-dark.png";
+import ourBrandsDark4 from "@images/cars/our-brands-4-dark.png";
+import ourBrandsDark5 from "@images/cars/our-brands-5-dark.png";
+import ourBrandsDark6 from "@images/cars/our-brands-6-dark.png";
+import { useCommonStore } from "@/store/commonStore";
 
 interface OurBrandsSectionProps {}
 
+const listBrand: StaticImageData[] = [
+  ourBrands1,
+  ourBrands2,
+  ourBrands3,
+  ourBrands4,
+  ourBrands5,
+  ourBrands6,
+];
+
+const listBrandDark: StaticImageData[] = [
+  ourBrandsDark1,
+  ourBrandsDark2,
+  ourBrandsDark3,
+  ourBrandsDark4,
+  ourBrandsDark5,
+  ourBrandsDark6,
+];
+
 export function OurBrandsSection(props: OurBrandsSectionProps) {
+  const { params } = useCommonStore();
+
   return (
-    <div className="max-w-[970px] mx-auto">
-      <h2 className="text-black20 text-[32px] font-semibold text-center mb-[14px]">
+    <div className="mx-auto max-w-[970px]">
+      <h2 className="mb-[14px] text-center text-[32px] font-semibold text-black20 dark:text-white">
         Our Brands
       </h2>
-      <p className="text-gray6F text-sm text-center max-w-[520px] mx-auto mb-[60px]">
+      <p className="mx-auto mb-[60px] max-w-[520px] text-center text-sm text-gray6F dark:text-grayC3">
         All of these place are becoming your ideal workplaces for your team
         meetings, corporate events, press & influencers
       </p>
       <div className="flex items-center gap-[80px]">
-        <Image src={ourBrands1} alt="our-brands" width={90} height={28} />
-        <Image src={ourBrands2} alt="our-brands" width={90} height={28} />
-        <Image src={ourBrands3} alt="our-brands" width={90} height={28} />
-        <Image src={ourBrands4} alt="our-brands" width={90} height={28} />
-        <Image src={ourBrands5} alt="our-brands" width={90} height={28} />
-        <Image src={ourBrands6} alt="our-brands" width={90} height={28} />
+        {params.theme === "light" &&
+          listBrand.map((item, index) => (
+            <div key={index} className="relative">
+              <Image src={item} alt="our-brands" width={90} height={28} />
+            </div>
+          ))}
+
+        {params.theme === "dark" &&
+          listBrandDark.map((item, index) => (
+            <div key={index} className="relative">
+              <Image src={item} alt="our-brands" width={90} height={28} />
+            </div>
+          ))}
       </div>
     </div>
   );

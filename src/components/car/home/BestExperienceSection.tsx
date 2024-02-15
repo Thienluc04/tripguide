@@ -1,5 +1,5 @@
-'use client';
-import BestExperience from '@images/cars/best-experience.png';
+"use client";
+import BestExperience from "@images/cars/best-experience.png";
 
 import {
   BestShieldIcon,
@@ -7,10 +7,42 @@ import {
   SterlingPoundIcon,
   TagIcon,
   UserIcon,
-} from '@/components/icons';
-import Image from 'next/image';
+} from "@/components/icons";
+import Image from "next/image";
 
 interface BestExperienceSectionProps {}
+
+const listItem = [
+  {
+    title: "Deals for every budget",
+    description:
+      "Choose from & wide variety of car classes new high-quality vehicles teeting your neads and luxigel best",
+    icon: <SterlingPoundIcon className="text-blueFE dark:text-gray90" />,
+  },
+  {
+    title: "Awesome Customer Support",
+    description:
+      "Deliver faster, more personalized support with the power of cobrowse and live chat.",
+    icon: <HeadphoneIcon className="text-blueFE dark:text-gray90" />,
+  },
+  {
+    title: "Free Cancellation",
+    description: "No extra fee, you can cancel your booking anytime",
+    icon: <TagIcon className="text-blueFE dark:text-gray90" />,
+  },
+  {
+    title: "Your Best security",
+    description:
+      "Every detail that is part of our service has been created with your safety in mind",
+    icon: <BestShieldIcon className="text-blueFE dark:text-gray90" />,
+  },
+  {
+    title: "Quality Drivers",
+    description:
+      "We have the most rigorous driver selection process in the market. We work only with the best.",
+    icon: <UserIcon className="text-blueFE dark:text-gray90" />,
+  },
+];
 
 export function BestExperienceSection(props: BestExperienceSectionProps) {
   return (
@@ -23,83 +55,29 @@ export function BestExperienceSection(props: BestExperienceSectionProps) {
           height={846}
         />
       </div>
-      <div className="max-w-[500px] mx-auto">
+      <div className="mx-auto max-w-[500px]">
         <div className="mb-11">
-          <h2 className="text-black text-[40px] font-bold leading-[60px] mb-4">
+          <h2 className="mb-4 text-[40px] font-bold leading-[60px] text-black dark:text-grayF6">
             Feel the best experience with our rental deals
           </h2>
-          <div className="bg-grayF6 h-[2px]"></div>
+          <div className="h-[2px] bg-grayF6 dark:bg-black29"></div>
         </div>
         <div className="flex flex-col gap-10">
-          <div className="flex gap-6 items-start">
-            <div className="h-[52px] w-[52px] bg-grayF2 border border-white shadow-lg shadow-slate-200 flex rounded-lg items-center justify-center">
-              <SterlingPoundIcon className="text-blueFE" />
+          {listItem.map((item, index) => (
+            <div key={index} className="flex items-start gap-6">
+              <div className="flex h-[52px] w-[52px] items-center justify-center rounded-lg border border-white bg-grayF2 shadow-lg shadow-slate-200 dark:border-black44 dark:bg-black29 dark:shadow-none">
+                {item.icon}
+              </div>
+              <div className="flex-1">
+                <h3 className="mb-1 text-2xl font-medium leading-9 text-black45 dark:text-grayF3">
+                  {item.title}
+                </h3>
+                <p className="text-sm font-medium text-gray90">
+                  {item.description}
+                </p>
+              </div>
             </div>
-            <div className="flex-1">
-              <h3 className="text-black45 text-2xl font-medium leading-9 mb-1">
-                Deals for every budget
-              </h3>
-              <p className="text-gray90 text-sm font-medium">
-                Choose from & wide variety of car classes new high-quality
-                vehicles teeting your neads and luxigel best
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-6 items-start">
-            <div className="h-[52px] w-[52px] bg-grayF2 border border-white shadow-lg shadow-slate-200 flex rounded-lg items-center justify-center">
-              <HeadphoneIcon className="text-blueFE" />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-black45 text-2xl font-medium leading-9 mb-1">
-                Awesome Customer Support
-              </h3>
-              <p className="text-gray90 text-sm font-medium">
-                Deliver faster, more personalized support with the power of co
-                browse and live chat.
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-6 items-start">
-            <div className="h-[52px] w-[52px] bg-grayF2 border border-white shadow-lg shadow-slate-200 flex rounded-lg items-center justify-center">
-              <TagIcon className="text-blueFE" />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-black45 text-2xl font-medium leading-9 mb-1">
-                Free Cancellation
-              </h3>
-              <p className="text-gray90 text-sm font-medium">
-                No extra fee, you can cancel your booking anytime
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-6 items-start">
-            <div className="h-[52px] w-[52px] bg-grayF2 border border-white shadow-lg shadow-slate-200 flex rounded-lg items-center justify-center">
-              <BestShieldIcon className="text-blueFE" />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-black45 text-2xl font-medium leading-9 mb-1">
-                Your Best security
-              </h3>
-              <p className="text-gray90 text-sm font-medium">
-                Every detail that is part of our service has been created with
-                your safety in mind
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-6 items-start">
-            <div className="h-[52px] w-[52px] bg-grayF2 border border-white shadow-lg shadow-slate-200 flex rounded-lg items-center justify-center">
-              <UserIcon className="text-blueFE" />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-black45 text-2xl font-medium leading-9 mb-1">
-                Quality Drivers
-              </h3>
-              <p className="text-gray90 text-sm font-medium">
-                We have the most rigorous driver selection process in the
-                market. We work only with the best.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

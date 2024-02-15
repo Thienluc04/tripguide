@@ -9,7 +9,7 @@ import {
 
 export default function HotelPage() {
   return (
-    <div className="flex flex-col gap-[70px] bg-grayFB pt-[124px]">
+    <div className="flex flex-col gap-[70px] bg-grayFB pt-[124px] dark:bg-black">
       <BestPlaceSection />
       <FeaturedDestinationsSection />
       <TopTourSection />

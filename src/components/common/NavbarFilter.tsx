@@ -72,7 +72,7 @@ export function NavbarFilter({
   return (
     <div
       className={cn(
-        "relative rounded-[20px] bg-white px-[60px] py-[30px] shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)]",
+        "relative rounded-[20px] bg-white px-[60px] py-[30px] shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)] dark:bg-black29",
         className,
       )}
     >
@@ -88,7 +88,8 @@ export function NavbarFilter({
           <div
             className={cn(
               "flex w-full items-center justify-between pb-0",
-              !hiddenLinks && "border-b border-b-grayF3 pb-7",
+              !hiddenLinks &&
+                "border-b border-b-grayF3 pb-7 dark:border-b-black44",
             )}
           >
             {!hiddenLinks && (
@@ -98,7 +99,7 @@ export function NavbarFilter({
                     href={item.path}
                     className={cn(
                       item.path === path
-                        ? "tab-active text-black44"
+                        ? "tab-active text-black44 dark:text-grayFD"
                         : "text-gray8B",
                       "flex items-center gap-2",
                     )}
@@ -112,23 +113,23 @@ export function NavbarFilter({
             )}
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-[10px]">
-                <span className="text-lg font-medium text-black44">
+                <span className="text-lg font-medium text-black44 dark:text-white">
                   Round trip
                 </span>
-                <ChevronDownIcon className="text-gray8B"></ChevronDownIcon>
+                <ChevronDownIcon className="text-gray8B dark:text-grayC3"></ChevronDownIcon>
               </div>
               {type !== "car" && (
                 <div
                   className="flex cursor-pointer items-center gap-[10px]"
                   onClick={() => setOpenPassenger(!openPassenger)}
                 >
-                  <span className="text-lg font-medium text-black44">
+                  <span className="text-lg font-medium text-black44 dark:text-white">
                     1 passenger
                   </span>
                   {openPassenger ? (
-                    <ChevronTopIcon className="text-gray8B"></ChevronTopIcon>
+                    <ChevronTopIcon className="text-gray8B dark:text-grayC3"></ChevronTopIcon>
                   ) : (
-                    <ChevronDownIcon className="text-gray8B"></ChevronDownIcon>
+                    <ChevronDownIcon className="text-gray8B dark:text-grayC3"></ChevronDownIcon>
                   )}
                 </div>
               )}

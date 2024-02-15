@@ -1,14 +1,14 @@
-import { BestWayItem } from '..';
+import { BestWayItem } from "..";
 
 interface BestWaySectionProps {}
 
 export function BestWaySection(props: BestWaySectionProps) {
   return (
     <div className="container">
-      <h2 className="text-black text-[40px] text-center font-bold leading-[60px] mb-4">
+      <h2 className="mb-4 text-center text-[40px] font-bold leading-[60px] text-black dark:text-white">
         Best Way to Find Your Modern Cars
       </h2>
-      <p className="text-gray90 max-w-[632px] mx-auto leading-6 text-center mb-[60px]">
+      <p className="mx-auto mb-[60px] max-w-[632px] text-center leading-6 text-gray90 dark:text-grayC3">
         We Know the ditterence is in the details and that’s our car rental
         services, in the tourism and business industry, stand out for their
       </p>

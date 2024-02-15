@@ -41,37 +41,39 @@ export function Footer(props: FooterProps) {
           </Button>
         </div>
       </div>
-      <div className="bg-grayF6 pb-[150px] pt-[224px]">
+      <div className="bg-grayF6 pb-[150px] pt-[224px] dark:bg-black29 dark:text-white">
         <div className="container flex justify-between">
           <div className="w-[254px]">
             <Link href={"/"} className="mb-5 flex items-center gap-[10px]">
               <Image src={logo} alt="logo" width={40} height={38}></Image>
               <h2 className="font-OpenSans text-xl font-bold">TripGuide</h2>
             </Link>
-            <p className="mb-6 leading-6 text-gray8B">
+            <p className="mb-6 leading-6 text-gray8B dark:text-grayF3">
               This is the team that specializes in making sure in the find it a
               your interior looks cool
             </p>
-            <div className="inline-flex gap-1 rounded-lg bg-white p-1">
+            <div className="inline-flex gap-1 rounded-lg bg-white p-1 dark:bg-black44">
               <div
-                className="flex h-[30px] w-[60px] cursor-pointer items-center justify-center 
-                rounded-lg bg-grayFD shadow-[0px_2px_2px_0px_rgba(67,_67,_67,_0.10)]"
+                className="dark:bg-blackA52 flex h-[30px] w-[60px] cursor-pointer items-center 
+                justify-center rounded-lg bg-grayFD shadow-[0px_2px_2px_0px_rgba(67,_67,_67,_0.10)]"
               >
-                <SunIcon className="text-black44"></SunIcon>
+                <SunIcon className="text-black44 dark:text-grayF3" />
               </div>
-              <div className="flex h-[30px] w-[60px] cursor-pointer items-center justify-center rounded-lg">
-                <MoonIcon className="text-grayB90"></MoonIcon>
+              <div className="flex h-[30px] w-[60px]  cursor-pointer items-center justify-center rounded-lg">
+                <MoonIcon className="text-grayB90 dark:text-gray8B" />
               </div>
             </div>
           </div>
           <div>
-            <h3 className="mb-5 text-2xl font-medium text-black29">Services</h3>
+            <h3 className="mb-5 text-2xl font-medium text-black29 dark:text-white">
+              Services
+            </h3>
             <div className="flex flex-col gap-4">
               {listServices.map((item, index) => (
                 <Link
                   key={index}
                   href={"/"}
-                  className="font-medium leading-6 text-gray8B"
+                  className="font-medium leading-6 text-gray8B dark:text-grayF3"
                 >
                   {item}
                 </Link>
@@ -79,13 +81,15 @@ export function Footer(props: FooterProps) {
             </div>
           </div>
           <div>
-            <h3 className="mb-5 text-2xl font-medium text-black29">Support</h3>
+            <h3 className="mb-5 text-2xl font-medium text-black29 dark:text-white">
+              Support
+            </h3>
             <div className="flex flex-col gap-4">
               {listSupport.map((item, index) => (
                 <Link
                   key={index}
                   href={"/"}
-                  className="font-medium leading-6 text-gray8B"
+                  className="font-medium leading-6 text-gray8B dark:text-grayF3"
                 >
                   {item}
                 </Link>
@@ -93,13 +97,15 @@ export function Footer(props: FooterProps) {
             </div>
           </div>
           <div>
-            <h3 className="mb-5 text-2xl font-medium text-black29">Business</h3>
+            <h3 className="mb-5 text-2xl font-medium text-black29 dark:text-white">
+              Business
+            </h3>
             <div className="flex flex-col gap-4">
               {listBusiness.map((item, index) => (
                 <Link
                   key={index}
                   href={"/"}
-                  className="font-medium leading-6 text-gray8B"
+                  className="font-medium leading-6 text-gray8B dark:text-grayF3"
                 >
                   {item}
                 </Link>

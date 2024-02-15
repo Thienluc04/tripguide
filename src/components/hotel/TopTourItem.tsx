@@ -1,7 +1,8 @@
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 
 interface TopTourItemProps {
-  image: string;
+  image: string | StaticImport;
   name: string;
   title: string;
   description: string;

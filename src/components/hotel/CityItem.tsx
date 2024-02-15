@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import { YellowStarIcon } from '@/components/icons';
-import { Button } from '../ui';
+import Image from "next/image";
+import { YellowStarIcon } from "@/components/icons";
+import { Button } from "../ui";
 
 interface CityItemProps {
   image: string;
@@ -18,29 +18,36 @@ export function CityItem({
   price,
 }: CityItemProps) {
   return (
-    <div className="rounded-[20px] bg-white p-4 flex gap-[30px] w-[534px]">
+    <div className="flex w-[534px] gap-[30px] rounded-[20px] bg-white p-5 dark:bg-black29">
       <Image
         src={image}
         alt="city"
         width={160}
         height={168}
         className="rounded-2xl"
-      ></Image>
+      />
       <div>
-        <h3 className="text-black32 text-2xl font-bold mb-3">{title}</h3>
-        <div className="flex gap-2 items-center mb-6">
-          <YellowStarIcon></YellowStarIcon>
-          <p>
-            {rating} <span className="text-gray8B">({totalRating})</span>
+        <h3 className="mb-3 text-2xl font-bold text-black32 dark:text-grayFD">
+          {title}
+        </h3>
+        <div className="mb-6 flex items-center gap-2">
+          <YellowStarIcon />
+          <p className="dark:text-grayC3">
+            {rating}{" "}
+            <span className="text-gray8B dark:text-grayF3">
+              ({totalRating})
+            </span>
           </p>
         </div>
-        <div className="flex text-2xl font-semibold items-end mb-6">
+        <div className="mb-6 flex items-end text-2xl font-semibold dark:text-grayF6">
           ${price}
-          <span className="text-gray9A text-base font-medium">/night</span>
+          <span className="text-base font-medium text-gray9A dark:text-grayF3">
+            /night
+          </span>
         </div>
         <Button
           variant="primary"
-          className="rounded-md py-2 px-4 text-sm !shadow-none w-auto h-auto"
+          className="h-auto w-auto rounded-md px-4 py-2 text-sm !shadow-none"
         >
           Book Now
         </Button>

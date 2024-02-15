@@ -24,7 +24,7 @@ interface City {
 }
 
 interface Tour {
-  image: string;
+  image: string | StaticImport;
   name: string;
   title: string;
   description: string;
