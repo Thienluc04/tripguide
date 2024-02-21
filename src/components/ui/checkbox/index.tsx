@@ -26,8 +26,8 @@ export function Checkbox({ label, className, ...props }: CheckboxProps) {
         <span
           className={clsx(
             checked
-              ? "bg-primary text-white"
-              : "border border-grayF3 bg-grayF6 dark:border-black44 dark:bg-black29",
+              ? "bg-primary text-white dark:text-black"
+              : "border border-grayF3 bg-grayF6 dark:border-black44 dark:bg-transparent",
             "inline-flex h-4 w-4 items-center justify-center rounded",
           )}
         >
@@ -47,7 +47,7 @@ export function Checkbox({ label, className, ...props }: CheckboxProps) {
           )}
         </span>
       </span>
-      {label && <span className="text-sm">{label}</span>}
+      {label && <span className="text-sm dark:text-grayC3">{label}</span>}
     </label>
   );
 }

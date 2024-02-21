@@ -20,7 +20,7 @@ export function FeedbackSection(props: FeedbackSectionProps) {
           <YellowStarIcon />
           <YellowStarIcon />
           <YellowStarIcon />
-          <YellowEmptyStar />
+          <YellowEmptyStar className="text-orange42 dark:text-gray8B" />
         </div>
       </div>
       <form className="mb-[60px]">
@@ -53,7 +53,7 @@ export function FeedbackSection(props: FeedbackSectionProps) {
         type="submit"
         variant="outline"
       >
-        <CircleLoading />
+        <CircleLoading className="text-[#353945] dark:text-grayC3" />
         <span className="font-medium leading-6 text-black">View All</span>
       </Button>
     </div>

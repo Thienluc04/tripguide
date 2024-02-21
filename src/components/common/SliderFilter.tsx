@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Input, Slider } from '@/components/ui';
-import { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import { Input, Slider } from "@/components/ui";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 interface SliderFilterProps {
   min?: number;
@@ -22,8 +22,10 @@ export function SliderFilter({
 }: SliderFilterProps) {
   return (
     <div>
-      <h3 className="text-lg font-medium text-black mb-10">{title}</h3>
-      <div className="flex gap-4 items-center mb-1">
+      <h3 className="mb-10 text-lg font-medium text-black dark:text-white">
+        {title}
+      </h3>
+      <div className="mb-1 flex items-center gap-4">
         <Slider
           value={[value]}
           max={max}
@@ -33,7 +35,7 @@ export function SliderFilter({
           onValueChange={(value) => {
             setValue(value[0]);
           }}
-          className="w-full"
+          className="w-full cursor-pointer"
         ></Slider>
         <Input
           value={value}
@@ -48,14 +50,14 @@ export function SliderFilter({
             }
           }}
           type="number"
-          className="w-[60px] h-8 border-2 border-grayC3"
-        ></Input>
+          className="dark:text-grayF9 h-8 w-[60px] border-2 border-grayC3"
+        />
       </div>
-      <div className="flex justify-between font-medium leading-6 mb-4">
+      <div className="mb-4 flex justify-between font-medium leading-6 dark:text-grayF6">
         <span>${min}</span>
         <span className="mr-6">${max}</span>
       </div>
-      <div className="h-[1px] bg-grayF6"></div>
+      <div className="h-[1px] bg-grayF6 dark:bg-black44"></div>
     </div>
   );
 }

@@ -1,21 +1,21 @@
-import { ComponentProps } from 'react';
-import { cn } from '@/lib/utils';
-import { TrendingItem } from '.';
-import { TrendItem } from '@/types/general';
+import { ComponentProps } from "react";
+import { cn } from "@/lib/utils";
+import { TrendingItem } from ".";
+import { TrendItem } from "@/types/general";
 
-interface TrendingSectionProps extends ComponentProps<'div'> {
+interface TrendingSectionProps extends ComponentProps<"div"> {
   title?: string;
   data: TrendItem[];
 }
 
 export function TrendingSection({
   className,
-  title = 'Trending Hotels',
+  title = "Trending Hotels",
   data,
 }: TrendingSectionProps) {
   return (
-    <div className={cn('container', className)}>
-      <h2 className="text-black29 text-5xl font-bold leading-[70px] mb-10">
+    <div className={cn("container", className)}>
+      <h2 className="mb-10 text-5xl font-bold leading-[70px] text-black29 dark:text-white">
         {title}
       </h2>
       <div className="flex gap-[30px]">

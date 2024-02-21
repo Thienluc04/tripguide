@@ -1,16 +1,19 @@
-import { PassengerItem } from '.';
+import { cn } from "@/lib/utils";
+import { PassengerItem } from ".";
 
 interface PassengerProps {
-  type: 'hotel' | 'flight' | 'car';
   params: HotelParams | FlightParams;
   setParams: (params: HotelParams | FlightParams) => void;
+  className?: string;
 }
 
-export function Passenger({ type, params, setParams }: PassengerProps) {
+export function Passenger({ params, setParams, className }: PassengerProps) {
   return (
     <div
-      className="absolute right-0 bottom-full mb-2 p-5 rounded-2xl bg-white flex flex-col gap-3 w-[354px] 
-          shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)]"
+      className={cn(
+        "absolute bottom-full right-0 mb-2 flex w-[354px] flex-col gap-3 rounded-2xl bg-white p-5 shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)] dark:border dark:border-black44 dark:bg-black29",
+        className,
+      )}
     >
       <PassengerItem
         title="Adults"
@@ -23,8 +26,8 @@ export function Passenger({ type, params, setParams }: PassengerProps) {
             passenger: { ...params.passenger, adults: passenger },
           });
         }}
-      ></PassengerItem>
-      <div className="h-[1px] bg-grayEC"></div>
+      />
+      <div className="h-[1px] bg-grayEC dark:bg-black44"></div>
       <PassengerItem
         title="Children"
         description="Ages 2-12"
@@ -36,8 +39,8 @@ export function Passenger({ type, params, setParams }: PassengerProps) {
             passenger: { ...params.passenger, children: passenger },
           });
         }}
-      ></PassengerItem>
-      <div className="h-[1px] bg-grayEC"></div>
+      />
+      <div className="h-[1px] bg-grayEC dark:bg-black44"></div>
       <PassengerItem
         title="Infants"
         description="under 2"
@@ -49,7 +52,7 @@ export function Passenger({ type, params, setParams }: PassengerProps) {
             passenger: { ...params.passenger, infants: passenger },
           });
         }}
-      ></PassengerItem>
+      />
     </div>
   );
 }

@@ -14,7 +14,7 @@ interface FooterProps {}
 
 export function Footer(props: FooterProps) {
   return (
-    <div className="">
+    <footer>
       <div
         className="container flex h-[248px] translate-y-1/2 items-end 
         justify-between bg-[url(/images/bg-footer.png)] px-[90px] py-[62px]"
@@ -54,8 +54,8 @@ export function Footer(props: FooterProps) {
             </p>
             <div className="inline-flex gap-1 rounded-lg bg-white p-1 dark:bg-black44">
               <div
-                className="dark:bg-blackA52 flex h-[30px] w-[60px] cursor-pointer items-center 
-                justify-center rounded-lg bg-grayFD shadow-[0px_2px_2px_0px_rgba(67,_67,_67,_0.10)]"
+                className="flex h-[30px] w-[60px] cursor-pointer items-center justify-center 
+                rounded-lg bg-grayFD shadow-[0px_2px_2px_0px_rgba(67,_67,_67,_0.10)] dark:bg-blackA52"
               >
                 <SunIcon className="text-black44 dark:text-grayF3" />
               </div>
@@ -114,6 +114,6 @@ export function Footer(props: FooterProps) {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

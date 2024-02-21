@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="pb-[300px]">
+    <main className="pb-[300px] dark:bg-black">
       <HotelHero>
         <NavbarFilter type="hotel" />
       </HotelHero>

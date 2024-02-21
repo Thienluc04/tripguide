@@ -78,9 +78,11 @@ export function NavbarFilter({
     >
       {openPassenger && (
         <Passenger
-          type={type}
           params={type === "hotel" ? hotelParams : flightParams}
           setParams={type === "hotel" ? setHotelParams : setFlightParams}
+          className={cn(
+            hiddenLinks && "-bottom-32 right-full z-10 translate-x-full",
+          )}
         />
       )}
       <div className="flex items-end gap-[50px]">

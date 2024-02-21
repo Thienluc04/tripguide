@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { Checkbox } from '@/components/ui/checkbox';
+import Link from "next/link";
+import { Checkbox } from "@/components/ui/checkbox";
 
 interface CheckboxFiltersProps {
   title: string;
@@ -18,18 +18,30 @@ export function CheckboxFilter({
 }: CheckboxFiltersProps) {
   return (
     <div>
-      <h3 className="text-lg font-medium text-black mb-3">{title}</h3>
+      <h3 className="mb-3 text-lg font-medium text-black dark:text-white">
+        {title}
+      </h3>
       <div className="flex flex-col gap-[14px]">
         {limit
           ? !listLabel &&
             listData.map((data, index) => {
               if (index < limit) {
-                return <Checkbox key={index} label={data} />;
+                return (
+                  <Checkbox
+                    className="dark:border-gray8B"
+                    key={index}
+                    label={data}
+                  />
+                );
               }
             })
           : !listLabel &&
             listData.map((data, index) => (
-              <Checkbox key={index} label={data} />
+              <Checkbox
+                className="dark:border-gray8B"
+                key={index}
+                label={data}
+              />
             ))}
         {limit
           ? listLabel &&
@@ -37,8 +49,8 @@ export function CheckboxFilter({
               if (index < limit) {
                 return (
                   <div key={index} className="flex justify-between">
-                    <Checkbox label={data} />
-                    <span className="text-gray8B leading-6">
+                    <Checkbox className="dark:border-gray8B" label={data} />
+                    <span className="leading-6 text-gray8B dark:text-gray90">
                       {listLabel[index]}
                     </span>
                   </div>
@@ -48,8 +60,8 @@ export function CheckboxFilter({
           : listLabel &&
             listData.map((data, index) => (
               <div key={index} className="flex justify-between">
-                <Checkbox label={data} />
-                <span className="text-gray8B leading-6">
+                <Checkbox className="dark:border-gray8B" label={data} />
+                <span className="leading-6 text-gray8B dark:text-gray90">
                   {listLabel[index]}
                 </span>
               </div>
@@ -57,13 +69,13 @@ export function CheckboxFilter({
       </div>
       {limit && limit < listData.length && (
         <Link
-          href={'/'}
-          className="text-primary font-medium leading-6 inline-block mt-4"
+          href={"/"}
+          className="mt-4 inline-block font-medium leading-6 text-primary"
         >
           See More
         </Link>
       )}
-      {!last && <div className="h-[1px] bg-grayF2 mt-4"></div>}
+      {!last && <div className="mt-4 h-[1px] bg-grayF2 dark:bg-black44"></div>}
     </div>
   );
 }

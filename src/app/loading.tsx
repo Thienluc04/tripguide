@@ -1,3 +1,5 @@
 export default function Loading() {
-  return <div>Loading...</div>;
+  return (
+    <div className="min-h-screen dark:bg-black dark:text-white">Loading...</div>
+  );
 }

@@ -20,9 +20,9 @@ export function PaymentItem({
   return (
     <div
       className={cn(
-        "relative flex h-12 w-[96px] cursor-pointer items-center justify-center rounded-md border border-grayE6 bg-white transition-all",
+        "relative flex h-12 w-[96px] cursor-pointer items-center justify-center rounded-md border border-grayE6 bg-white transition-all dark:border-black2F dark:bg-black2F",
         active &&
-          "border-primary bg-[rgba(47,_128,_237,_0.05)] shadow-[0px_3px_24px_0px_rgba(0,_0,_0,_0.10)]",
+          "border-primary bg-[rgba(47,_128,_237,_0.05)] shadow-[0px_3px_24px_0px_rgba(0,_0,_0,_0.10)] dark:border-primary dark:bg-[rgba(47,_128,_237,_0.05)]",
       )}
       {...props}
     >

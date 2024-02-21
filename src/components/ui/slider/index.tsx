@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import * as SliderPrimitive from '@radix-ui/react-slider';
+import * as React from "react";
+import * as SliderPrimitive from "@radix-ui/react-slider";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 interface SliderProps {
   dotContent?: number;
@@ -18,8 +18,8 @@ const Slider = React.forwardRef<
     <SliderPrimitive.Root
       ref={ref}
       className={cn(
-        'relative flex w-full touch-none select-none items-center',
-        className
+        "relative flex w-full touch-none select-none items-center",
+        className,
       )}
       {...props}
     >
@@ -27,10 +27,10 @@ const Slider = React.forwardRef<
         <SliderPrimitive.Range className="absolute h-full bg-primary" />
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb
-        data-dot={'$' + dotContent}
+        data-dot={"$" + dotContent}
         className={cn(
-          'relative block h-[18px] w-[18px] rounded-full border-[3px] border-white bg-primary shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
-          `slider-thumb`
+          "focus-visible:ring-ring relative block h-[18px] w-[18px] rounded-full border-[3px] border-white bg-primary shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50",
+          "slider-thumb",
         )}
       />
     </SliderPrimitive.Root>

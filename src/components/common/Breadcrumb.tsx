@@ -1,8 +1,8 @@
-import { cn } from '@/lib/utils';
-import { ComponentProps } from 'react';
-import { ChevronRightIcon } from '@/components/icons';
+import { cn } from "@/lib/utils";
+import { ComponentProps } from "react";
+import { ChevronRightIcon } from "@/components/icons";
 
-interface BreadcrumbProps extends ComponentProps<'div'> {
+interface BreadcrumbProps extends ComponentProps<"div"> {
   list: string[];
   last: string;
 }
@@ -15,16 +15,19 @@ export function Breadcrumb({
 }: BreadcrumbProps) {
   return (
     <div
-      className={cn('flex items-center gap-[10px] mt-10', className)}
+      className={cn("flex items-center gap-[10px] pt-10", className)}
       {...props}
     >
       {list.map((item, index) => (
-        <p key={index} className="flex text-sm gap-2 items-center">
+        <p
+          key={index}
+          className="flex items-center gap-2 text-sm dark:text-grayF3"
+        >
           {item}
           <ChevronRightIcon />
         </p>
       ))}
-      <p className="text-gray8B text-sm">{last}</p>
+      <p className="text-sm text-gray8B dark:text-gray8B">{last}</p>
     </div>
   );
 }

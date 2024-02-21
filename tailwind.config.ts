@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -30,6 +31,7 @@ const config: Config = {
         black4B: "#42464B",
         black1B: "#18191B",
         blackA52: "#474A52",
+        black2D: "#23262D",
         gray: "#8E94A3",
         gray8B: "#84878B",
         grayF3: "#E7ECF3",
@@ -59,12 +61,14 @@ const config: Config = {
         grayA7: "#8897A7",
         grayFE: "#FEFEFE",
         grayE4: "#E4E4E4",
+        grayF9: "#F9F9F9",
         primary: "#316BFF",
         red: "#FF543D",
         red57: "#EB5757",
         orange: "#FFAF4E",
         orange04: "#FD9704",
         orange54: "#FA8F54",
+        orange42: "#FFC542",
         blueEA: "#E7E8EA",
         blueA7: "#0B3BA7",
         blueE6: "#145CE6",

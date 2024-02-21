@@ -122,7 +122,7 @@ input[type="number"] {
   border-radius: 10px;
   background: #0b2541;
   box-shadow: 0px 8px 17px rgba(15, 15, 15, 0.2);
-  @apply flex items-center justify-center px-3 py-2 font-Roboto text-xs font-medium leading-[18px] text-white;
+  @apply dark:text-grayF9 flex items-center justify-center px-3 py-2 font-Roboto text-xs font-medium leading-[18px] text-white dark:bg-black29;
 }
 
 .slider-thumb::after {
