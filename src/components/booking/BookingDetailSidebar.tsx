@@ -25,9 +25,9 @@ export function BookingDetailSidebar({
       )}
       {bookingType === "flight" && (
         <div className="mb-[14px] flex items-center gap-5">
-          <p className="text-xl font-bold text-black44">AKL</p>
+          <p className="text-xl font-bold text-black44 dark:text-grayF3">AKL</p>
           <Image src={planeTrip} alt="plane-trip" width={130} height={20} />
-          <p className="text-xl font-bold text-black44">SGN</p>
+          <p className="text-xl font-bold text-black44 dark:text-grayF3">SGN</p>
         </div>
       )}
       {bookingType === "car" && (

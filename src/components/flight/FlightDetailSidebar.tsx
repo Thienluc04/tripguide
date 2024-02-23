@@ -2,56 +2,84 @@ interface FlightDetailSidebarProps {}
 
 export function FlightDetailSidebar(props: FlightDetailSidebarProps) {
   return (
-    <div className="py-6 bg-white w-[332px] rounded-[10px] border border-grayF3">
-      <div className="flex flex-col gap-5 px-[30px] mb-5">
-        <h3 className="text-black33 text-xl font-medium">Price Details</h3>
+    <div className="w-[332px] rounded-[10px] border border-grayF3 bg-white py-6 dark:border-black29 dark:bg-black29">
+      <div className="mb-5 flex flex-col gap-5 px-[30px]">
+        <h3 className="text-xl font-medium text-black33 dark:text-white">
+          Price Details
+        </h3>
         <div className="flex items-center justify-between">
-          <p className="text-gray90 font-medium leading-6">1x Passenger</p>
-          <span className="text-black2F font-medium leading-6">$350</span>
+          <p className="font-medium leading-6 text-gray90 dark:text-grayC3">
+            1x Passenger
+          </p>
+          <span className="font-medium leading-6 text-black2F dark:text-white">
+            $350
+          </span>
         </div>
         <div className="flex items-center justify-between">
-          <p className="text-gray90 font-medium leading-6">Tax and fee</p>
-          <span className="text-black2F font-medium leading-6">$8</span>
+          <p className="font-medium leading-6 text-gray90 dark:text-grayC3">
+            Tax and fee
+          </p>
+          <span className="font-medium leading-6 text-black2F dark:text-white">
+            $8
+          </span>
         </div>
         <div className="flex items-center justify-between">
-          <p className="text-gray90 font-medium leading-6">Service free</p>
-          <span className="text-black2F font-medium leading-6">$2</span>
+          <p className="font-medium leading-6 text-gray90 dark:text-grayC3">
+            Service free
+          </p>
+          <span className="font-medium leading-6 text-black2F dark:text-white">
+            $2
+          </span>
         </div>
       </div>
       <div
-        className="py-2 px-3 mx-4 flex items-center justify-between rounded-md 
-            bg-blueFE bg-opacity-20 mb-5"
+        className="mx-4 mb-5 flex items-center justify-between rounded-md bg-blueFE 
+            bg-opacity-20 px-3 py-2 dark:bg-black44"
       >
-        <p className="text-black2F font-medium leading-6">Total</p>
-        <span className="text-black2F font-medium leading-6">$360</span>
+        <p className="font-medium leading-6 text-black2F dark:text-white">
+          Total
+        </p>
+        <span className="font-medium leading-6 text-black2F dark:text-white">
+          $360
+        </span>
       </div>
-      <div className="h-[1px] bg-grayF3"></div>
-      <div className="py-5 px-[30px]">
-        <h3 className="text-black33 text-xl font-medium mb-4">Passengers</h3>
-        <p className="text-gray90 font-medium leading-6">1x adult 2 children</p>
+      <div className="dark:bg-black39 h-[1px] bg-grayF3"></div>
+      <div className="px-[30px] py-5">
+        <h3 className="mb-4 text-xl font-medium text-black33 dark:text-white">
+          Passengers
+        </h3>
+        <p className="font-medium leading-6 text-gray90 dark:text-grayC3">
+          1x adult 2 children
+        </p>
       </div>
-      <div className="h-[1px] bg-grayF3"></div>
-      <div className="py-5 px-[30px]">
-        <h3 className="text-black33 text-xl font-medium mb-5">
+      <div className="dark:bg-black39 h-[1px] bg-grayF3"></div>
+      <div className="px-[30px] py-5">
+        <h3 className="mb-5 text-xl font-medium text-black33 dark:text-white">
           Check-in baggage
         </h3>
-        <div className="flex items-center justify-between mb-[10px]">
-          <p className="text-gray8B font-medium leading-6">Depature</p>
-          <p className="text-gray8B font-medium leading-6">
+        <div className="mb-[10px] flex items-center justify-between">
+          <p className="font-medium leading-6 text-gray8B dark:text-grayC3">
+            Depature
+          </p>
+          <p className="font-medium leading-6 text-gray8B dark:text-grayC3">
             3 bags ( 120g total)
           </p>
         </div>
-        <div className="flex items-center justify-between mb-[10px]">
-          <p className="text-gray8B font-medium leading-6">Return</p>
-          <p className="text-gray8B font-medium leading-6">
+        <div className="mb-[10px] flex items-center justify-between">
+          <p className="font-medium leading-6 text-gray8B dark:text-grayC3">
+            Return
+          </p>
+          <p className="font-medium leading-6 text-gray8B dark:text-grayC3">
             3 bags ( 120g total)
           </p>
         </div>
       </div>
-      <div className="h-[1px] bg-grayF3"></div>
-      <div className="pt-5 px-[30px]">
-        <h3 className="text-black33 text-xl font-medium mb-3">Services</h3>
-        <p className="text-gray8B font-medium leading-6">
+      <div className="dark:bg-black39 h-[1px] bg-grayF3"></div>
+      <div className="px-[30px] pt-5">
+        <h3 className="mb-3 text-xl font-medium text-black33 dark:text-white">
+          Services
+        </h3>
+        <p className="font-medium leading-6 text-gray8B dark:text-grayC3">
           No extra services selected
         </p>
       </div>

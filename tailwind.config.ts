@@ -32,6 +32,7 @@ const config: Config = {
         black1B: "#18191B",
         blackA52: "#474A52",
         black2D: "#23262D",
+        black39: "#292D39",
         gray: "#8E94A3",
         gray8B: "#84878B",
         grayF3: "#E7ECF3",

@@ -34,7 +34,7 @@ export default function FlightDetailPage(props: FlightDetailPageProps) {
   ];
   return (
     <>
-      <div className="bg-grayF6">
+      <div className="bg-grayF6 dark:bg-black">
         <div className="container">
           <Breadcrumb
             list={["Home", "Flights"]}
