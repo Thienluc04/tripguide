@@ -11,10 +11,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      {children}
-      <Footer />
-    </>
-  );
+  return <>{children}</>;
 }

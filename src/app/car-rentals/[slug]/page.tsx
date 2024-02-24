@@ -11,9 +11,12 @@ import carDetail4 from "@images/cars/detail-4.png";
 
 import certified from "@images/cars/certified.png";
 import guarantee from "@images/cars/guarantee.png";
+import guaranteeDark from "@images/cars/guarantee-dark.png";
 import insured from "@images/cars/insured.png";
+import insuredDark from "@images/cars/insured-dark.png";
 import { DetailCarContent, FeedbackSection } from "@/components/car/detail";
 import { TrendItem } from "@/types/general";
+import { useCommonStore } from "@/store/commonStore";
 
 interface CarDetailPageProps {}
 
@@ -44,6 +47,9 @@ export default function CarDetailPage(props: CarDetailPageProps) {
       totalReviews: 122,
     },
   ];
+
+  const { params } = useCommonStore();
+
   return (
     <div className="container">
       <Breadcrumb
@@ -52,13 +58,13 @@ export default function CarDetailPage(props: CarDetailPageProps) {
         className=" mb-[30px] mt-0 pt-10"
       />
       <div>
-        <h1 className="mb-4 text-5xl font-bold leading-[70px] text-black">
+        <h1 className="mb-4 text-5xl font-bold leading-[70px] text-black dark:text-white">
           Best Sellar BMW i10 - 2020
         </h1>
         <div className="mb-[50px] flex gap-[22px]">
           <div className="flex items-center gap-[10px]">
             <YellowStarIcon />
-            <p className="text-sm text-black45">
+            <p className="text-sm text-black45 dark:text-grayC3">
               4.8 <span className="text-gray8B">(122 reviews)</span>
             </p>
           </div>
@@ -101,15 +107,37 @@ export default function CarDetailPage(props: CarDetailPageProps) {
         <div className="mb-10 flex items-center gap-[50px]">
           <div className="flex items-center gap-3">
             <Image src={certified} alt="certified" width={50} height={50} />
-            <p className="text-lg font-medium">Certified Owners</p>
+            <p className="text-lg font-medium dark:text-grayF6">
+              Certified Owners
+            </p>
           </div>
           <div className="flex items-center gap-3">
-            <Image src={guarantee} alt="guarantee" width={50} height={50} />
-            <p className="text-lg font-medium">Best Price Guarantee</p>
+            {params.theme === "dark" ? (
+              <Image
+                src={guaranteeDark}
+                alt="guarantee-dark"
+                width={50}
+                height={50}
+              />
+            ) : (
+              <Image src={guarantee} alt="guarantee" width={50} height={50} />
+            )}
+            <p className="text-lg font-medium dark:text-grayF6">
+              Best Price Guarantee
+            </p>
           </div>
           <div className="flex items-center gap-3">
-            <Image src={insured} alt="insured" width={50} height={50} />
-            <p className="text-lg font-medium">100% insured</p>
+            {params.theme === "dark" ? (
+              <Image src={insuredDark} alt="insured" width={50} height={50} />
+            ) : (
+              <Image
+                src={insuredDark}
+                alt="insured-dark"
+                width={50}
+                height={50}
+              />
+            )}
+            <p className="text-lg font-medium dark:text-grayF6">100% insured</p>
           </div>
         </div>
         <DetailCarContent className="mb-[70px]" />

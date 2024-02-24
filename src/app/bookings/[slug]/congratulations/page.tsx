@@ -71,8 +71,10 @@ export default function HotelCongratulations() {
             <Image src={planeTrip} alt="plane-trip" width={218} height={50} />
             <span>SGN</span>
           </div>
-        ) : (
+        ) : bookingType === "hotel" ? (
           "Switzerland Hotels and Places to Stay"
+        ) : (
+          "Best Seller BMW i10 - 2021"
         )}
       </h2>
       <div className="mb-[30px] flex items-end justify-between">

@@ -31,7 +31,7 @@ export function BookingDetailSidebar({
         </div>
       )}
       {bookingType === "car" && (
-        <h2 className="mb-1 text-2xl font-medium leading-9 text-black">
+        <h2 className="mb-2 text-2xl font-medium leading-9 text-black dark:text-white">
           Best Saller BMW i10 - 2021
         </h2>
       )}

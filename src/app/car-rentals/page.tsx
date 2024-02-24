@@ -29,7 +29,7 @@ export default function CarRentalsPage(props: CarRentalsPageProps) {
 
   return (
     <>
-      <div className="bg-grayF6">
+      <div className="bg-grayF6 dark:bg-black">
         <div className="container">
           <Breadcrumb
             list={["Home"]}
@@ -45,7 +45,7 @@ export default function CarRentalsPage(props: CarRentalsPageProps) {
       </div>
       <div className="hotel-container mx-auto flex max-w-[1400px] gap-7">
         <div>
-          <h3 className="mb-[35px] text-[22px] font-medium text-black33">
+          <h3 className="mb-[35px] text-[22px] font-medium text-black33 dark:text-white">
             Filter by
           </h3>
           <SidebarFilter>
@@ -68,7 +68,9 @@ export default function CarRentalsPage(props: CarRentalsPageProps) {
           <ListContentCar />
           <div className="mx-auto mt-10 flex w-[176px] items-center justify-center gap-4 rounded-3xl border border-grayC3 p-[10px]">
             <Image src={loadingImage} alt="loading" width={18} height={18} />
-            <span className="font-medium leading-6 text-black">View All</span>
+            <span className="font-medium leading-6 text-black dark:text-white">
+              View All
+            </span>
           </div>
         </div>
       </div>
