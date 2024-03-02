@@ -39,7 +39,15 @@ export function Footer(props: FooterProps) {
       });
       localStorage?.setItem("theme", mode);
     }
-  }, [mode, localStorage]);
+  }, [mode]);
+
+  useEffect(() => {
+    if (typeof localStorage !== "undefined") {
+      if (localStorage?.getItem("theme")) {
+        setParams({ theme: localStorage.getItem("theme") as "dark" | "light" });
+      }
+    }
+  }, []);
 
   return (
     <footer>
