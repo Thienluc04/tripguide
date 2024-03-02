@@ -43,23 +43,25 @@ export default function ManageAccountDetail(props: ManageAccountDetailProps) {
 
   return (
     <div className="container">
-      <div className="mb-[50px] mt-10 flex items-center gap-3">
-        <Link href={"/manage-account"} className="flex items-center gap-2">
+      <div className="mb-11 flex items-center gap-3 pt-10">
+        <Link href={"/"} className="flex items-center gap-2 dark:text-grayF3">
           <ChevronLeftIcon />
           <span className="leading-6">Back</span>
         </Link>
-        <div className="h-3 w-[1px] bg-grayC3"></div>
-        <p className="leading-6 text-grayC3">Personal Information</p>
+        <div className="h-3 w-[1px] bg-grayC3 dark:bg-gray8B"></div>
+        <p className="leading-6 text-grayC3 dark:text-gray8B">
+          Personal Information
+        </p>
       </div>
-      <div className="flex items-center gap-16 border-b border-grayF3">
+      <div className="flex items-center gap-16 border-b border-grayF3 dark:border-black44">
         {listNavItem.map((item, index) => (
           <div
             key={index}
             onClick={() => handleClickNavItem(item)}
             className={cn(
-              "relative w-auto cursor-pointer pb-6 text-xl font-medium text-grayA7",
+              "relative w-auto cursor-pointer pb-6 text-xl font-medium text-grayA7 dark:text-gray8B",
               item.tag === currentTag &&
-                "font-bold text-blue53 before:absolute before:-bottom-[1px] before:h-[2px] before:w-full before:bg-blueFF",
+                "font-bold text-blue53 before:absolute before:-bottom-[1px] before:h-[2px] before:w-full before:bg-blueFF dark:text-grayFD dark:before:bg-primary",
             )}
           >
             {item.title}

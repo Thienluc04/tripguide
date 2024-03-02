@@ -9,6 +9,8 @@ import paymentPayout from "@images/manage-account/payment-payout.png";
 import privacy from "@images/manage-account/privacy.png";
 import preference from "@images/manage-account/preference.png";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { ChevronLeftIcon } from "@/components/icons";
 
 interface Item {
   image: string | StaticImageData;
@@ -63,23 +65,32 @@ export default function MangeAccountPage(props: MangeAccountPageProps) {
 
   return (
     <div className="container">
-      <Breadcrumb list={["Home"]} last="Manage account" className="mb-8" />
+      <div className="mb-11 flex items-center gap-3 pt-10">
+        <Link href={"/"} className="flex items-center gap-2 dark:text-grayF3">
+          <ChevronLeftIcon />
+          <span className="leading-6">Back</span>
+        </Link>
+        <div className="h-3 w-[1px] bg-grayC3 dark:bg-gray8B"></div>
+        <p className="leading-6 text-grayC3 dark:text-gray8B">Manage account</p>
+      </div>
       <div className="mx-auto max-w-[1088px]">
-        <h1 className="mb-2 text-5xl font-bold leading-[70px] text-black">
+        <h1 className="mb-2 text-5xl font-bold leading-[70px] text-black dark:text-grayF6">
           Manage Account
         </h1>
-        <p className="leading-6">Manage your TripGuide.com experience</p>
+        <p className="leading-6 dark:text-grayC3">
+          Manage your TripGuide.com experience
+        </p>
         <div className="mt-8 flex flex-wrap justify-center gap-10">
           {listItem.map((item, index) => (
             <div
               key={index}
-              className="w-[242px] cursor-pointer rounded-[10px] border border-grayF6 bg-white px-8 py-5"
+              className="w-[242px] cursor-pointer rounded-[10px] border border-grayF6 bg-white px-8 py-5 dark:border-black29 dark:bg-black29"
               onClick={() => router.push("/manage-account/detail#" + item.tag)}
             >
               <div className="mb-3 flex justify-center">
                 <Image src={item.image} alt="mange-account-item-img" />
               </div>
-              <h3 className="text-center text-xl font-bold text-black29">
+              <h3 className="text-center text-xl font-bold text-black29 dark:text-grayF3">
                 {item.name}
               </h3>
               <p className="text-center text-sm text-gray8B">{item.desc}</p>

@@ -23,11 +23,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={twMerge(dmSans.className, params.theme === "dark" && "dark")}
+        className={twMerge(
+          dmSans.className,
+          params.theme === "dark" && "dark",
+          "flex min-h-screen flex-col",
+        )}
       >
         <ToastContainer />
         <Header />
-        <div className="bg-grayAFB text-black44 dark:bg-black">{children}</div>
+        <div className="flex h-full flex-1 flex-col bg-grayAFB text-black44 dark:bg-black">
+          {children}
+        </div>
       </body>
     </html>
   );

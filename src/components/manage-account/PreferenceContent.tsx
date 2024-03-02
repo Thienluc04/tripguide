@@ -5,10 +5,10 @@ interface PreferenceContentProps {}
 export function PreferenceContent(props: PreferenceContentProps) {
   return (
     <div className="mt-[50px]">
-      <div className="mb-6 border-b border-b-grayF3 pb-6">
+      <div className="mb-6 border-b border-b-grayF3 pb-6 dark:border-b-black44">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="mb-2 font-medium leading-6 text-black29">
+            <h3 className="mb-2 font-medium leading-6 text-black29 dark:text-grayF6">
               Preferred language
             </h3>
             <p className="text-xs leading-[18px] text-gray8B">English</p>
@@ -22,10 +22,10 @@ export function PreferenceContent(props: PreferenceContentProps) {
           </Button>
         </div>
       </div>
-      <div className="mb-6 border-b border-b-grayF3 pb-6">
+      <div className="mb-6 border-b border-b-grayF3 pb-6 dark:border-b-black44">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="mb-2 font-medium leading-6 text-black29">
+            <h3 className="mb-2 font-medium leading-6 text-black29 dark:text-grayF6">
               Preferred currency
             </h3>
             <p className="text-xs leading-[18px] text-gray8B">
@@ -44,7 +44,7 @@ export function PreferenceContent(props: PreferenceContentProps) {
       <div>
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="mb-2 font-medium leading-6 text-black29">
+            <h3 className="mb-2 font-medium leading-6 text-black29 dark:text-grayF6">
               Time zone
             </h3>
           </div>

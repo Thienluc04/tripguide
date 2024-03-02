@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { MoonIcon, SunIcon } from "@/components/icons";
 import Link from "next/link";
@@ -9,10 +11,36 @@ import {
 import { Button } from "../ui";
 
 import logo from "@images/logo.png";
+import { useCommonStore } from "@/store/commonStore";
+import { cn } from "@/lib/utils";
+import { useEffect, useMemo, useState } from "react";
 
 interface FooterProps {}
 
 export function Footer(props: FooterProps) {
+  const { setParams } = useCommonStore();
+
+  const themeLocal = useMemo(() => {
+    if (typeof localStorage !== "undefined") {
+      if (localStorage?.getItem("theme")) {
+        return localStorage?.getItem("theme");
+      }
+    }
+  }, []);
+
+  const [mode, setMode] = useState<"dark" | "light">(
+    (themeLocal as "dark" | "light") || "light",
+  );
+
+  useEffect(() => {
+    if (localStorage) {
+      setParams({
+        theme: mode,
+      });
+      localStorage?.setItem("theme", mode);
+    }
+  }, [mode, localStorage]);
+
   return (
     <footer>
       <div
@@ -54,12 +82,23 @@ export function Footer(props: FooterProps) {
             </p>
             <div className="inline-flex gap-1 rounded-lg bg-white p-1 dark:bg-black44">
               <div
-                className="flex h-[30px] w-[60px] cursor-pointer items-center justify-center 
-                rounded-lg bg-grayFD shadow-[0px_2px_2px_0px_rgba(67,_67,_67,_0.10)] dark:bg-blackA52"
+                className={cn(
+                  "flex h-[30px] w-[60px] cursor-pointer items-center justify-center rounded-lg",
+                  mode === "light" &&
+                    "bg-grayFD shadow-[0px_2px_2px_0px_rgba(67,_67,_67,_0.10)] dark:bg-blackA52",
+                )}
+                onClick={() => setMode("light")}
               >
                 <SunIcon className="text-black44 dark:text-grayF3" />
               </div>
-              <div className="flex h-[30px] w-[60px]  cursor-pointer items-center justify-center rounded-lg">
+              <div
+                className={cn(
+                  "flex h-[30px] w-[60px] cursor-pointer items-center justify-center rounded-lg",
+                  mode === "dark" &&
+                    "bg-grayFD shadow-[0px_2px_2px_0px_rgba(67,_67,_67,_0.10)] dark:bg-blackA52",
+                )}
+                onClick={() => setMode("dark")}
+              >
                 <MoonIcon className="text-grayB90 dark:text-gray8B" />
               </div>
             </div>

@@ -115,7 +115,7 @@ export function FilterItem({
                         key={item.title}
                         className={cn(
                           "flex cursor-pointer items-center gap-3 rounded-lg",
-                          item.title === value && "bg-grayF3",
+                          item.title === value && "bg-grayF3 dark:bg-black29",
                         )}
                         onSelect={() => {
                           setValue(item.title === value ? "" : item.title);
@@ -138,7 +138,7 @@ export function FilterItem({
                         key={index}
                         className={cn(
                           "flex cursor-pointer items-center gap-3 rounded-lg",
-                          item === value && "bg-grayF3",
+                          item === value && "bg-grayF3 dark:bg-black29",
                         )}
                         onSelect={() => {
                           setValue(item === value ? "" : item);
