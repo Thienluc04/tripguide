@@ -1,9 +1,6 @@
-import { ComponentProps } from "react";
-import { ExploreWorldItem } from ".";
+interface ExploreWorldSectionProps {}
 
-interface ExploreWorldSectionProps extends ComponentProps<"section"> {}
-
-export function ExploreWorldSection(props: ExploreWorldSectionProps) {
+export function ExploreWorldSection({}: ExploreWorldSectionProps) {
   return (
     <section className="container">
       <div className="mb-[26px]">
@@ -14,12 +11,12 @@ export function ExploreWorldSection(props: ExploreWorldSectionProps) {
           10,788 beautiful places to go
         </p>
       </div>
-      <div className="flex gap-[30px]">
+      {/* <div className="flex gap-[30px]">
         <ExploreWorldItem image="/images/flights/explore-1.png" />
         <ExploreWorldItem image="/images/flights/explore-2.png" />
         <ExploreWorldItem image="/images/flights/explore-3.png" />
         <ExploreWorldItem image="/images/flights/explore-4.png" />
-      </div>
+      </div> */}
     </section>
   );
 }

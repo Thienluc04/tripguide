@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { YellowStarIcon } from '@/components/icons';
+import Image from "next/image";
+import { YellowStarIcon } from "@/components/icons";
 
 export interface PassionItemProps {
   image: string;
@@ -15,7 +15,7 @@ export function PassionItem({
   totalRating,
 }: PassionItemProps) {
   return (
-    <div className="relative">
+    <div className="relative min-w-[270px] xl:min-w-0">
       <Image
         src={image}
         alt="passion"
@@ -27,11 +27,11 @@ export function PassionItem({
         className="absolute inset-0 rounded-2xl"
         style={{
           background:
-            'linear-gradient(2deg, rgba(22, 22, 22, 0.48) 14.56%, rgba(35, 35, 35, 0.00) 25.42%)',
+            "linear-gradient(2deg, rgba(22, 22, 22, 0.48) 14.56%, rgba(35, 35, 35, 0.00) 25.42%)",
         }}
       ></div>
-      <div className="absolute inset-0 py-4 px-[30px] flex flex-col justify-end">
-        <h3 className="text-white text-2xl font-semibold mb-2">{title}</h3>
+      <div className="absolute inset-0 flex flex-col justify-end px-[30px] py-4">
+        <h3 className="mb-2 text-2xl font-semibold text-white">{title}</h3>
         <div className="flex gap-2">
           <YellowStarIcon />
           <p className="text-sm text-white">

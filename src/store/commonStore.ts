@@ -8,7 +8,7 @@ interface CommonStore {
 export const useCommonStore: UseBoundStore<StoreApi<CommonStore>> = create(
   (set) => ({
     params: {
-      theme: "dark",
+      theme: (localStorage?.getItem("theme") as "light" | "dark") || "light",
     },
     setParams: (params: CommonParams) => {
       set(() => ({ params }));

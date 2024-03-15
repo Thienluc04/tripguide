@@ -72,7 +72,7 @@ export function NavbarFilter({
   return (
     <div
       className={cn(
-        "relative rounded-[20px] bg-white px-[60px] py-[30px] shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)] dark:bg-black29",
+        "relative mx-5 rounded-[20px] bg-white px-5 py-5 shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)] dark:bg-black29 xl:mx-0 xl:px-[60px] xl:py-[30px]",
         className,
       )}
     >
@@ -85,17 +85,17 @@ export function NavbarFilter({
           )}
         />
       )}
-      <div className="flex items-end gap-[50px]">
-        <div className="flex flex-1 flex-col gap-7">
+      <div className="flex flex-col items-end gap-3 xl:flex-row xl:gap-[50px]">
+        <div className="flex w-full flex-1 flex-col gap-5 xl:gap-7">
           <div
             className={cn(
-              "flex w-full items-center justify-between pb-0",
+              "flex w-full flex-col items-start justify-between pb-0 lg:flex-row xl:items-center",
               !hiddenLinks &&
-                "border-b border-b-grayF3 pb-7 dark:border-b-black44",
+                "border-b-0 border-b-grayF3 dark:border-b-black44 xl:border-b xl:pb-7",
             )}
           >
             {!hiddenLinks && (
-              <div className="flex items-center gap-8">
+              <div className="flex items-start gap-8 border-b border-b-grayF3 pb-5 dark:border-b-black44 xl:items-center xl:border-none xl:pb-0">
                 {tabsLink.map((item) => (
                   <Link
                     href={item.path}
@@ -113,7 +113,7 @@ export function NavbarFilter({
                 ))}
               </div>
             )}
-            <div className="flex items-center gap-6">
+            <div className="mt-5 flex items-center gap-6 xl:mt-0">
               <div className="flex items-center gap-[10px]">
                 <span className="text-lg font-medium text-black44 dark:text-white">
                   Round trip
@@ -129,21 +129,22 @@ export function NavbarFilter({
                     1 passenger
                   </span>
                   {openPassenger ? (
-                    <ChevronTopIcon className="text-gray8B dark:text-grayC3"></ChevronTopIcon>
+                    <ChevronTopIcon className="text-gray8B dark:text-grayC3" />
                   ) : (
-                    <ChevronDownIcon className="text-gray8B dark:text-grayC3"></ChevronDownIcon>
+                    <ChevronDownIcon className="text-gray8B dark:text-grayC3" />
                   )}
                 </div>
               )}
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col items-center gap-2 xl:flex-row">
             {type === "hotel" && (
               <>
                 <FilterItem
                   title="Location"
                   description="Where are you from?"
-                  className="w-[332px]"
+                  className="xl:w-[332px]"
+                  styleContent="z-30"
                   listLocation={listLocation}
                   type="location"
                   onSetLocation={(location) =>
@@ -154,6 +155,7 @@ export function NavbarFilter({
                   type="date"
                   title="Check in"
                   description="Add Date"
+                  styleContent="z-20"
                   valueDate={hotelParams.checkInDate}
                   onSetDate={(date) => {
                     setHotelParams({ ...hotelParams, checkInDate: date });
@@ -163,6 +165,7 @@ export function NavbarFilter({
                   type="date"
                   title="Check out"
                   description="Add Date"
+                  styleContent="z-10"
                   arrowTurn={false}
                   valueDate={hotelParams.checkOutDate}
                   onSetDate={(date) => {
@@ -177,7 +180,7 @@ export function NavbarFilter({
                   title="Leaving From"
                   description="Where are you from?"
                   type="location"
-                  className="w-[260px]"
+                  className="xl:w-[260px]"
                   listLocation={listLocation}
                   onSetLocation={(location) =>
                     setFlightParams({ ...flightParams, from: location })
@@ -197,7 +200,7 @@ export function NavbarFilter({
                   title="Check in"
                   description="Add date"
                   type="date"
-                  className="w-[182px]"
+                  className="xl:w-[182px]"
                   valueDate={flightParams.checkInDate}
                   onSetDate={(date) => {
                     setFlightParams({ ...flightParams, checkInDate: date });
@@ -207,7 +210,7 @@ export function NavbarFilter({
                   title="Check out"
                   description="Add date"
                   type="date"
-                  className="w-[182px]"
+                  className="xl:w-[182px]"
                   arrowTurn={false}
                   valueDate={flightParams.checkOutDate}
                   onSetDate={(date) => {
@@ -222,9 +225,9 @@ export function NavbarFilter({
                   title="Pick up from"
                   description="Where are you from?"
                   type="location"
-                  className="w-[260px]"
+                  className="xl:w-[260px]"
                   listLocation={listLocationCar}
-                  styleContent="w-[248px]"
+                  styleContent="xl:w-[248px]"
                   onSetLocation={(location) =>
                     setCarParams({ ...carParams, from: location })
                   }
@@ -233,7 +236,7 @@ export function NavbarFilter({
                   title="Pick up to"
                   description="Going to"
                   type="location"
-                  className="w-[200px]"
+                  className="xl:w-[200px]"
                   listLocation={listLocationCar}
                   styleContent="w-[230px]"
                   onSetLocation={(location) =>
@@ -244,7 +247,7 @@ export function NavbarFilter({
                   title="Check in"
                   description="Add date"
                   type="date"
-                  className="w-[182px]"
+                  className="xl:w-[182px]"
                   valueDate={carParams.checkInDate}
                   onSetDate={(date) => {
                     setCarParams({ ...carParams, checkInDate: date });
@@ -254,7 +257,7 @@ export function NavbarFilter({
                   title="Check out"
                   description="Add date"
                   type="date"
-                  className="w-[182px]"
+                  className="xl:w-[182px]"
                   arrowTurn={false}
                   valueDate={carParams.checkOutDate}
                   onSetDate={(date) => {
@@ -265,7 +268,11 @@ export function NavbarFilter({
             )}
           </div>
         </div>
-        <Button variant="primary" onClick={handleSubmitFilter}>
+        <Button
+          variant="primary"
+          onClick={handleSubmitFilter}
+          className="h-auto w-full py-3 text-xl xl:h-[70px] xl:w-[152px] xl:py-0"
+        >
           Search
         </Button>
       </div>

@@ -19,13 +19,13 @@ export function FeaturedDestinationsSection({
 }: FeaturedDestinationsSectionProps) {
   return (
     <section className={cn("container", className)} {...props}>
-      <h2 className="mb-3 text-5xl font-bold text-black dark:text-white">
+      <h2 className="mx-auto mb-3 max-w-[182px] text-center text-[30px] font-bold text-black dark:text-white xl:mx-0 xl:max-w-full xl:text-left xl:text-5xl">
         Featured Destinations
       </h2>
-      <p className="mb-9 dark:text-grayC3">
+      <p className="mx-auto mb-9 max-w-[186px] text-center text-sm dark:text-grayC3 xl:mx-0 xl:max-w-full xl:text-left xl:text-base">
         Popular destinations open to visitors from Indonesia
       </p>
-      <div className="flex gap-[30px]">
+      <div className="hidden gap-[30px] xl:flex">
         <div className="flex flex-col gap-[30px]">
           <div className="relative">
             <div
@@ -244,6 +244,208 @@ export function FeaturedDestinationsSection({
                   ></Image>
                   <span className="text-xs text-white">196 Activities</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-[30px] xl:hidden">
+        <div className="relative">
+          <div
+            className="absolute inset-0 mx-auto w-[calc(100%-40px)] rounded-[15px] xl:mx-0 xl:w-auto"
+            style={{
+              backgroundImage:
+                "linear-gradient(1deg, rgba(111, 130, 123, 0.48) 19.18%, rgba(31, 71, 56, 0.00) 39.64%)",
+            }}
+          ></div>
+          <Image
+            src={destinations2}
+            alt="destinations-2"
+            width={270}
+            height={220}
+            className="mx-auto w-[calc(100%-40px)] xl:mx-0 xl:w-auto"
+          ></Image>
+          <div className="absolute inset-0 inline-flex flex-col justify-between p-5 px-10 xl:px-0">
+            <div>
+              <span className="inline rounded-[20px] bg-white px-4 text-lg font-bold text-red shadow-[0px_4px_10px_0px_rgba(40,_40,_40,_0.12)] xl:text-sm">
+                3.5
+              </span>
+            </div>
+            <div>
+              <h3 className="mb-2 text-2xl font-bold leading-9 text-white xl:text-lg xl:leading-none">
+                London, United State
+              </h3>
+              <div className="flex items-center gap-2">
+                <Image
+                  src={smallAvatar2}
+                  alt="small-avatar-2"
+                  width={14}
+                  height={14}
+                  className="h-6 w-6 xl:h-auto xl:w-auto"
+                ></Image>
+                <span className="text-base leading-6 text-white xl:text-xs xl:leading-none">
+                  196 Activities
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative">
+          <div
+            className="absolute inset-0 mx-auto w-[calc(100%-40px)] rounded-[15px] xl:mx-0 xl:w-auto"
+            style={{
+              backgroundImage:
+                "linear-gradient(1deg, rgba(111, 130, 123, 0.48) 19.18%, rgba(31, 71, 56, 0.00) 39.64%)",
+            }}
+          ></div>
+          <Image
+            src={destinations3}
+            alt="destinations-3"
+            width={270}
+            height={220}
+            className="mx-auto w-[calc(100%-40px)] xl:mx-0 xl:w-auto"
+          ></Image>
+          <div className="absolute inset-0 inline-flex flex-col justify-between p-5 px-10 xl:px-0">
+            <div>
+              <span className="inline rounded-[20px] bg-white px-4 text-lg font-bold text-red shadow-[0px_4px_10px_0px_rgba(40,_40,_40,_0.12)] xl:text-sm">
+                3.5
+              </span>
+            </div>
+            <div>
+              <h3 className="mb-2 text-2xl font-bold leading-9 text-white xl:text-lg xl:leading-none">
+                Australia Tour
+              </h3>
+              <div className="flex items-center gap-2">
+                <Image
+                  src={smallAvatar1}
+                  alt="small-avatar-1"
+                  width={14}
+                  height={14}
+                  className="h-6 w-6 xl:h-auto xl:w-auto"
+                ></Image>
+                <span className="text-base leading-6 text-white xl:text-xs xl:leading-none">
+                  196 Activities
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative">
+          <div
+            className="absolute inset-0 mx-auto w-[calc(100%-40px)] rounded-[15px] xl:mx-0 xl:w-auto"
+            style={{
+              backgroundImage:
+                "linear-gradient(1deg, rgba(111, 130, 123, 0.48) 19.18%, rgba(31, 71, 56, 0.00) 39.64%)",
+            }}
+          ></div>
+          <Image
+            src={destinations4}
+            alt="destinations-4"
+            width={270}
+            height={220}
+            className="mx-auto w-[calc(100%-40px)] xl:mx-0 xl:w-auto"
+          ></Image>
+          <div className="absolute inset-0 inline-flex flex-col justify-between p-5 px-10 xl:px-0">
+            <div>
+              <span className="inline rounded-[20px] bg-white px-4 text-lg font-bold text-red shadow-[0px_4px_10px_0px_rgba(40,_40,_40,_0.12)] xl:text-sm">
+                3.5
+              </span>
+            </div>
+            <div>
+              <h3 className="mb-2 text-2xl font-bold leading-9 text-white xl:text-lg xl:leading-none">
+                Australia Tour
+              </h3>
+              <div className="flex items-center gap-2">
+                <Image
+                  src={smallAvatar2}
+                  alt="small-avatar-2"
+                  width={14}
+                  height={14}
+                  className="h-6 w-6 xl:h-auto xl:w-auto"
+                ></Image>
+                <span className="text-base leading-6 text-white xl:text-xs xl:leading-none">
+                  196 Activities
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative">
+          <div
+            className="absolute inset-0 mx-auto w-[calc(100%-40px)] rounded-[15px] xl:mx-0 xl:w-auto"
+            style={{
+              backgroundImage:
+                "linear-gradient(1deg, rgba(111, 130, 123, 0.48) 19.18%, rgba(31, 71, 56, 0.00) 39.64%)",
+            }}
+          ></div>
+          <Image
+            src={destinations5}
+            alt="destinations-4"
+            width={270}
+            height={220}
+            className="mx-auto w-[calc(100%-40px)] xl:mx-0 xl:w-auto"
+          ></Image>
+          <div className="absolute inset-0 inline-flex flex-col justify-between p-5 px-10 xl:px-0">
+            <div>
+              <span className="inline rounded-[20px] bg-white px-4 text-lg font-bold text-red shadow-[0px_4px_10px_0px_rgba(40,_40,_40,_0.12)] xl:text-sm">
+                3.5
+              </span>
+            </div>
+            <div>
+              <h3 className="mb-2 text-2xl font-bold leading-9 text-white xl:text-lg xl:leading-none">
+                Japan Tour
+              </h3>
+              <div className="flex items-center gap-2">
+                <Image
+                  src={smallAvatar2}
+                  alt="small-avatar-2"
+                  width={14}
+                  height={14}
+                  className="h-6 w-6 xl:h-auto xl:w-auto"
+                ></Image>
+                <span className="text-base leading-6 text-white xl:text-xs xl:leading-none">
+                  196 Activities
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative">
+          <div
+            className="absolute inset-0 mx-auto w-[calc(100%-40px)] rounded-[15px] xl:mx-0 xl:w-auto"
+            style={{
+              backgroundImage:
+                "linear-gradient(1deg, rgba(111, 130, 123, 0.48) 19.18%, rgba(31, 71, 56, 0.00) 39.64%)",
+            }}
+          ></div>
+          <Image
+            src={destinations6}
+            alt="destinations-4"
+            width={270}
+            height={220}
+            className="mx-auto w-[calc(100%-40px)] xl:mx-0 xl:w-auto"
+          ></Image>
+          <div className="absolute inset-0 inline-flex flex-col justify-between p-5 px-10 xl:px-0">
+            <div>
+              <span className="inline rounded-[20px] bg-white px-4 text-lg font-bold text-red shadow-[0px_4px_10px_0px_rgba(40,_40,_40,_0.12)] xl:text-sm">
+                3.5
+              </span>
+            </div>
+            <div>
+              <h3 className="mb-2 text-2xl font-bold leading-9 text-white xl:text-lg xl:leading-none">
+                Japan Tour
+              </h3>
+              <div className="flex items-center gap-2">
+                <Image
+                  src={smallAvatar2}
+                  alt="small-avatar-2"
+                  width={14}
+                  height={14}
+                  className="h-6 w-6 xl:h-auto xl:w-auto"
+                ></Image>
+                <span className="text-base leading-6 text-white xl:text-xs xl:leading-none">
+                  196 Activities
+                </span>
               </div>
             </div>
           </div>

@@ -23,14 +23,14 @@ export function ExploreItem({
   price,
 }: ExploreItemProps) {
   return (
-    <div className="mb-8 w-[270px] rounded-[20px] border border-grayF3 bg-white p-[14px] transition-all hover:shadow-[0px_15px_45px_0px_rgba(102,_102,_102,_0.10)] dark:border-black44 dark:bg-black29">
+    <div className="w-[270px] min-w-[270px] rounded-[20px] border border-grayF3 bg-white p-[14px] transition-all hover:shadow-[0px_15px_45px_0px_rgba(102,_102,_102,_0.10)] dark:border-black44 dark:bg-black29 xl:mb-8 xl:min-w-0">
       <Image
         src={image}
         alt="explore"
         width={242}
         height={152}
         className="mb-5"
-      ></Image>
+      />
       <div className="mb-3 flex items-center gap-2">
         <YellowStarIcon></YellowStarIcon>
         <p className="text-sm font-medium dark:text-grayF3">

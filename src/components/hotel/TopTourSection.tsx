@@ -22,15 +22,17 @@ const settings = {
 export function TopTourSection({ className, ...props }: TopTourSectionProps) {
   return (
     <section className={cn("container", className)} {...props}>
-      <div className="mb-[60px] flex items-center justify-between">
+      <div className="mb-[30px] items-center justify-between xl:mb-[60px] xl:flex">
         <div>
-          <h2 className="mb-3 text-5xl font-bold text-black dark:text-white">
+          <h2 className="mb-3 text-center text-[30px] font-bold leading-[42px] text-black dark:text-white xl:text-left xl:text-5xl xl:leading-none">
             Top Tour
           </h2>
-          <p className="text-gray90 dark:text-grayC3">Keep calm & travel on</p>
+          <p className="text-center text-gray90 dark:text-grayC3 xl:text-left">
+            Keep calm & travel on
+          </p>
         </div>
       </div>
-      <Slider {...settings} className="overflow-hidden">
+      <Slider {...settings} className="hidden overflow-hidden xl:block">
         {listTour.map((item, index) => (
           <TopTourItem
             key={index}
@@ -41,6 +43,17 @@ export function TopTourSection({ className, ...props }: TopTourSectionProps) {
           ></TopTourItem>
         ))}
       </Slider>
+      <div className="flex flex-col gap-5 xl:hidden">
+        {listTour.map((item, index) => (
+          <TopTourItem
+            key={index}
+            image={item.image}
+            name={item.name}
+            title={item.title}
+            description={item.description}
+          ></TopTourItem>
+        ))}
+      </div>
     </section>
   );
 }

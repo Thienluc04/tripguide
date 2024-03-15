@@ -68,26 +68,26 @@ export function FilterItem({
 
   return (
     <Popover>
-      <div className="relative">
+      <div className="relative flex w-full flex-1 flex-col">
         <PopoverTrigger asChild>
           <div
             className={cn(
-              "flex h-[70px] w-[250px] cursor-pointer flex-col justify-center rounded-lg border border-blueEA bg-gray5F7 px-6 dark:border-black54 dark:bg-black44",
+              "flex w-full cursor-pointer flex-col justify-center rounded-lg border border-blueEA bg-gray5F7 px-5 py-2 dark:border-black54 dark:bg-black44 xl:h-[70px] xl:w-[250px] xl:px-6 xl:py-0",
               className,
             )}
             onClick={() => setIsOpen(!isOpen)}
             {...props}
           >
-            <h3 className="mb-[6px] text-lg font-medium dark:text-grayFD">
+            <h3 className="text-base font-medium leading-6 dark:text-grayFD xl:mb-[6px] xl:text-lg">
               {title}
             </h3>
-            <span className="leading-6 text-grayC3 dark:text-gray8B">
+            <span className="text-xs leading-[18px] text-grayC3 dark:text-gray8B xl:text-base xl:leading-6">
               {value || description}
             </span>
             {arrowTurn && (
               <div className="arrow-turn">
                 <ArrowTurnIcon
-                  className="text-grayC4 dark:bg-black4B dark:text-grayF6"
+                  className="rounded-3xl bg-white text-grayC4 dark:bg-black4B dark:text-grayF6"
                   fillCircle="black4B"
                 />
               </div>
@@ -97,7 +97,7 @@ export function FilterItem({
         {type === "location" && (
           <PopoverContent
             className={cn(
-              "shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10] z-10 ml-16 mt-1 flex w-[402px] flex-col gap-5 rounded-[20px] border border-grayF6 bg-white p-2 pr-[50px] dark:border-black54 dark:bg-black44",
+              "xl:shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10] z-10 mt-1 flex w-full flex-col gap-5 rounded-[20px] border border-grayF6 bg-white p-2 shadow-md dark:border-black54 dark:bg-black44 xl:ml-16 xl:w-[402px] xl:pr-[50px]",
               styleContent,
             )}
           >
@@ -121,7 +121,7 @@ export function FilterItem({
                           setValue(item.title === value ? "" : item.title);
                         }}
                       >
-                        <AddressIcon className="text-grayC4"></AddressIcon>
+                        <AddressIcon className="text-grayC4" />
                         <div className="flex flex-col gap-1">
                           <h3 className="font-medium leading-6 text-gray90 dark:text-grayF3">
                             {item.title}
@@ -144,7 +144,7 @@ export function FilterItem({
                           setValue(item === value ? "" : item);
                         }}
                       >
-                        <AddressIcon className="text-grayC4"></AddressIcon>
+                        <AddressIcon className="text-grayC4" />
                         <div className="flex flex-col gap-1">
                           <p className="font-medium leading-6 text-gray90 dark:text-grayF3">
                             {item}
@@ -169,7 +169,7 @@ export function FilterItem({
               mode="single"
               selected={date}
               onSelect={setDate}
-              className="calendar min-w-[250px] rounded-[20px] border border-grayF6 bg-white shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)] dark:border-black44 dark:bg-black29"
+              className="calendar min-w-full rounded-[20px] border border-grayF6 bg-white shadow-md dark:border-black44 dark:bg-black29 xl:min-w-[250px] xl:shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)]"
             />
           </div>
         )}

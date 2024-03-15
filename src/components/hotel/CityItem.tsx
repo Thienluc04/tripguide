@@ -18,7 +18,7 @@ export function CityItem({
   price,
 }: CityItemProps) {
   return (
-    <div className="flex w-[534px] gap-[30px] rounded-[20px] bg-white p-5 dark:bg-black29">
+    <div className="mx-5 flex w-full gap-[30px] rounded-[20px] bg-white p-5 dark:bg-black29 xl:mx-0 xl:w-[534px]">
       <Image
         src={image}
         alt="city"

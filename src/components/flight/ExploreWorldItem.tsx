@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { AddressIcon, BuildingIcon, YellowStarIcon } from "../icons";
 import Image from "next/image";

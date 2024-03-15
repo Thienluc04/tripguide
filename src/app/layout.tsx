@@ -3,6 +3,7 @@
 import { Header } from "@/components/common";
 import { useCommonStore } from "@/store/commonStore";
 import { DM_Sans } from "next/font/google";
+import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { twMerge } from "tailwind-merge";
@@ -19,13 +20,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const { params } = useCommonStore();
+  console.log("params:", params);
+
+  useEffect(() => {
+    if (typeof localStorage !== "undefined") {
+      localStorage?.setItem("theme", params.theme);
+    }
+  }, [params.theme]);
 
   return (
     <html lang="en">
       <body
         className={twMerge(
           dmSans.className,
-          params.theme === "dark" && "dark",
+          params.theme === "dark" ? "dark" : "light",
           "flex min-h-screen flex-col",
         )}
       >

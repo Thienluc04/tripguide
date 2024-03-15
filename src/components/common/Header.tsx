@@ -59,27 +59,27 @@ export function Header({ className }: HeaderProps) {
   return (
     <div
       className={twMerge(
-        "flex items-center justify-between bg-white px-10 py-5 shadow-[0px_-1px_4px_0px_#E2E2EA] dark:bg-black29 dark:text-white",
+        "sticky left-0 right-0 top-0 z-50 flex items-center justify-between bg-white px-3 py-5 shadow-[0px_-1px_4px_0px_#E2E2EA] dark:bg-black29 dark:text-white xl:px-10",
         className,
       )}
     >
       <Link href={"/"} className="flex items-center gap-[10px]">
-        <Image src={logo} alt="logo" width={40} height={38}></Image>
+        <Image src={logo} alt="logo" width={40} height={38} />
         <h2 className="font-OpenSans text-xl font-bold">TripGuide</h2>
       </Link>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 xl:gap-4">
         <Popover>
           <PopoverTrigger className="cursor-pointer">
             <h3 className="font-Roboto text-sm font-bold text-gray8B dark:text-grayF3">
               USD
             </h3>
           </PopoverTrigger>
-          <PopoverContent className="mt-2 max-h-[416px] w-[340px] rounded-2xl border border-grayF3 bg-white px-5 py-6 shadow-[0px_32px_60px_-32px_rgba(0,_0,_0,_0.10)] dark:border-black44 dark:bg-black29">
+          <PopoverContent className="mx-5 mt-2 max-h-[416px] w-[340px] rounded-2xl border border-grayF3 bg-white px-5 py-6 shadow-[0px_32px_60px_-32px_rgba(0,_0,_0,_0.10)] dark:border-black44 dark:bg-black29">
             <Command>
               <div className="mb-2 flex items-center justify-end">
                 <XIcon className="cursor-pointer text-grayC3" />
               </div>
-              <div className="mb-3 flex items-center rounded-lg bg-grayF6 px-5 dark:bg-[#353945]">
+              <div className="mb-3 flex items-center rounded-lg bg-grayF6 px-5 dark:bg-black45">
                 <SearchIcon className="text-grayC3" width={16} height={16} />
                 <div className="ml-4 mr-3 h-[10px] w-[1px] bg-grayF3"></div>
                 <div className="flex-1">
@@ -98,8 +98,8 @@ export function Header({ className }: HeaderProps) {
                     <CommandItem
                       key={index}
                       className={cn(
-                        "flex cursor-pointer items-center justify-between rounded-lg px-3 py-[10px] transition-all hover:bg-grayF6 dark:hover:bg-[#353945]",
-                        item.active && "bg-grayF6 dark:bg-[#353945]",
+                        "flex cursor-pointer items-center justify-between rounded-lg px-3 py-[10px] transition-all hover:bg-grayF6 dark:hover:bg-black45",
+                        item.active && "bg-grayF6 dark:bg-black45",
                       )}
                     >
                       <div className="flex items-center gap-2">
@@ -119,15 +119,15 @@ export function Header({ className }: HeaderProps) {
           </PopoverContent>
         </Popover>
         <Popover>
-          <PopoverTrigger asChild className="cursor-pointer">
-            <Image src={flagUSA} width={20} height={20} alt="usa-flag"></Image>
+          <PopoverTrigger className="relative cursor-pointer">
+            <Image src={flagUSA} width={20} height={20} alt="usa-flag" />
           </PopoverTrigger>
-          <PopoverContent className="mt-2 max-h-[416px] w-[340px] rounded-2xl border border-grayF3 bg-white px-5 py-6 shadow-[0px_32px_60px_-32px_rgba(0,_0,_0,_0.10)] dark:border-black44 dark:bg-black29">
+          <PopoverContent className="mx-5 mt-2 max-h-[416px] w-[340px] rounded-2xl border border-grayF3 bg-white px-5 py-6 shadow-[0px_32px_60px_-32px_rgba(0,_0,_0,_0.10)] dark:border-black44 dark:bg-black29">
             <Command>
               <div className="mb-2 flex items-center justify-end">
                 <XIcon className="cursor-pointer text-grayC3" />
               </div>
-              <div className="mb-3 flex items-center rounded-md px-5 dark:bg-[#353945]">
+              <div className="mb-3 flex items-center rounded-md px-5 dark:bg-black45">
                 <SearchIcon className="text-grayC3" width={16} height={16} />
                 <div className="ml-4 mr-3 h-[10px] w-[1px] bg-grayF3"></div>
                 <div className="flex-1">
@@ -141,8 +141,8 @@ export function Header({ className }: HeaderProps) {
                     <CommandItem
                       key={index}
                       className={cn(
-                        "flex cursor-pointer items-center justify-between rounded-lg px-3 py-[10px] transition-all hover:bg-grayF6 dark:hover:bg-[#353945]",
-                        item.active && "bg-grayF6 dark:bg-[#353945]",
+                        "flex cursor-pointer items-center justify-between rounded-lg px-3 py-[10px] transition-all hover:bg-grayF6 dark:hover:bg-black45",
+                        item.active && "bg-grayF6 dark:bg-black45",
                       )}
                     >
                       <div className="flex items-center gap-3">
@@ -165,22 +165,22 @@ export function Header({ className }: HeaderProps) {
           </PopoverContent>
         </Popover>
         <DropdownMenu>
-          <DropdownMenuTrigger className="relative cursor-pointer">
+          <DropdownMenuTrigger className="relative hidden cursor-pointer xl:block">
             <NotificationIcon className="text-gray8B dark:text-grayF3" />
             <span
               className="absolute -right-2 -top-2 flex h-4 min-w-[16px] items-center
             justify-center rounded-full bg-red57 px-1 text-[10px] font-medium text-white"
             >
-              10
+              1
             </span>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="z-10 mr-4 mt-2 flex flex-col gap-5 rounded-[20px] border border-grayF3 bg-white py-5 shadow-[0px_20px_40px_0px_rgba(0,_0,_0,_0.10)] dark:border-black44 dark:bg-black29">
+          <DropdownMenuContent className="z-50 mr-4 mt-2 flex flex-col gap-5 rounded-[20px] border border-grayF3 bg-white py-5 shadow-[0px_20px_40px_0px_rgba(0,_0,_0,_0.10)] dark:border-black44 dark:bg-black29">
             {listNoti.map((item, index) => (
               <DropdownMenuItem
                 key={index}
                 className={cn(
                   "flex cursor-pointer items-start gap-2 p-0 px-6 py-2",
-                  item.unseen && "rounded-lg bg-grayF6 px-3 dark:bg-[#353945]",
+                  item.unseen && "rounded-lg bg-grayF6 px-3 dark:bg-black45",
                 )}
               >
                 <div className="flex items-center gap-2">
@@ -210,6 +210,54 @@ export function Header({ className }: HeaderProps) {
             </p>
           </DropdownMenuContent>
         </DropdownMenu>
+        <Popover>
+          <PopoverTrigger className="relative block cursor-pointer xl:hidden">
+            <NotificationIcon className="text-gray8B dark:text-grayF3" />
+            <span
+              className="absolute -right-2 -top-2 flex h-4 min-w-[16px] items-center
+            justify-center rounded-full bg-red57 px-1 text-[10px] font-medium text-white"
+            >
+              1
+            </span>
+          </PopoverTrigger>
+          <PopoverContent className="z-50 mx-auto mt-2 flex w-[calc(100%-40px)] flex-col gap-5 rounded-[20px] border border-grayF3 bg-white p-2 shadow-[0px_20px_40px_0px_rgba(0,_0,_0,_0.10)] dark:border-black44 dark:bg-black29">
+            <Command>
+              {listNoti.map((item, index) => (
+                <div
+                  key={index}
+                  className={cn(
+                    "flex cursor-pointer items-start gap-2 p-0 px-2 py-2",
+                    item.unseen && "rounded-lg bg-grayF6 px-3 dark:bg-black45",
+                  )}
+                >
+                  <div className="flex items-center gap-2">
+                    {item.unseen && (
+                      <span className="h-1 w-1 rounded-full bg-red"></span>
+                    )}
+                    <Image
+                      src={item.avatar}
+                      alt="avatar-noti"
+                      width={32}
+                      height={32}
+                    />
+                  </div>
+                  <div>
+                    <p className="mb-[6px] max-w-[292px] text-sm leading-[18px] text-gray8B">
+                      You Booked and earn 8 point for on customer creation Steve
+                      Mathew
+                    </p>
+                    <p className="text-xs leading-[18px] text-grayC3">
+                      4 weeks ago
+                    </p>
+                  </div>
+                </div>
+              ))}
+              <p className="cursor-pointer text-center text-xs font-medium leading-5 text-gray8B">
+                See all activity
+              </p>
+            </Command>
+          </PopoverContent>
+        </Popover>
         <div className="h-8 w-[1px] bg-grayF3"></div>
 
         {/* <Link href={"/sign-in"}>
@@ -222,12 +270,14 @@ export function Header({ className }: HeaderProps) {
 
         {/* User logged */}
         <DropdownMenu>
-          <DropdownMenuTrigger className="flex cursor-pointer items-center gap-2">
-            <Image src={avatar} alt="avatar" width={32} height={32}></Image>
-            <h3 className="font-Roboto text-sm font-medium">Delowar</h3>
-            <ArrowDownIcon />
+          <DropdownMenuTrigger className="hidden cursor-pointer items-center gap-2 xl:flex">
+            <Image src={avatar} alt="avatar" width={32} height={32} />
+            <h3 className="hidden font-Roboto text-sm font-medium xl:block">
+              Delowar
+            </h3>
+            <ArrowDownIcon className="hidden xl:block" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="z-10 mr-7 flex  flex-col gap-6 rounded-2xl border border-grayF3 bg-white p-5 shadow-[0px_6px_30px_0px_rgba(37,_37,_37,_0.16)] dark:border-black44 dark:bg-black29">
+          <DropdownMenuContent className="z-50 flex  flex-col gap-6 rounded-2xl border border-grayF3 bg-white p-5 shadow-[0px_6px_30px_0px_rgba(37,_37,_37,_0.16)] dark:border-black44 dark:bg-black29 xl:mr-7">
             {listOptions.map((item, index) => (
               <DropdownMenuItem
                 key={index}
@@ -241,6 +291,12 @@ export function Header({ className }: HeaderProps) {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
+        <Link href={"/profile"} className="xl:hidden">
+          <Image src={avatar} alt="avatar" width={32} height={32} />
+          <h3 className="hidden font-Roboto text-sm font-medium xl:block">
+            Delowar
+          </h3>
+        </Link>
       </div>
     </div>
   );

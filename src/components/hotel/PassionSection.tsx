@@ -8,13 +8,13 @@ interface PassionSectionProps extends ComponentProps<"section"> {}
 export function PassionSection({ className, ...props }: PassionSectionProps) {
   return (
     <section className={cn("container", className)} {...props}>
-      <h2 className="mb-3 text-5xl font-bold text-black dark:text-white">
+      <h2 className="mb-3 text-center text-[30px] font-bold text-black dark:text-white xl:text-left xl:text-5xl">
         Travel Your Passion
       </h2>
-      <p className="mb-[42px] text-2xl font-medium text-gray8B">
+      <p className="mx-auto mb-[30px] max-w-[236px] text-sm font-medium  text-gray8B xl:mx-0 xl:mb-[42px] xl:max-w-none xl:text-2xl">
         Most Brilliant reasons Entrada should be your one-stop-shop!
       </p>
-      <div className="flex gap-[30px]">
+      <div className="mx-5 flex gap-5 overflow-x-auto xl:mx-0 xl:gap-[30px]">
         {listPassion.map((item, index) => (
           <PassionItem
             key={index}
@@ -22,7 +22,7 @@ export function PassionSection({ className, ...props }: PassionSectionProps) {
             rating={item.rating}
             title={item.title}
             totalRating={item.totalRating}
-          ></PassionItem>
+          />
         ))}
       </div>
     </section>
