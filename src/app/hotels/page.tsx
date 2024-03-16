@@ -50,7 +50,7 @@ export default function ListHotelPage() {
 
   return (
     <>
-      <div className="container">
+      <div className="container w-[calc(100%-40px)] pt-10 xl:w-auto xl:pt-0">
         <Breadcrumb list={["Home"]} last="Hotel list" className="mb-[60px]" />
         <NavbarFilter
           className="container !mb-[70px]"
@@ -58,7 +58,7 @@ export default function ListHotelPage() {
           hiddenLinks
         />
       </div>
-      <div className="hotel-container flex gap-10">
+      <div className="hotel-container flex w-[calc(100%-40px)] flex-col items-center gap-10 xl:w-auto xl:flex-row xl:items-start">
         <SidebarFilter>
           <SearchFilter />
           <CheckboxFilter
@@ -119,7 +119,7 @@ export default function ListHotelPage() {
               plane: "Depature from zuich",
             }}
           />
-          <div className="mx-auto flex w-[176px] items-center justify-center gap-4 rounded-3xl border border-grayC3 p-[10px]">
+          <div className="mx-auto flex w-full items-center justify-center gap-4 rounded-xl border border-grayC3 p-[10px] xl:w-[176px] xl:rounded-3xl">
             <Image src={loadingImage} alt="loading" width={18} height={18} />
             <span className="font-medium leading-6 text-black dark:text-white">
               View All

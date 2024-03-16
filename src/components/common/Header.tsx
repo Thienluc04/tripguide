@@ -59,7 +59,7 @@ export function Header({ className }: HeaderProps) {
   return (
     <div
       className={twMerge(
-        "sticky left-0 right-0 top-0 z-50 flex items-center justify-between bg-white px-3 py-5 shadow-[0px_-1px_4px_0px_#E2E2EA] dark:bg-black29 dark:text-white xl:px-10",
+        "sticky left-0 right-0 top-0 z-50 flex items-center justify-between bg-white px-3 py-5 shadow-[0px_-1px_4px_0px_#E2E2EA] dark:bg-black29 dark:text-white dark:shadow-none xl:px-10",
         className,
       )}
     >

@@ -21,7 +21,7 @@ export function TrendingItem({
   totalReviews,
 }: TrendingItemProps) {
   return (
-    <div className="w-[270px] rounded-2xl border-2 border-grayF6 bg-white p-4 dark:border-black29 dark:bg-black29">
+    <div className="mx-auto w-[270px] rounded-2xl border-2 border-grayF6 bg-white p-4 dark:border-black29 dark:bg-black29 xl:mx-0">
       <Image
         src={image}
         alt="trending-image"

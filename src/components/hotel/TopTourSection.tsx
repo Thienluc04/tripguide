@@ -40,7 +40,7 @@ export function TopTourSection({ className, ...props }: TopTourSectionProps) {
             name={item.name}
             title={item.title}
             description={item.description}
-          ></TopTourItem>
+          />
         ))}
       </Slider>
       <div className="flex flex-col gap-5 xl:hidden">
@@ -51,7 +51,7 @@ export function TopTourSection({ className, ...props }: TopTourSectionProps) {
             name={item.name}
             title={item.title}
             description={item.description}
-          ></TopTourItem>
+          />
         ))}
       </div>
     </section>

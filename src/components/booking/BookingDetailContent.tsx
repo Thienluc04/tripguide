@@ -1,9 +1,8 @@
 "use client";
 
 import { CreditCard, PaymentItem, TourUpdateItem } from "@/components/common";
-import { ThreeDotsIcon, TickIcon, UnionIcon } from "@/components/icons";
+import { TickIcon } from "@/components/icons";
 import { Checkbox, Input } from "@/components/ui";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -20,21 +19,21 @@ export function BookingDetailContent(props: BookingDetailContentProps) {
   const pathname = usePathname();
 
   return (
-    <div>
-      <div className="w-[494px]">
-        <h1 className="mb-6 text-[40px] font-bold leading-[60px] text-black2F dark:text-white">
+    <div className="mb-[30px] xl:mb-0">
+      <div className="xl:w-[494px]">
+        <h1 className="mb-5 text-[34px] font-bold leading-10 text-black2F dark:text-white xl:mb-6 xl:text-[40px] xl:leading-[60px]">
           Confirm your Book
         </h1>
-        <div className="mb-10 h-[2px] w-full bg-grayF6 dark:bg-black29"></div>
-        <h2 className="mb-[30px] text-[34px] font-bold leading-[44px] text-black dark:text-grayF3">
+        <div className="mb-4 h-[2px] w-full bg-grayF6 dark:bg-black29 xl:mb-10"></div>
+        <h2 className="mb-6 text-[28px] font-bold leading-10 text-black dark:text-grayF3 xl:mb-[30px] xl:text-[34px] xl:leading-[44px]">
           Your tour
         </h2>
-        <TourUpdateItem type="date" className="mb-5 w-[470px]" />
-        <TourUpdateItem type="traveler" className="mb-10 w-[470px]" />
-        <h2 className="mb-5 text-[34px] font-bold leading-[44px] text-black dark:text-grayF3">
+        <TourUpdateItem type="date" className="mb-5 xl:w-[470px]" />
+        <TourUpdateItem type="traveler" className="mb-10 xl:w-[470px]" />
+        <h2 className="mb-5 text-[28px] font-bold leading-10 text-black dark:text-grayF3 xl:text-[34px] xl:leading-[44px]">
           Credit Cards
         </h2>
-        <div className="mb-[30px] flex gap-3">
+        <div className="mb-[30px] flex flex-wrap gap-3 xl:flex-nowrap">
           <PaymentItem
             type="mastercard"
             widthImage={40}
@@ -73,7 +72,7 @@ export function BookingDetailContent(props: BookingDetailContentProps) {
         </div>
         <div className="mb-10 h-[2px] bg-grayF6 dark:bg-black44"></div>
       </div>
-      <div className="mb-10 flex gap-5">
+      <div className="mb-10 flex flex-col gap-5 xl:flex-row">
         <CreditCard
           cardNumber="8948 xxxx xxxx 7894"
           holderName="Holder Name"
@@ -130,7 +129,7 @@ export function BookingDetailContent(props: BookingDetailContentProps) {
       </div>
       <Link
         href={pathname + "/congratulations"}
-        className="inline-block rounded-[36px] bg-blueFE px-5 py-3 text-lg font-medium leading-7 text-white"
+        className="block rounded-xl bg-blueFE px-5 py-3 text-center text-sm font-medium text-white xl:inline-block xl:rounded-[36px] xl:text-left xl:text-lg xl:leading-7"
       >
         Confirm and reserve
       </Link>

@@ -17,7 +17,7 @@ export function BookingDetailSidebar({
   bookingType = "hotel",
 }: BookingDetailSidebarProps) {
   return (
-    <div className="w-[444px] rounded-[20px] border-2 border-grayF3 bg-white px-9 py-10 dark:border-black44 dark:bg-black29">
+    <div className="rounded-[20px] border-2 border-grayF3 bg-white px-5 py-6 dark:border-black44 dark:bg-black29 xl:w-[444px] xl:px-9 xl:py-10">
       {bookingType === "hotel" && (
         <h2 className="mb-[14px] text-lg font-medium text-black dark:text-grayFD">
           Switzerland Hotels and Places to Stay

@@ -13,7 +13,7 @@ export function FindItem({ image }: FindItemProps) {
         alt="find-image"
         width={334}
         height={246}
-        className="mb-4"
+        className="mb-4 w-full xl:w-auto"
       />
       <h3 className="mb-[10px] text-lg font-medium text-black45 dark:text-grayFD">
         Green House Guest House

@@ -113,7 +113,12 @@ export function NavbarFilter({
                 ))}
               </div>
             )}
-            <div className="mt-5 flex items-center gap-6 xl:mt-0">
+            <div
+              className={cn(
+                "flex items-center gap-6 xl:mt-0",
+                !hiddenLinks && "mt-5",
+              )}
+            >
               <div className="flex items-center gap-[10px]">
                 <span className="text-lg font-medium text-black44 dark:text-white">
                   Round trip

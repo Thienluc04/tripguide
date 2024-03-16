@@ -28,13 +28,13 @@ export default function BookingDetail() {
   }, [slug]);
 
   return (
-    <div className="container">
+    <div className="container w-[calc(100%-40px)] pt-10 xl:pt-0">
       <Breadcrumb
         list={getListDetailBooking(bookingType)}
         last="Confirm and pay"
-        className="mb-12"
+        className="mb-[30px] xl:mb-12"
       />
-      <div className="flex items-start justify-between">
+      <div className="flex flex-col items-center justify-between xl:flex-row xl:items-start">
         <BookingDetailContent />
         <BookingDetailSidebar bookingType={bookingType} />
       </div>

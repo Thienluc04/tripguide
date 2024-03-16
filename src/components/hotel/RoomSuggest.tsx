@@ -8,9 +8,9 @@ interface RoomSuggestProps {
 
 export function RoomSuggest({ title, price }: RoomSuggestProps) {
   return (
-    <div className="flex justify-between rounded-[10px] border border-grayF3 px-[30px] py-5 dark:border-black29 dark:bg-black29">
-      <div>
-        <h3 className="mb-4 text-2xl font-medium leading-9 text-black29 dark:text-grayFD">
+    <div className="flex flex-col rounded-[10px] border border-grayF3 px-5 py-5 dark:border-black29 dark:bg-black29 xl:flex-row xl:justify-between xl:px-[30px]">
+      <div className="mb-3 xl:mb-0">
+        <h3 className="mb-5 text-lg font-medium text-black29 dark:text-grayFD xl:mb-4 xl:text-2xl xl:leading-9">
           {title}
         </h3>
         <p className="mb-4 text-sm text-gray8B">Offer conditions:</p>
@@ -31,14 +31,14 @@ export function RoomSuggest({ title, price }: RoomSuggestProps) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-end">
-        <p className="mb-4 text-[34px] font-bold leading-[44px] text-black dark:text-grayFD">
+      <div className="flex flex-col items-start xl:items-end">
+        <p className="text-xl font-medium leading-7 text-black dark:text-grayFD xl:mb-4 xl:text-[34px] xl:font-bold xl:leading-[44px]">
           ${price}{" "}
-          <span className="text-xl font-normal leading-8 text-gray8B dark:text-grayC3">
+          <span className="text-sm font-normal text-gray8B dark:text-grayC3 xl:text-xl xl:leading-8">
             /night
           </span>
         </p>
-        <p className="text-lg font-medium text-orange">Save $4</p>
+        <p className="text-sm font-medium text-orange xl:text-lg">Save $4</p>
         <p className="mb-5 text-xs leading-[18px] text-gray8B">
           on TripGuide.com $106
         </p>

@@ -15,7 +15,7 @@ export function Breadcrumb({
 }: BreadcrumbProps) {
   return (
     <div
-      className={cn("flex items-center gap-[10px] pt-10", className)}
+      className={cn("hidden items-center gap-[10px] pt-10 xl:flex", className)}
       {...props}
     >
       {list.map((item, index) => (

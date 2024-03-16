@@ -20,7 +20,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const { params } = useCommonStore();
-  console.log("params:", params);
 
   useEffect(() => {
     if (typeof localStorage !== "undefined") {

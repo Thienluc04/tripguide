@@ -6,10 +6,10 @@ interface BookingDetailsProps {}
 
 export function BookingDetails(props: BookingDetailsProps) {
   return (
-    <div className="w-[408px] rounded-[20px] border border-grayEA px-[46px] py-5 dark:border-black44 dark:bg-black29">
+    <div className="mb-[30px] w-full rounded-[20px] border border-grayEA px-5 py-5 dark:border-black44 dark:bg-black29 xl:mb-0 xl:w-[408px] xl:px-[46px]">
       <div className="mb-5 flex items-center justify-between border-b border-b-grayEC pb-4 dark:border-b-black44">
         <div className="flex gap-[10px]">
-          <h2 className="text-[34px] font-bold leading-[44px] text-black dark:text-grayFD">
+          <h2 className="text-[28px] font-bold leading-[44px] text-black dark:text-grayFD xl:text-[34px]">
             $142{" "}
             <span className="text-xl font-normal leading-8 text-gray8B dark:text-grayF3">
               /night

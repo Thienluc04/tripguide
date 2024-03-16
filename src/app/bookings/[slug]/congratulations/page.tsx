@@ -38,7 +38,7 @@ export default function HotelCongratulations() {
 
   if (!bookingType) return null;
   return (
-    <div className="container">
+    <div className="container w-[calc(100%-40px)] pt-10 xl:w-full xl:pt-0">
       <Breadcrumb
         list={[
           "Home",
@@ -57,14 +57,14 @@ export default function HotelCongratulations() {
         last="Congratulations"
         className="mb-[70px]"
       />
-      <h2 className="mb-5 text-2xl font-bold dark:text-grayC3">
+      <h2 className="mb-3 text-xl font-bold dark:text-grayC3 xl:mb-5 xl:text-2xl">
         Congratulations!
       </h2>
-      <h1 className="mb-6 text-5xl font-medium leading-[60px] dark:text-grayFD">
+      <h1 className="mb-6 text-[34px] font-medium leading-[44px] dark:text-grayFD xl:text-5xl xl:leading-[60px]">
         Your trip has been booked!
       </h1>
-      <div className="mb-9 h-[1px] w-[822px] bg-grayF3 dark:bg-black44"></div>
-      <h2 className="mb-7 text-[34px] font-bold leading-[44px] text-black2F dark:text-grayF6">
+      <div className="mb-[30px] h-[1px] bg-grayF3 dark:bg-black44 xl:mb-9 xl:w-[822px]"></div>
+      <h2 className="mb-5 text-xl font-bold text-black2F dark:text-grayF6 xl:mb-7 xl:text-[34px] xl:leading-[44px]">
         {bookingType === "flight" ? (
           <div className="flex items-center gap-5">
             <span>AKL</span>
@@ -77,9 +77,9 @@ export default function HotelCongratulations() {
           "Best Seller BMW i10 - 2021"
         )}
       </h2>
-      <div className="mb-[30px] flex items-end justify-between">
-        <div className="w-[380px]">
-          <div className="mb-6 flex items-center gap-9">
+      <div className="mb-[30px] flex flex-col-reverse justify-between gap-6 xl:flex-row xl:items-end xl:gap-0">
+        <div className="xl:w-[380px]">
+          <div className="mb-4 flex items-center justify-between xl:mb-6 xl:justify-start xl:gap-9">
             <div className="flex gap-2">
               <YellowStarIcon />
               <p className="text-sm font-medium text-black45 dark:text-grayC3">
@@ -93,7 +93,7 @@ export default function HotelCongratulations() {
             </p>
           </div>
           <div className="mb-6 h-[1px] w-full bg-grayF4 dark:bg-black44"></div>
-          <div className="mb-[30px] flex gap-6">
+          <div className="mb-[30px] flex gap-3 xl:gap-6">
             <div className="flex-1 rounded-xl bg-grayF6 px-5 py-2 pb-3 dark:bg-black29">
               <h3 className="text-sm font-medium text-black45 dark:text-grayFD">
                 Dates
@@ -169,7 +169,7 @@ export default function HotelCongratulations() {
       </div>
       <Link
         href="/"
-        className="flex h-12 w-[205px] items-center justify-center rounded-[34px] bg-blueFE font-bold text-white"
+        className="flex h-12 w-full items-center justify-center rounded-xl bg-blueFE font-bold text-white xl:w-[205px] xl:rounded-[34px]"
       >
         Go To Your Home
       </Link>

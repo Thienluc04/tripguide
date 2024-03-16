@@ -19,20 +19,20 @@ interface HotelItemProps {
 
 export function HotelItem({ hotel }: HotelItemProps) {
   return (
-    <div className="flex gap-[30px] rounded-xl border border-grayF3 dark:border-black44">
+    <div className="flex flex-col rounded-3xl border border-grayF3 dark:border-black44 xl:flex-row xl:gap-[30px] xl:rounded-xl">
       <Image
         src={hotel.image}
         alt="hotel"
         width={420}
         height={465}
-        className="block rounded-l-xl"
+        className="block w-full rounded-t-3xl xl:w-auto xl:rounded-l-xl xl:rounded-tr-none"
       />
-      <div className="py-[30px] pr-[26px]">
-        <h2 className="mb-[22px] text-[40px] font-bold leading-[60px] text-black2F dark:text-white">
+      <div className="px-5 py-4 xl:px-0 xl:py-[30px] xl:pr-[26px]">
+        <h2 className="mb-3 text-[34px] font-bold leading-[44px] text-black2F dark:text-white xl:mb-[22px] xl:text-[40px] xl:leading-[60px]">
           {hotel.title}
         </h2>
-        <div className="mb-11 flex items-center gap-5">
-          <div className="flex items-center gap-[10px]">
+        <div className="mb-4 flex items-center justify-between xl:mb-11 xl:justify-start xl:gap-5">
+          <div className="flex items-center gap-2 xl:gap-[10px]">
             <YellowStarIcon />
             <p className="text-sm font-medium dark:text-grayC3">
               {hotel.rating}
@@ -41,14 +41,14 @@ export function HotelItem({ hotel }: HotelItemProps) {
               </span>
             </p>
           </div>
-          <div className="flex gap-[10px]">
+          <div className="flex gap-2 xl:gap-[10px]">
             <FlagIcon className="text-gray8B dark:text-grayC3" />
             <p className="text-sm text-gray8B dark:text-grayC3">
               {hotel.location}
             </p>
           </div>
         </div>
-        <div className="mb-10 flex flex-wrap items-center gap-x-5 gap-y-4">
+        <div className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-4 xl:mb-10">
           <div className="flex items-center gap-3">
             <AddressIcon className="text-gray8B dark:text-grayC3" />
             <span className="leading-6 text-black dark:text-grayFD">
@@ -68,7 +68,7 @@ export function HotelItem({ hotel }: HotelItemProps) {
             </span>
           </div>
         </div>
-        <div className="flex justify-between">
+        <div className="flex flex-col justify-between gap-6 xl:flex-row xl:gap-0">
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-4">
               <WifiCrossIcon className="text-gray8B dark:text-grayC3" />
@@ -95,9 +95,9 @@ export function HotelItem({ hotel }: HotelItemProps) {
               </span>
             </div>
           </div>
-          <div className="flex flex-col gap-5">
-            <p className="flex w-[176px] items-center justify-center gap-2 rounded-3xl bg-grayF6 py-1 dark:bg-black29">
-              <span className="text-[28px] font-bold leading-10 dark:text-white">
+          <div className="flex flex-col gap-3 xl:gap-5">
+            <p className="flex h-10 w-[140px] items-center justify-center gap-2 rounded-3xl bg-grayF6 py-1 dark:bg-black29 xl:h-auto xl:w-[176px]">
+              <span className="text-base font-bold leading-6 dark:text-white xl:text-[28px] xl:leading-10">
                 $320
               </span>
               <span className="font-medium text-gray8B dark:text-grayC3">
@@ -106,8 +106,8 @@ export function HotelItem({ hotel }: HotelItemProps) {
             </p>
             <Link
               href={"/hotels/1"}
-              className="w-[176px] rounded-3xl bg-primary py-[10px] text-center text-xl 
-              font-bold text-white shadow-[0px_5px_20px_0px_rgba(20,_92,_230,_0.14)]"
+              className="w-[140px] rounded-3xl bg-primary py-[10px] text-center text-base font-medium text-white shadow-[0px_5px_20px_0px_rgba(20,_92,_230,_0.14)] 
+              xl:w-[176px] xl:text-xl xl:font-bold"
             >
               Book Now
             </Link>
