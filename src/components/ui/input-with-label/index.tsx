@@ -22,7 +22,7 @@ export const InputWithLabel = ({
             {children}
           </InputWithLabel.Label>
           <InputWithLabel.Input
-            className="h-12 w-[376px] rounded-[10px] border-grayF3 px-5 dark:border-black44 dark:text-grayC3"
+            className="h-12 w-full rounded-[10px] border-grayF3 px-5 dark:border-black44 dark:text-grayC3 xl:w-[376px]"
             {...props}
           />
         </>

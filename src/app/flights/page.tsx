@@ -38,23 +38,23 @@ export default function ListFlightPage(props: ListFlightPageProps) {
 
   return (
     <>
-      <div className="bg-grayF6 dark:bg-black">
-        <div className="container">
+      <div className="mb-10 bg-grayF6 dark:bg-black xl:mb-0">
+        <div className="container px-5 pt-10 xl:px-0 xl:pt-0">
           <Breadcrumb
             list={["Home"]}
             last="Flights"
             className="-mb-14 mt-0 pt-10"
           />
           <NavbarFilter
-            className="container !mb-[130px] translate-y-2/4"
+            className="container xl:!mb-[130px] xl:translate-y-2/4"
             type="flight"
             hiddenLinks
           />
         </div>
       </div>
-      <div className="container">
-        <div className="mx-auto mb-12 mt-2 h-[2px] w-[1120px] bg-[#EDEDED] dark:bg-[#120E0E]"></div>
-        <div className="flex justify-between">
+      <div className="container px-5 xl:px-0">
+        <div className="mx-auto mb-12 mt-2 hidden h-[2px] bg-[#EDEDED] dark:bg-[#120E0E] xl:block xl:w-[1120px]"></div>
+        <div className="flex flex-col justify-between xl:flex-row">
           <SidebarFilter>
             <CheckboxFilter
               title="Popular Filters"
@@ -81,12 +81,12 @@ export default function ListFlightPage(props: ListFlightPageProps) {
               limit={3}
             />
           </SidebarFilter>
-          <div className="flex flex-col gap-[30px]">
+          <div className="mt-10 flex flex-col gap-[30px] xl:mt-0">
             <FlightItem />
             <FlightItem />
             <FlightItem />
             <FlightItem />
-            <div className="mx-auto flex w-[176px] items-center justify-center gap-4 rounded-3xl border border-grayC3 p-[10px]">
+            <div className="mx-auto flex w-full items-center justify-center gap-4 rounded-3xl border border-grayC3 p-[10px] xl:w-[176px]">
               <Image src={loadingImage} alt="loading" width={18} height={18} />
               <span className="font-medium leading-6 text-black dark:text-white">
                 View All

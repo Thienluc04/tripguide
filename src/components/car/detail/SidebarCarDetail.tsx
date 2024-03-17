@@ -10,18 +10,22 @@ interface SidebarCarDetailProps {}
 
 export function SidebarCarDetail(props: SidebarCarDetailProps) {
   return (
-    <div className="w-[446px] rounded-[30px] border-2 border-grayF6 px-9 py-7 dark:border-black44 dark:bg-black29">
-      <div className="mb-3 flex items-center justify-between">
+    <div className="mt-[30px] rounded-[30px] border-2 border-grayF6 px-6 py-5 dark:border-black44 dark:bg-black29 xl:mt-0 xl:w-[446px] xl:px-9 xl:py-7">
+      <div className="mb-4 flex items-center justify-between xl:mb-3">
         <div className="flex items-center">
-          <h3 className="mr-[10px] text-[34px] font-bold leading-[44px] text-black dark:text-grayFD">
+          <h3 className="mr-[10px] text-2xl font-bold leading-[34px] text-black dark:text-grayFD xl:text-[34px] xl:leading-[44px]">
             $450
           </h3>
-          <span className="mr-1 text-2xl font-medium leading-9 text-grayC3">
+          <span className="mr-1 text-lg font-medium leading-7 text-grayC3 xl:text-2xl xl:leading-9">
             $570
           </span>
-          <span className="text-lg text-grayC3">/day</span>
+          <span className="text-lg leading-7 text-grayC3 xl:leading-none">
+            /day
+          </span>
         </div>
-        <span className="text-lg text-green71">Car is available</span>
+        <span className="text-sm text-green71 xl:text-lg">
+          Car is available
+        </span>
       </div>
       <div className="mb-8 flex items-center gap-[10px]">
         <YellowStarIcon />

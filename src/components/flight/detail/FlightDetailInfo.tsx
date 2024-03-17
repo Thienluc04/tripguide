@@ -7,22 +7,22 @@ interface FlightDetailInfoProps {}
 
 export function FlightDetailInfo(props: FlightDetailInfoProps) {
   return (
-    <div className="rounded-[20px] border border-grayF3 bg-white p-10 dark:border-black29 dark:bg-black29">
-      <div className="mb-6 flex items-end justify-between">
+    <div className="rounded-[20px] border border-grayF3 bg-white p-5 dark:border-black29 dark:bg-black29 xl:p-10">
+      <div className="mb-6 items-end justify-between xl:flex">
         <div>
           <h2 className="mb-2 text-2xl font-medium leading-9 text-black29 dark:text-white">
             Dhaka To Dubai
           </h2>
-          <p className="text-sm font-medium text-gray8B dark:text-grayC3">
+          <p className="text-xs font-medium text-gray8B dark:text-grayC3 xl:text-sm">
             Non stop | 2 hrs 20 mins | Economy | Thu 27 Jul 2020
           </p>
         </div>
-        <div className="rounded-lg bg-orange54 bg-opacity-20 px-[22px] py-[10px] font-medium leading-6 text-orange54">
+        <div className="mt-5 inline-block rounded-lg bg-orange54 bg-opacity-20 px-[22px] py-[10px] font-medium leading-6 text-orange54 xl:mt-0 xl:block">
           Change Flight
         </div>
       </div>
       <div className="mb-[30px] h-[1px] bg-grayF3 dark:bg-black44"></div>
-      <div className="mb-10 flex items-center gap-[50px]">
+      <div className="mb-10 flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-[50px]">
         <div className="flex items-center gap-5">
           <Image src={emirates} alt="emirates" width={50} height={34} />
           <div>
@@ -62,7 +62,7 @@ export function FlightDetailInfo(props: FlightDetailInfoProps) {
           </p>
         </div>
       </div>
-      <div className="mb-10 flex gap-12">
+      <div className="mb-10 flex flex-col xl:flex-row xl:gap-12">
         <div>
           <p className="mb-2 font-medium leading-6 dark:text-grayFD">
             Baggoge:
@@ -103,7 +103,7 @@ export function FlightDetailInfo(props: FlightDetailInfoProps) {
           </p>
         </div>
       </div>
-      <div className="mb-10 flex items-center gap-[50px]">
+      <div className="mb-10 flex flex-col xl:flex-row xl:items-center xl:gap-[50px]">
         <div className="flex items-center gap-5">
           <Image src={emirates} alt="emirates" width={50} height={34} />
           <div>
@@ -143,7 +143,7 @@ export function FlightDetailInfo(props: FlightDetailInfoProps) {
           </p>
         </div>
       </div>
-      <div className="flex gap-12">
+      <div className="flex flex-wrap gap-12 xl:flex-nowrap">
         <div>
           <p className="mb-2 font-medium leading-6 dark:text-grayFD">
             Baggoge:

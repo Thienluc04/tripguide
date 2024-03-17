@@ -11,7 +11,7 @@ export function Passenger({ params, setParams, className }: PassengerProps) {
   return (
     <div
       className={cn(
-        "absolute bottom-full right-0 mb-2 flex w-[354px] flex-col gap-3 rounded-2xl bg-white p-5 shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)] dark:border dark:border-black44 dark:bg-black29",
+        "absolute right-0 mb-2 flex w-[354px] flex-col gap-3 rounded-2xl bg-white p-5 shadow-[0px_12px_60px_0px_rgba(89,_89,_89,_0.10)] dark:border dark:border-black44 dark:bg-black29 xl:bottom-full",
         className,
       )}
     >

@@ -258,7 +258,7 @@ export function Header({ className }: HeaderProps) {
             </Command>
           </PopoverContent>
         </Popover>
-        <div className="h-8 w-[1px] bg-grayF3"></div>
+        <div className="h-8 w-[1px] bg-grayF3 dark:bg-black44"></div>
 
         {/* <Link href={"/sign-in"}>
           <UserIcon

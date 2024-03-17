@@ -2,8 +2,8 @@ interface FlightDetailSidebarProps {}
 
 export function FlightDetailSidebar(props: FlightDetailSidebarProps) {
   return (
-    <div className="w-[332px] rounded-[10px] border border-grayF3 bg-white py-6 dark:border-black29 dark:bg-black29">
-      <div className="mb-5 flex flex-col gap-5 px-[30px]">
+    <div className="mx-auto w-[calc(100%-40px)] rounded-[10px] border border-grayF3 bg-white py-6 dark:border-black29 dark:bg-black29 xl:mx-0 xl:w-[332px]">
+      <div className="mb-5 flex flex-col gap-5 px-5 xl:px-[30px]">
         <h3 className="text-xl font-medium text-black33 dark:text-white">
           Price Details
         </h3>
@@ -43,7 +43,7 @@ export function FlightDetailSidebar(props: FlightDetailSidebarProps) {
           $360
         </span>
       </div>
-      <div className="dark:bg-black39 h-[1px] bg-grayF3"></div>
+      <div className="h-[1px] bg-grayF3 dark:bg-black39"></div>
       <div className="px-[30px] py-5">
         <h3 className="mb-4 text-xl font-medium text-black33 dark:text-white">
           Passengers
@@ -52,7 +52,7 @@ export function FlightDetailSidebar(props: FlightDetailSidebarProps) {
           1x adult 2 children
         </p>
       </div>
-      <div className="dark:bg-black39 h-[1px] bg-grayF3"></div>
+      <div className="h-[1px] bg-grayF3 dark:bg-black39"></div>
       <div className="px-[30px] py-5">
         <h3 className="mb-5 text-xl font-medium text-black33 dark:text-white">
           Check-in baggage
@@ -74,7 +74,7 @@ export function FlightDetailSidebar(props: FlightDetailSidebarProps) {
           </p>
         </div>
       </div>
-      <div className="dark:bg-black39 h-[1px] bg-grayF3"></div>
+      <div className="h-[1px] bg-grayF3 dark:bg-black39"></div>
       <div className="px-[30px] pt-5">
         <h3 className="mb-3 text-xl font-medium text-black33 dark:text-white">
           Services

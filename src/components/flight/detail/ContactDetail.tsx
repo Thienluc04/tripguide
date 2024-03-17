@@ -17,8 +17,8 @@ interface ContactDetailProps {}
 
 export function ContactDetail(props: ContactDetailProps) {
   return (
-    <div className="rounded-[20px] border border-grayF3 bg-white p-10 dark:border-black29 dark:bg-black29">
-      <div className="mb-6 mr-[76px] flex justify-between">
+    <div className="w-full rounded-[20px] border border-grayF3 bg-white p-5 dark:border-black29 dark:bg-black29 xl:w-auto xl:p-10">
+      <div className="mb-6 flex justify-between xl:mr-[76px]">
         <h2 className="text-2xl font-medium leading-9 text-black29 dark:text-grayFD">
           Contact Details
         </h2>
@@ -29,7 +29,7 @@ export function ContactDetail(props: ContactDetailProps) {
           </p>
         </div>
       </div>
-      <div className="flex flex-wrap gap-x-[30px] gap-y-6">
+      <div className="flex flex-col gap-x-[30px] gap-y-6 xl:flex-row xl:flex-wrap">
         <InputWithLabel defaultValue="bddesign776@gmail.com" name="email">
           Enter an email
         </InputWithLabel>
@@ -51,7 +51,7 @@ export function ContactDetail(props: ContactDetailProps) {
           </Label>
           <Select>
             <SelectTrigger
-              className="h-12 w-[376px] border-grayF3 px-5 text-sm text-gray8B dark:border-black44 dark:text-grayC3"
+              className="h-12 border-grayF3 px-5 text-sm text-gray8B dark:border-black44 dark:text-grayC3 xl:w-[376px]"
               icon={<ChevronDownIcon className="dark:text-grayC3" />}
             >
               <SelectValue placeholder="Country" />
@@ -87,7 +87,7 @@ export function ContactDetail(props: ContactDetailProps) {
           </Label>
           <Select>
             <SelectTrigger
-              className="h-12 w-[376px] border-grayF3 px-5 text-sm text-gray8B dark:border-black44 dark:text-grayC3"
+              className="h-12 border-grayF3 px-5 text-sm text-gray8B dark:border-black44 dark:text-grayC3 xl:w-[376px]"
               icon={<ChevronDownIcon className="dark:text-grayC3" />}
             >
               <SelectValue placeholder="Country code" />
@@ -116,7 +116,7 @@ export function ContactDetail(props: ContactDetailProps) {
           </Label>
           <Select>
             <SelectTrigger
-              className="h-12 w-[376px] border-grayF3 px-5 text-sm text-gray8B dark:border-black44 dark:text-grayC3"
+              className="h-12 border-grayF3 px-5 text-sm text-gray8B dark:border-black44 dark:text-grayC3 xl:w-[376px]"
               icon={<ChevronDownIcon className="dark:text-grayC3" />}
             >
               <SelectValue placeholder="Phone number" />

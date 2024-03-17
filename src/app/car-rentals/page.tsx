@@ -29,23 +29,23 @@ export default function CarRentalsPage(props: CarRentalsPageProps) {
 
   return (
     <>
-      <div className="bg-grayF6 dark:bg-black">
-        <div className="container">
+      <div className="mb-10 bg-grayF6 pt-10 dark:bg-black xl:mb-0 xl:pt-0">
+        <div className="container px-5 xl:px-0">
           <Breadcrumb
             list={["Home"]}
             last="Cars"
             className="-mb-14 mt-0 pt-10"
           />
           <NavbarFilter
-            className="container !mb-[130px] translate-y-2/4"
+            className="container xl:!mb-[130px] xl:translate-y-2/4"
             type="car"
             hiddenLinks
           />
         </div>
       </div>
-      <div className="hotel-container mx-auto flex max-w-[1400px] gap-7">
+      <div className="hotel-container mx-auto flex max-w-[1400px] flex-col gap-7 xl:flex-row">
         <div>
-          <h3 className="mb-[35px] text-[22px] font-medium text-black33 dark:text-white">
+          <h3 className="mb-[35px] hidden px-5 text-[22px] font-medium text-black33 dark:text-white xl:block xl:px-0">
             Filter by
           </h3>
           <SidebarFilter>
@@ -62,11 +62,11 @@ export default function CarRentalsPage(props: CarRentalsPageProps) {
             <CheckboxFilter title="Mileage/Kilometers" listData={listMileage} />
           </SidebarFilter>
         </div>
-        <div>
+        <div className="px-5 xl:px-0">
           <ChooseTypeCar />
           <FilterListCar />
           <ListContentCar />
-          <div className="mx-auto mt-10 flex w-[176px] items-center justify-center gap-4 rounded-3xl border border-grayC3 p-[10px]">
+          <div className="mx-auto mt-10 flex items-center justify-center gap-4 rounded-xl border border-grayC3 p-[10px] xl:w-[176px] xl:rounded-3xl">
             <Image src={loadingImage} alt="loading" width={18} height={18} />
             <span className="font-medium leading-6 text-black dark:text-white">
               View All

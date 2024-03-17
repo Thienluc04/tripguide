@@ -22,11 +22,11 @@ export function PassengerDetail({ title, hasBirthday }: PassengerDetailProps) {
   const listYear = Array.from({ length: 24 }, (_, i) => i + 1);
 
   return (
-    <div className="rounded-[20px] border border-grayF3 bg-white p-10 dark:border-black29 dark:bg-black29">
+    <div className="w-full rounded-[20px] border border-grayF3 bg-white p-5 dark:border-black29 dark:bg-black29 xl:w-auto xl:p-10">
       <h2 className="mb-[30px] text-2xl font-medium leading-9 text-black29 dark:text-grayFD">
         {title}
       </h2>
-      <div className="mb-6 flex gap-[30px]">
+      <div className="mb-6 flex flex-col gap-[30px] xl:flex-row">
         <InputWithLabel defaultValue="Zuichi" name="firstName">
           First name
         </InputWithLabel>
@@ -34,7 +34,7 @@ export function PassengerDetail({ title, hasBirthday }: PassengerDetailProps) {
           Last name
         </InputWithLabel>
       </div>
-      <div className="flex items-center gap-8">
+      <div className="flex flex-col gap-8 xl:flex-row xl:items-center">
         <div>
           <Label
             htmlFor="gender"
@@ -44,7 +44,7 @@ export function PassengerDetail({ title, hasBirthday }: PassengerDetailProps) {
           </Label>
           <Select>
             <SelectTrigger
-              className="h-12 w-[198px] border-grayF3 px-5 text-sm text-gray8B dark:border-black44 dark:text-grayC3"
+              className="h-12 border-grayF3 px-5 text-sm text-gray8B dark:border-black44 dark:text-grayC3 xl:w-[198px]"
               icon={<ChevronDownIcon />}
             >
               <SelectValue placeholder="Gender" />
@@ -75,10 +75,10 @@ export function PassengerDetail({ title, hasBirthday }: PassengerDetailProps) {
             >
               Birth Day
             </Label>
-            <div className="flex rounded-[10px] border border-grayF3 dark:border-black44">
+            <div className="inline-flex w-full rounded-[10px] border border-grayF3 dark:border-black44 xl:flex xl:w-auto">
               <Select>
                 <SelectTrigger
-                  className="flex h-12 w-[92px] gap-3 border-none px-5 py-3 text-sm text-gray8B dark:text-grayC3"
+                  className="flex h-12 gap-3 border-none px-5 py-3 text-sm text-gray8B dark:text-grayC3 xl:w-[92px]"
                   icon={<ChevronDownIcon className="dark:text-grayC3" />}
                 >
                   <SelectValue placeholder="Date" />
@@ -99,7 +99,7 @@ export function PassengerDetail({ title, hasBirthday }: PassengerDetailProps) {
               </Select>
               <Select>
                 <SelectTrigger
-                  className="flex h-12 w-[105px] gap-3 border-none px-5 py-3 text-sm text-gray8B dark:text-grayC3"
+                  className="flex h-12 gap-3 border-none px-5 py-3 text-sm text-gray8B dark:text-grayC3 xl:w-[105px]"
                   icon={<ChevronDownIcon className="dark:text-grayC3" />}
                 >
                   <SelectValue placeholder="Month" />
@@ -120,7 +120,7 @@ export function PassengerDetail({ title, hasBirthday }: PassengerDetailProps) {
               </Select>
               <Select>
                 <SelectTrigger
-                  className="flex h-12 w-[120px] gap-3 border-none px-5 py-3 text-sm text-gray8B dark:text-grayC3"
+                  className="flex h-12 gap-3 border-none px-5 py-3 text-sm text-gray8B dark:text-grayC3 xl:w-[120px]"
                   icon={<ChevronDownIcon className="dark:text-grayC3" />}
                 >
                   <SelectValue placeholder="Year" />

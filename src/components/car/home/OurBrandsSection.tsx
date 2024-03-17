@@ -45,11 +45,11 @@ export function OurBrandsSection(props: OurBrandsSectionProps) {
       <h2 className="mb-[14px] text-center text-[32px] font-semibold text-black20 dark:text-white">
         Our Brands
       </h2>
-      <p className="mx-auto mb-[60px] max-w-[520px] text-center text-sm text-gray6F dark:text-grayC3">
+      <p className="mx-auto mb-[30px] max-w-[520px] px-5 text-center text-sm text-gray6F dark:text-grayC3 xl:mb-[60px] xl:px-0">
         All of these place are becoming your ideal workplaces for your team
-        meetings, corporate events, press & influencers
+        meetings, corporate events, press & influencer
       </p>
-      <div className="flex items-center gap-[80px]">
+      <div className="flex flex-wrap items-center justify-center gap-5 xl:flex-nowrap xl:justify-start xl:gap-[80px]">
         {params.theme === "light" &&
           listBrand.map((item, index) => (
             <div key={index} className="relative">

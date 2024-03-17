@@ -1,9 +1,13 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren } from "react";
 
 interface SidebarFilterProps {}
 
 export function SidebarFilter({
   children,
 }: PropsWithChildren<SidebarFilterProps>) {
-  return <div className="flex flex-col gap-[30px] w-[290px]">{children}</div>;
+  return (
+    <div className="mx-auto flex w-[290px] flex-col gap-[30px] xl:mx-0">
+      {children}
+    </div>
+  );
 }

@@ -16,13 +16,13 @@ const listItem = [
   {
     title: "Deals for every budget",
     description:
-      "Choose from & wide variety of car classes new high-quality vehicles teeting your neads and luxigel best",
+      "Choose from & wide variety of car classes new high-quality vehicles teeing your neaps and lucile best",
     icon: <SterlingPoundIcon className="text-blueFE dark:text-gray90" />,
   },
   {
     title: "Awesome Customer Support",
     description:
-      "Deliver faster, more personalized support with the power of cobrowse and live chat.",
+      "Deliver faster, more personalized support with the power of corrodes and live chat.",
     icon: <HeadphoneIcon className="text-blueFE dark:text-gray90" />,
   },
   {
@@ -47,7 +47,7 @@ const listItem = [
 export function BestExperienceSection(props: BestExperienceSectionProps) {
   return (
     <div className="relative">
-      <div className="absolute left-0 top-0">
+      <div className="left-0 top-0 xl:absolute">
         <Image
           src={BestExperience}
           alt="best-experience"
@@ -55,9 +55,9 @@ export function BestExperienceSection(props: BestExperienceSectionProps) {
           height={846}
         />
       </div>
-      <div className="mx-auto max-w-[500px]">
-        <div className="mb-11">
-          <h2 className="mb-4 text-[40px] font-bold leading-[60px] text-black dark:text-grayF6">
+      <div className="mx-auto max-w-[500px] px-5 xl:px-0">
+        <div className="mb-5 xl:mb-11">
+          <h2 className="mb-5 text-2xl font-bold leading-9 text-black dark:text-grayF6 xl:mb-4 xl:text-[40px] xl:leading-[60px]">
             Feel the best experience with our rental deals
           </h2>
           <div className="h-[2px] bg-grayF6 dark:bg-black29"></div>
@@ -65,7 +65,7 @@ export function BestExperienceSection(props: BestExperienceSectionProps) {
         <div className="flex flex-col gap-10">
           {listItem.map((item, index) => (
             <div key={index} className="flex items-start gap-6">
-              <div className="flex h-[52px] w-[52px] items-center justify-center rounded-lg border border-white bg-grayF2 shadow-lg shadow-slate-200 dark:border-black44 dark:bg-black29 dark:shadow-none">
+              <div className="mt-2 flex h-[52px] w-[52px] items-center justify-center rounded-lg border border-white bg-grayF2 shadow-lg shadow-slate-200 dark:border-black44 dark:bg-black29 dark:shadow-none">
                 {item.icon}
               </div>
               <div className="flex-1">

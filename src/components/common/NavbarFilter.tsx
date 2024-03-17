@@ -81,7 +81,8 @@ export function NavbarFilter({
           params={type === "hotel" ? hotelParams : flightParams}
           setParams={type === "hotel" ? setHotelParams : setFlightParams}
           className={cn(
-            hiddenLinks && "-bottom-32 right-full z-10 translate-x-full",
+            hiddenLinks &&
+              "right-full top-14 z-20 translate-x-full xl:-bottom-32",
           )}
         />
       )}
@@ -186,6 +187,7 @@ export function NavbarFilter({
                   description="Where are you from?"
                   type="location"
                   className="xl:w-[260px]"
+                  styleContent="z-50"
                   listLocation={listLocation}
                   onSetLocation={(location) =>
                     setFlightParams({ ...flightParams, from: location })
@@ -195,7 +197,8 @@ export function NavbarFilter({
                   title="Going to"
                   description="Going to?"
                   type="location"
-                  className="w-[200px]"
+                  className="xl:w-[200px]"
+                  styleContent="z-40"
                   listLocation={listLocation}
                   onSetLocation={(location) =>
                     setFlightParams({ ...flightParams, to: location })
@@ -206,6 +209,7 @@ export function NavbarFilter({
                   description="Add date"
                   type="date"
                   className="xl:w-[182px]"
+                  styleContent="z-30"
                   valueDate={flightParams.checkInDate}
                   onSetDate={(date) => {
                     setFlightParams({ ...flightParams, checkInDate: date });
@@ -216,6 +220,7 @@ export function NavbarFilter({
                   description="Add date"
                   type="date"
                   className="xl:w-[182px]"
+                  styleContent="z-20"
                   arrowTurn={false}
                   valueDate={flightParams.checkOutDate}
                   onSetDate={(date) => {
@@ -243,7 +248,7 @@ export function NavbarFilter({
                   type="location"
                   className="xl:w-[200px]"
                   listLocation={listLocationCar}
-                  styleContent="w-[230px]"
+                  styleContent="xl:w-[230px]"
                   onSetLocation={(location) =>
                     setCarParams({ ...carParams, to: location })
                   }

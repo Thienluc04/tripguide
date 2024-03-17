@@ -35,7 +35,7 @@ interface ListContentCarProps {}
 
 export function ListContentCar(props: ListContentCarProps) {
   return (
-    <div className="grid grid-cols-3 gap-x-6 gap-y-[30px]">
+    <div className="grid grid-cols-1 gap-x-6 gap-y-[30px] md:grid-cols-2 xl:grid-cols-3">
       {listCar.map((item, index) => (
         <CarItem key={index} image={item.image} name={item.name} />
       ))}

@@ -4,15 +4,15 @@ interface BestWaySectionProps {}
 
 export function BestWaySection(props: BestWaySectionProps) {
   return (
-    <div className="container">
-      <h2 className="mb-4 text-center text-[40px] font-bold leading-[60px] text-black dark:text-white">
+    <div className="container px-5 xl:px-0">
+      <h2 className="mb-3 text-center text-[30px] font-bold leading-10 text-black dark:text-white xl:mb-4 xl:text-[40px] xl:leading-[60px]">
         Best Way to Find Your Modern Cars
       </h2>
-      <p className="mx-auto mb-[60px] max-w-[632px] text-center leading-6 text-gray90 dark:text-grayC3">
-        We Know the ditterence is in the details and that’s our car rental
+      <p className="mx-auto mb-10 max-w-[632px] text-center text-sm leading-6 text-gray90 dark:text-grayC3 xl:mb-[60px] xl:text-base">
+        We Know the difference is in the details and that’s our car rental
         services, in the tourism and business industry, stand out for their
       </p>
-      <div className="flex justify-center gap-[130px]">
+      <div className="flex flex-col items-center justify-center gap-10 xl:flex-row xl:items-start xl:gap-[130px]">
         <BestWayItem
           image="/images/cars/best-way-1.png"
           title="Choose Your Car"

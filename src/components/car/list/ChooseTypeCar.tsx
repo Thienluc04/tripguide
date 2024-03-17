@@ -37,7 +37,13 @@ const listChoose: ChooseType[] = [
 export function ChooseTypeCar({ className, ...props }: ChooseTypeCarProps) {
   const [activeType, setActiveType] = useState<string>("");
   return (
-    <div className={cn("flex gap-[30px]", className)} {...props}>
+    <div
+      className={cn(
+        "xl: flex flex-wrap justify-center gap-[30px] xl:flex-nowrap xl:justify-start",
+        className,
+      )}
+      {...props}
+    >
       {listChoose.map((item, index) => (
         <ChooseTypeItem
           key={index}
