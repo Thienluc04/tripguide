@@ -11,10 +11,12 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </h2>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Email
             </h3>
-            <p className="dark:text-gray8B">Receive notifications via email</p>
+            <p className="text-xs dark:text-gray8B md:text-base">
+              Receive notifications via email
+            </p>
           </div>
           <Switch
             id="email"
@@ -23,10 +25,10 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </div>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Text messages
             </h3>
-            <p className="dark:text-gray8B">
+            <p className="text-xs dark:text-gray8B md:text-base">
               Receive notifications via mobile phone
             </p>
           </div>
@@ -37,10 +39,10 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </div>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Browser notifications
             </h3>
-            <p className="dark:text-gray8B">
+            <p className="text-xs dark:text-gray8B md:text-base">
               Receive notifications of your browser
             </p>
           </div>
@@ -56,10 +58,12 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </h2>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Email
             </h3>
-            <p className="dark:text-gray8B">Receive notifications via email</p>
+            <p className="text-xs dark:text-gray8B md:text-base">
+              Receive notifications via email
+            </p>
           </div>
           <Switch
             id="email"
@@ -68,10 +72,10 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </div>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Text messages
             </h3>
-            <p className="dark:text-gray8B">
+            <p className="text-xs dark:text-gray8B md:text-base">
               Receive notifications via mobile phone
             </p>
           </div>
@@ -82,10 +86,10 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </div>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Browser notifications
             </h3>
-            <p className="dark:text-gray8B">
+            <p className="text-xs dark:text-gray8B md:text-base">
               Receive notifications of your browser
             </p>
           </div>
@@ -101,10 +105,12 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </h2>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Email
             </h3>
-            <p className="dark:text-gray8B">Receive notifications via email</p>
+            <p className="text-xs dark:text-gray8B md:text-base">
+              Receive notifications via email
+            </p>
           </div>
           <Switch
             id="email"
@@ -113,10 +119,10 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </div>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Text messages
             </h3>
-            <p className="dark:text-gray8B">
+            <p className="text-xs dark:text-gray8B md:text-base">
               Receive notifications via mobile phone
             </p>
           </div>
@@ -127,10 +133,10 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </div>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Browser notifications
             </h3>
-            <p className="dark:text-gray8B">
+            <p className="text-xs dark:text-gray8B md:text-base">
               Receive notifications of your browser
             </p>
           </div>
@@ -146,10 +152,12 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </h2>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Email
             </h3>
-            <p className="dark:text-gray8B">Receive notifications via email</p>
+            <p className="text-xs dark:text-gray8B md:text-base">
+              Receive notifications via email
+            </p>
           </div>
           <Switch
             id="email"
@@ -158,10 +166,10 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </div>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Text messages
             </h3>
-            <p className="dark:text-gray8B">
+            <p className="text-xs dark:text-gray8B md:text-base">
               Receive notifications via mobile phone
             </p>
           </div>
@@ -172,10 +180,10 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </div>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Browser notifications
             </h3>
-            <p className="dark:text-gray8B">
+            <p className="text-xs dark:text-gray8B md:text-base">
               Receive notifications of your browser
             </p>
           </div>
@@ -191,10 +199,12 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </h2>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Email
             </h3>
-            <p className="dark:text-gray8B">Receive notifications via email</p>
+            <p className="text-xs dark:text-gray8B md:text-base">
+              Receive notifications via email
+            </p>
           </div>
           <Switch
             id="email"
@@ -203,10 +213,10 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </div>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Text messages
             </h3>
-            <p className="dark:text-gray8B">
+            <p className="text-xs dark:text-gray8B md:text-base">
               Receive notifications via mobile phone
             </p>
           </div>
@@ -217,10 +227,10 @@ export function NotificationsContent(props: NotificationsContentProps) {
         </div>
         <div className="mb-6 flex items-center justify-between border-b border-b-grayF3 pb-6 dark:border-b-black44">
           <div>
-            <h3 className="mb-1 font-medium leading-6 text-black2F dark:text-grayF6">
+            <h3 className="mb-1 text-sm font-medium leading-6 text-black2F dark:text-grayF6 md:text-base">
               Browser notifications
             </h3>
-            <p className="dark:text-gray8B">
+            <p className="text-xs dark:text-gray8B md:text-base">
               Receive notifications of your browser
             </p>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeftIcon } from "@/components/icons";
+import { ChevronDownIcon, ChevronLeftIcon } from "@/components/icons";
 import {
   NotificationsContent,
   PaymentContent,
@@ -9,6 +9,14 @@ import {
   PrivacyContent,
   SecurityContent,
 } from "@/components/manage-account";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui";
 import { listNavItem } from "@/constants/manage-account.const";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -42,8 +50,8 @@ export default function ManageAccountDetail(props: ManageAccountDetailProps) {
   }
 
   return (
-    <div className="container">
-      <div className="mb-11 flex items-center gap-3 pt-10">
+    <div className="container pt-10 xl:pt-0">
+      <div className="mb-11 hidden items-center gap-3 pt-10 xl:flex">
         <Link href={"/"} className="flex items-center gap-2 dark:text-grayF3">
           <ChevronLeftIcon />
           <span className="leading-6">Back</span>
@@ -53,7 +61,7 @@ export default function ManageAccountDetail(props: ManageAccountDetailProps) {
           Personal Information
         </p>
       </div>
-      <div className="flex items-center gap-16 border-b border-grayF3 dark:border-black44">
+      <div className="hidden items-center gap-16 border-b border-grayF3 dark:border-black44 xl:flex">
         {listNavItem.map((item, index) => (
           <div
             key={index}
@@ -68,7 +76,37 @@ export default function ManageAccountDetail(props: ManageAccountDetailProps) {
           </div>
         ))}
       </div>
-      <div className="w-[740px]">
+      <div className="mx-5 mb-[30px] xl:hidden">
+        <Select onValueChange={(value) => setCurrentTag(value as CurrentTag)}>
+          <SelectTrigger
+            className="h-auto w-full rounded-xl border-grayC3 px-6 py-3 text-base text-blue53 dark:border-black44 dark:text-grayF3"
+            icon={
+              <ChevronDownIcon className="w-[14px] text-black44 dark:text-grayC3" />
+            }
+          >
+            <SelectValue
+              placeholder={
+                listNavItem.find((item) => item.tag === currentTag)?.title
+              }
+            />
+          </SelectTrigger>
+          <SelectContent className="border-grayC3 bg-white dark:border-black44 dark:bg-black">
+            <SelectGroup>
+              {listNavItem.map((item) => (
+                <SelectItem
+                  key={item.tag}
+                  onSelect={() => handleClickNavItem(item)}
+                  className="text-base text-black44 dark:text-grayF3"
+                  value={item.tag}
+                >
+                  {item.title}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </div>
+      <div className="mx-5 xl:mx-0 xl:w-[740px]">
         {currentTag === "personal-info" && <PersonalInfoContent />}
         {currentTag === "security" && <SecurityContent />}
         {currentTag === "notifications" && <NotificationsContent />}

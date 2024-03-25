@@ -18,17 +18,17 @@ export function ModelAuth({
       <div className="absolute inset-0 z-30 flex items-center justify-center">
         <div
           className={twMerge(
-            "relative min-w-[466px] rounded-[20px] bg-white px-12 py-[54px] dark:bg-black",
+            "relative rounded-[20px] bg-white p-[30px] dark:bg-black md:min-w-[466px] xl:px-12 xl:py-[54px]",
             className,
           )}
         >
           <Link
             href={"/"}
-            className="absolute right-0 top-0 -translate-y-2/4 translate-x-2/4 rounded-full dark:border dark:border-black44 dark:bg-black29"
+            className="absolute right-6 top-6 flex h-7 w-7 -translate-y-2/4 translate-x-2/4 items-center justify-center rounded-full border border-grayF3 bg-white dark:border dark:border-black44 dark:bg-black29 xl:right-0 xl:top-0 xl:h-9 xl:w-9"
           >
-            <CloseIcon className="dark:text-gray8B" />
+            <CloseIcon className="text-gray8B" />
           </Link>
-          <h2 className="mb-5 text-center text-[40px] font-bold text-black dark:text-grayFD">
+          <h2 className="mb-5 text-center text-[30px] font-bold leading-10 text-black dark:text-grayFD xl:text-[40px] xl:leading-none">
             {title}
           </h2>
           <div className="mb-5 flex items-center gap-3">

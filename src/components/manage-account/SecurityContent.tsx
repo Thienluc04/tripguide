@@ -5,8 +5,8 @@ interface SecurityContentProps {}
 
 export function SecurityContent(props: SecurityContentProps) {
   return (
-    <div className="mt-[70px]">
-      <div className="mb-[50px] border-b border-grayF3 pb-[50px] dark:border-black29">
+    <div className="xl:mt-[70px]">
+      <div className="mb-7 border-b border-grayF3 pb-6 dark:border-black29 xl:mb-[50px] xl:pb-[50px]">
         <h2 className="mb-3 text-2xl font-medium leading-9 text-black dark:text-gray8B">
           Login
         </h2>
@@ -25,12 +25,12 @@ export function SecurityContent(props: SecurityContentProps) {
           </Button>
         </div>
       </div>
-      <div className="mb-[50px] border-b border-grayF3 pb-[50px] dark:border-black29">
+      <div className="mb-10 border-b border-grayF3 pb-10 dark:border-black29 xl:mb-[50px] xl:pb-[50px]">
         <h2 className="mb-3 text-2xl font-medium leading-9 text-black dark:text-grayFD">
           Social accounts
         </h2>
-        <div className="flex items-center">
-          <div className="flex flex-1 items-center justify-between">
+        <div className="flex flex-col items-center gap-10 xl:flex-row xl:gap-0">
+          <div className="flex w-full flex-1 items-center justify-between">
             <div>
               <h3 className="mb-2 text-sm font-medium text-black dark:text-grayFD">
                 Facebook
@@ -44,8 +44,8 @@ export function SecurityContent(props: SecurityContentProps) {
               Connect
             </Button>
           </div>
-          <div className="mx-12 h-[60px] w-[1px] bg-grayF3 dark:bg-black29"></div>
-          <div className="flex flex-1 items-center justify-between">
+          <div className="mx-12 hidden h-[60px] w-[1px] bg-grayF3 dark:bg-black29 xl:block"></div>
+          <div className="flex w-full flex-1 items-center justify-between">
             <div>
               <h3 className="mb-2 text-sm font-medium leading-5 dark:text-grayFD">
                 Apple account
@@ -65,8 +65,8 @@ export function SecurityContent(props: SecurityContentProps) {
         <h2 className="mb-8 text-2xl font-medium leading-9 text-black dark:text-grayFD">
           Device history
         </h2>
-        <div className="mb-11 flex items-center justify-between border-b border-grayF3 pb-11 dark:border-black29">
-          <div className="flex items-center gap-5">
+        <div className="mb-10 flex flex-col  items-center justify-between gap-7 border-b border-grayF3 pb-10 dark:border-black29 md:flex-row xl:mb-11 xl:gap-0 xl:pb-11">
+          <div className="flex w-full items-center gap-5 md:w-auto">
             <DesktopIcon className="dark:border-grayC3" />
             <div>
               <p className="mb-1 text-xs text-gray8B dark:text-grayC3">
@@ -84,8 +84,8 @@ export function SecurityContent(props: SecurityContentProps) {
             Log out device
           </Button>
         </div>
-        <div className="mb-11 flex items-center justify-between border-b border-grayF3 pb-11 dark:border-black29">
-          <div className="flex items-center gap-5">
+        <div className="mb-10 flex flex-col  items-center justify-between gap-7 border-b border-grayF3 pb-10 dark:border-black29 md:flex-row xl:mb-11 xl:gap-0 xl:pb-11">
+          <div className="flex w-full items-center gap-5 md:w-auto">
             <DesktopIcon className="dark:border-grayC3" />
             <div>
               <p className="mb-1 text-xs text-gray8B dark:text-grayC3">
@@ -103,8 +103,8 @@ export function SecurityContent(props: SecurityContentProps) {
             Log out device
           </Button>
         </div>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-5">
+        <div className="flex flex-col items-center justify-between gap-7 md:flex-row xl:gap-0">
+          <div className="flex w-full items-center gap-5 md:w-auto">
             <MobileIcon className="dark:border-grayC3" />
             <div>
               <p className="mb-1 text-xs text-gray8B dark:text-grayC3">

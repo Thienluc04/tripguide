@@ -1,3 +1,4 @@
+import { Footer } from "@/components/common";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,5 +11,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <Footer className="block xl:hidden" />
+    </>
+  );
 }

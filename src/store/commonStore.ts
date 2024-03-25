@@ -13,7 +13,7 @@ export const useCommonStore: UseBoundStore<StoreApi<CommonStore>> = create(
       theme:
         (typeof localStorage !== "undefined" &&
           (localStorage?.getItem("theme") as "light" | "dark")) ||
-        "dark",
+        "light",
     },
     setParams: (params: CommonParams) => {
       set(() => ({ params }));

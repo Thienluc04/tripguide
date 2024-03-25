@@ -28,7 +28,7 @@ export function DetailCarContent({
   return (
     <div
       className={cn(
-        "flex flex-col items-start justify-between xl:flex-row",
+        "flex flex-col items-center justify-between xl:flex-row xl:items-start",
         className,
       )}
       {...props}

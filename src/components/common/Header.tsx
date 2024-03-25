@@ -291,12 +291,38 @@ export function Header({ className }: HeaderProps) {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
-        <Link href={"/profile"} className="xl:hidden">
+        <Popover>
+          <PopoverTrigger className="flex cursor-pointer items-center gap-2 xl:hidden">
+            <Image src={avatar} alt="avatar" width={32} height={32} />
+            <h3 className="hidden font-Roboto text-sm font-medium xl:block">
+              Delowar
+            </h3>
+            <ArrowDownIcon className="hidden xl:block" />
+          </PopoverTrigger>
+          <PopoverContent className="z-50 mr-5 flex w-auto flex-col gap-6 rounded-2xl border border-grayF3 bg-white p-5 shadow-[0px_6px_30px_0px_rgba(37,_37,_37,_0.16)] dark:border-black44 dark:bg-black29">
+            <Command className="gap-4">
+              {listOptions.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex cursor-pointer items-center gap-3 p-0"
+                  onClick={() => handleClickOption(item)}
+                  aria-hidden
+                >
+                  <div className="text-gray90 dark:text-grayC3">
+                    {item.icon}
+                  </div>
+                  <p className="text-black2F dark:text-grayF6">{item.name}</p>
+                </div>
+              ))}
+            </Command>
+          </PopoverContent>
+        </Popover>
+        {/* <Link href={"/profile"} className="xl:hidden">
           <Image src={avatar} alt="avatar" width={32} height={32} />
           <h3 className="hidden font-Roboto text-sm font-medium xl:block">
             Delowar
           </h3>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

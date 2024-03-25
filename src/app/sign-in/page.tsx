@@ -62,7 +62,7 @@ export default function SignInPage() {
           Sign In
         </Button>
         <div className="flex justify-center gap-1 text-sm">
-          <span className="text-grayF6">Don’t have an account?</span>
+          <span className="dark:text-grayF6">Don’t have an account?</span>
           <Link href={"/sign-up"} className="font-medium text-primary">
             Sign up
           </Link>

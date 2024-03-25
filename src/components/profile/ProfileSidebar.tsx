@@ -7,7 +7,7 @@ interface ProfileSidebarProps {}
 
 export function ProfileSidebar(props: ProfileSidebarProps) {
   return (
-    <div className="flex w-[350px] flex-col items-center rounded-[10px] border-2 border-grayF6 bg-white px-7 py-8 dark:border-black44 dark:bg-black29">
+    <div className="flex w-full flex-col items-center rounded-[10px] border-2 border-grayF6 bg-white px-5 py-[30px] dark:border-black44 dark:bg-black29 xl:w-[350px] xl:px-7 xl:py-8">
       <div className="relative mx-auto mb-3 inline-block text-center">
         <Image
           src={avatar}

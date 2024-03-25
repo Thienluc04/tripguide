@@ -237,7 +237,7 @@ export function NavbarFilter({
                   type="location"
                   className="xl:w-[260px]"
                   listLocation={listLocationCar}
-                  styleContent="xl:w-[248px]"
+                  styleContent="xl:w-[248px] z-50"
                   onSetLocation={(location) =>
                     setCarParams({ ...carParams, from: location })
                   }
@@ -248,7 +248,7 @@ export function NavbarFilter({
                   type="location"
                   className="xl:w-[200px]"
                   listLocation={listLocationCar}
-                  styleContent="xl:w-[230px]"
+                  styleContent="xl:w-[230px] z-40"
                   onSetLocation={(location) =>
                     setCarParams({ ...carParams, to: location })
                   }
@@ -258,6 +258,7 @@ export function NavbarFilter({
                   description="Add date"
                   type="date"
                   className="xl:w-[182px]"
+                  styleContent="z-30"
                   valueDate={carParams.checkInDate}
                   onSetDate={(date) => {
                     setCarParams({ ...carParams, checkInDate: date });
@@ -268,6 +269,7 @@ export function NavbarFilter({
                   description="Add date"
                   type="date"
                   className="xl:w-[182px]"
+                  styleContent="z-20"
                   arrowTurn={false}
                   valueDate={carParams.checkOutDate}
                   onSetDate={(date) => {

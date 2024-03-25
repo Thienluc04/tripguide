@@ -64,8 +64,8 @@ export default function MangeAccountPage(props: MangeAccountPageProps) {
   const router = useRouter();
 
   return (
-    <div className="container">
-      <div className="mb-11 flex items-center gap-3 pt-10">
+    <div className="container pt-[30px] xl:pt-0">
+      <div className="mb-11 hidden items-center gap-3 pt-10 xl:flex">
         <Link href={"/"} className="flex items-center gap-2 dark:text-grayF3">
           <ChevronLeftIcon />
           <span className="leading-6">Back</span>
@@ -74,13 +74,13 @@ export default function MangeAccountPage(props: MangeAccountPageProps) {
         <p className="leading-6 text-grayC3 dark:text-gray8B">Manage account</p>
       </div>
       <div className="mx-auto max-w-[1088px]">
-        <h1 className="mb-2 text-5xl font-bold leading-[70px] text-black dark:text-grayF6">
+        <h1 className="mb-2 text-center text-[30px] font-bold leading-[45px] text-black dark:text-grayF6 xl:text-left xl:text-5xl xl:leading-[70px]">
           Manage Account
         </h1>
-        <p className="leading-6 dark:text-grayC3">
+        <p className="text-center text-xs dark:text-grayC3 xl:text-left xl:text-base xl:leading-6">
           Manage your TripGuide.com experience
         </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-10">
+        <div className="mt-[30px] flex flex-wrap justify-center gap-5 xl:mt-8 xl:gap-10">
           {listItem.map((item, index) => (
             <div
               key={index}

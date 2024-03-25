@@ -12,7 +12,7 @@ interface PersonalInfoContentProps {}
 
 export function PersonalInfoContent(props: PersonalInfoContentProps) {
   return (
-    <div className="mt-[70px]">
+    <div className="xl:mt-[70px]">
       <div className="mb-6 flex items-center justify-between">
         <h3 className="text-2xl font-medium leading-9 text-black29 dark:text-grayF3">
           Account info
@@ -120,7 +120,7 @@ export function PersonalInfoContent(props: PersonalInfoContentProps) {
       <h3 className="mb-6 text-2xl font-medium leading-9 text-black29 dark:text-white">
         Social
       </h3>
-      <div className="mb-10 flex items-center gap-6">
+      <div className="mb-10 flex flex-wrap items-center gap-6">
         <div className="w-[358px]">
           <Label className="mb-3 inline-block text-base font-bold text-gray8B dark:text-grayC3">
             Website

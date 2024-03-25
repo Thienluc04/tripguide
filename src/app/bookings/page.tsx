@@ -10,8 +10,8 @@ export default function BookingPage() {
   const [navActive, setNavActive] = useState("total");
 
   return (
-    <div className="container flex h-full flex-1 flex-col">
-      <div className="mb-11 flex items-center gap-3 pt-10">
+    <div className="container flex h-full flex-1 flex-col px-5 pt-10 xl:px-0 xl:pt-0">
+      <div className="mb-11 hidden items-center gap-3 pt-10 xl:flex">
         <Link href={"/"} className="flex items-center gap-2 dark:text-grayF3">
           <ChevronLeftIcon />
           <span className="leading-6">Back</span>
@@ -20,13 +20,13 @@ export default function BookingPage() {
         <p className="leading-6 text-grayC3 dark:text-gray8B">Bookings</p>
       </div>
       <div>
-        <h1 className="leading-70px mb-9 text-5xl font-bold text-black29 dark:text-grayF6">
+        <h1 className="mb-[30px] text-[30px] font-bold leading-[45px] text-black29 dark:text-grayF6 xl:mb-9 xl:text-5xl xl:leading-[70px]">
           Bookings
         </h1>
-        <div className="flex items-center gap-20 border-b-2 border-b-grayF6 dark:border-b-black44">
+        <div className="flex items-center gap-6 border-b-2 border-b-grayF6 dark:border-b-black44 xl:gap-20">
           <div
             className={cn(
-              "relative cursor-pointer pb-4 pr-2 text-lg font-medium dark:text-grayC3",
+              "relative cursor-pointer pb-4 text-xs font-medium dark:text-grayC3 xl:pr-2 xl:text-lg",
               navActive === "total" &&
                 "before:absolute before:-bottom-[3px] before:left-0 before:h-[5px] before:w-full before:rounded before:bg-blueFE",
             )}
@@ -36,7 +36,7 @@ export default function BookingPage() {
           </div>
           <div
             className={cn(
-              "relative cursor-pointer pb-4 pr-2 text-lg font-medium dark:text-grayC3",
+              "relative cursor-pointer pb-4 text-xs font-medium dark:text-grayC3 xl:pr-2 xl:text-lg",
               navActive === "upcoming" &&
                 "before:absolute before:-bottom-[3px] before:left-0 before:h-[5px] before:w-full before:rounded before:bg-blueFE",
             )}
@@ -46,7 +46,7 @@ export default function BookingPage() {
           </div>
           <div
             className={cn(
-              "relative cursor-pointer pb-4 pr-2 text-lg font-medium dark:text-grayC3",
+              "relative cursor-pointer pb-4 text-xs font-medium dark:text-grayC3 xl:pr-2 xl:text-lg",
               navActive === "cancelled" &&
                 "before:absolute before:-bottom-[3px] before:left-0 before:h-[5px] before:w-full before:rounded before:bg-blueFE",
             )}

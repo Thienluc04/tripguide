@@ -10,7 +10,7 @@ interface PaymentContentProps {}
 
 export function PaymentContent(props: PaymentContentProps) {
   return (
-    <div className="mt-[70px]">
+    <div className="xl:mt-[70px]">
       <div className="mb-[18px] flex items-center justify-between">
         <h2 className="text-2xl font-medium leading-9 text-black dark:text-grayFD">
           Credit card

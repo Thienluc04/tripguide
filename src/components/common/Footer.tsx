@@ -1,27 +1,27 @@
 "use client";
 
-import Image from "next/image";
 import { MoonIcon, SunIcon } from "@/components/icons";
-import Link from "next/link";
 import {
   listBusiness,
   listServices,
   listSupport,
 } from "@/constants/footer.const";
+import Image from "next/image";
+import Link from "next/link";
 import { Button } from "../ui";
 
-import logo from "@images/logo.png";
-import { useCommonStore } from "@/store/commonStore";
 import { cn } from "@/lib/utils";
-import { useEffect, useMemo, useState } from "react";
+import { useCommonStore } from "@/store/commonStore";
+import logo from "@images/logo.png";
+import { ComponentProps } from "react";
 
-interface FooterProps {}
+interface FooterProps extends ComponentProps<"footer"> {}
 
 export function Footer(props: FooterProps) {
   const { params, setParams } = useCommonStore();
 
   return (
-    <footer>
+    <footer {...props}>
       <div
         className="!xl:mb-0 container !mb-5 !mt-10 w-[calc(100%-40px)] items-end justify-between rounded-xl bg-primary px-5 
         py-3 xl:mt-0 xl:flex xl:h-[248px] xl:w-auto xl:translate-y-1/2 xl:rounded-2xl xl:bg-[url(/images/bg-footer.png)] xl:px-[90px] xl:py-[62px]"
