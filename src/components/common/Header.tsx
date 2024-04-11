@@ -260,16 +260,16 @@ export function Header({ className }: HeaderProps) {
         </Popover>
         <div className="h-8 w-[1px] bg-grayF3 dark:bg-black44"></div>
 
-        {/* <Link href={"/sign-in"}>
+        <Link href={"/sign-in"}>
           <UserIcon
             className="flex cursor-pointer items-center justify-center rounded-full bg-grayF3 p-[6px] text-grayC3 dark:bg-black44"
             height={28}
             width={28}
           />
-        </Link> */}
+        </Link>
 
         {/* User logged */}
-        <DropdownMenu>
+        {/* <DropdownMenu>
           <DropdownMenuTrigger className="hidden cursor-pointer items-center gap-2 xl:flex">
             <Image src={avatar} alt="avatar" width={32} height={32} />
             <h3 className="hidden font-Roboto text-sm font-medium xl:block">
@@ -316,13 +316,7 @@ export function Header({ className }: HeaderProps) {
               ))}
             </Command>
           </PopoverContent>
-        </Popover>
-        {/* <Link href={"/profile"} className="xl:hidden">
-          <Image src={avatar} alt="avatar" width={32} height={32} />
-          <h3 className="hidden font-Roboto text-sm font-medium xl:block">
-            Delowar
-          </h3>
-        </Link> */}
+        </Popover> */}
       </div>
     </div>
   );

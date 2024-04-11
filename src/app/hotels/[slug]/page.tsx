@@ -61,7 +61,7 @@ export default function HotelDetailPage() {
 
   return (
     <>
-      <div className="detail-container w-[calc(100%-40px)] pt-10 xl:pt-0">
+      <div className="detail-container w-[calc(100%-40px)] pt-10 xl:w-auto xl:pt-0">
         <Breadcrumb
           list={["Home", "Hotel list"]}
           last="Hotel details"
@@ -161,7 +161,7 @@ export default function HotelDetailPage() {
         <HotelDetailsContent />
       </div>
       <div className="hidden h-[2px] bg-grayF6 dark:bg-black29 xl:block"></div>
-      <div className="mx-5 mb-[30px] max-w-[970px] xl:mx-auto xl:my-[70px] xl:mb-0">
+      <div className="mx-5 mb-[30px] max-w-[970px] xl:mx-auto xl:my-[70px] xl:mb-[70px]">
         <h2 className="mb-5 text-[30px] font-bold leading-10 text-black2F dark:text-white xl:text-5xl xl:leading-[60px]">
           Select Room
         </h2>

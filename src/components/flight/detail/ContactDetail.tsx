@@ -18,26 +18,14 @@ interface ContactDetailProps {}
 export function ContactDetail(props: ContactDetailProps) {
   return (
     <div className="w-full rounded-[20px] border border-grayF3 bg-white p-5 dark:border-black29 dark:bg-black29 xl:w-auto xl:p-10">
-      <div className="mb-6 flex justify-between xl:mr-[76px]">
+      <div className="mb-6 xl:mr-[76px]">
         <h2 className="text-2xl font-medium leading-9 text-black29 dark:text-grayFD">
           Contact Details
         </h2>
-        <div className="flex w-[112px] cursor-pointer items-center justify-center gap-2 rounded-[30px] border border-grayC3 py-2">
-          <PencilWriteIcon className="h-3 w-3 text-gray8B dark:text-grayC3" />
-          <p className="text-sm font-medium text-gray8B dark:text-grayC3">
-            Edit{" "}
-          </p>
-        </div>
       </div>
       <div className="flex flex-col gap-x-[30px] gap-y-6 xl:flex-row xl:flex-wrap">
         <InputWithLabel defaultValue="bddesign776@gmail.com" name="email">
-          Enter an email
-        </InputWithLabel>
-        <InputWithLabel
-          defaultValue="bddesign776@gmail.com"
-          name="confirmEmail"
-        >
-          Enter a Confirm Email
+          Enter email
         </InputWithLabel>
         <InputWithLabel defaultValue="Sylht, Bangladesh" name="address">
           Enter an address name

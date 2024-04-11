@@ -52,7 +52,7 @@ export default function FlightDetailPage(props: FlightDetailPageProps) {
         <FlightDetailContent />
         <FlightDetailSidebar />
       </div>
-      <div className="container w-[calc(100%-40px)]">
+      <div className="container w-[calc(100%-40px)] xl:w-auto">
         <TrendingSection data={listTrending} title="Trending Flight" />
       </div>
     </>

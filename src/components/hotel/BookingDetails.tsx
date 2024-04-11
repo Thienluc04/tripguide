@@ -54,7 +54,7 @@ export function BookingDetails(props: BookingDetailsProps) {
             <span className="text-sm dark:text-grayF3">
               2 Adults, 1 Children
             </span>
-            <ChevronDownIcon className="text-grayF3" />
+            <ChevronDownIcon className="text-black45 dark:text-grayF3" />
           </div>
         </div>
         <div className="mb-6">
