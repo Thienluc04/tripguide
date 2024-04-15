@@ -15,7 +15,7 @@ import ourBrandsDark3 from "@images/cars/our-brands-3-dark.png";
 import ourBrandsDark4 from "@images/cars/our-brands-4-dark.png";
 import ourBrandsDark5 from "@images/cars/our-brands-5-dark.png";
 import ourBrandsDark6 from "@images/cars/our-brands-6-dark.png";
-import { useCommonStore } from "@/store/commonStore";
+import { useCommonStore } from "@/store/common-store";
 
 interface OurBrandsSectionProps {}
 

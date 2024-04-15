@@ -5,14 +5,14 @@ import { tabsLink } from "@/constants/general.const";
 import { listLocation } from "@/constants/hotel.const";
 import { listLocation as listLocationCar } from "@/constants/car.const";
 import { cn } from "@/lib/utils";
-import { useHotelStore } from "@/store/hotelStore";
+import { useHotelStore } from "@/store/hotel-store";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { ComponentProps, PropsWithChildren, useState } from "react";
 import { FilterItem, Passenger } from ".";
 import { Button } from "../ui";
-import { useFlightStore } from "@/store/flightStore";
-import { useCarStore } from "@/store/carStore";
+import { useFlightStore } from "@/store/flight-store";
+import { useCarStore } from "@/store/car-store";
 
 interface NavbarFilterProps extends ComponentProps<"div"> {
   hiddenLinks?: boolean;

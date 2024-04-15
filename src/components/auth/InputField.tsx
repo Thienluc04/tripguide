@@ -16,8 +16,8 @@ interface InputFieldProps<T extends FieldValues>
   extends ComponentProps<"label"> {
   name: Path<T>;
   control: Control<T>;
-  label: string;
-  placeholder: string;
+  label?: string;
+  placeholder?: string;
   type?: HTMLInputTypeAttribute;
   messageError?: string;
 }
@@ -70,8 +70,8 @@ export function InputField<T extends FieldValues>({
         )}
       </div>
       {messageError && (
-        <div className="flex gap-1">
-          <WarningIcon className="text-red57" />
+        <div className="flex items-center gap-2">
+          <WarningIcon className=" text-red57" />
           <p className="text-[10px] font-medium text-red57">{messageError}</p>
         </div>
       )}

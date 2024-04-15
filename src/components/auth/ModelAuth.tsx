@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ComponentProps, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
-import { CloseIcon, FacebookIcon, GoogleIcon } from "../icons";
+import { CloseIcon, GoogleIcon } from "../icons";
 
 export interface ModelAuthProps extends ComponentProps<"div"> {
   title?: string;
@@ -15,10 +15,10 @@ export function ModelAuth({
   return (
     <div className="fixed inset-0 z-20">
       <div className="absolute inset-0 bg-black opacity-40"></div>
-      <div className="absolute inset-0 z-30 flex items-center justify-center">
+      <div className="absolute bottom-0 left-0 right-0 z-30 flex items-center justify-center max-sm:h-[calc(100%-78px)] sm:inset-0">
         <div
           className={twMerge(
-            "relative rounded-[20px] bg-white p-[30px] dark:bg-black md:min-w-[466px] xl:px-12 xl:py-[54px]",
+            "relative w-full bg-white p-[30px] dark:bg-black max-sm:h-full max-sm:overflow-y-auto md:overscroll-y-none md:rounded-[20px] xl:px-12 xl:py-[54px]",
             className,
           )}
         >
@@ -35,9 +35,6 @@ export function ModelAuth({
             <div className="flex h-12 flex-1 cursor-pointer items-center justify-center gap-[10px] rounded-lg bg-primary">
               <GoogleIcon />
               <span className="font-bold text-white">Sign in with Google</span>
-            </div>
-            <div className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-lg bg-black text-white dark:bg-black29">
-              <FacebookIcon />
             </div>
           </div>
           <div className="mb-5 flex items-center justify-center gap-[10px]">

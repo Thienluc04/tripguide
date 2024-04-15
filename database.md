@@ -356,8 +356,7 @@ interface Discount {
 
 # Users
 
-- fullName(string): Họ và tên
-- username(string): Tên người dùng
+- name(string): Tên người dùng
 - email(string): Email người dùng
 - phoneNumber(string): Số điện thoại người dùng
 - avatarImage(string): Ảnh đại diện
@@ -376,8 +375,7 @@ interface Discount {
 
 ```typescript
 interface User {
-  fullName: string;
-  username: string;
+  name: string;
   email: string;
   phoneNumber: string;
   avatarImage: string;

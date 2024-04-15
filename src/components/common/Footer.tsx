@@ -11,7 +11,7 @@ import Link from "next/link";
 import { Button } from "../ui";
 
 import { cn } from "@/lib/utils";
-import { useCommonStore } from "@/store/commonStore";
+import { useCommonStore } from "@/store/common-store";
 import logo from "@images/logo.png";
 import { ComponentProps } from "react";
 

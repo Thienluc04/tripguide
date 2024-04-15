@@ -31,6 +31,7 @@
         - Trẻ con: 50% giá
         - Trẻ sơ sinh: free
     - Nếu như chọn quá số người cho phép trong 1 phòng thì sẽ thông báo
+    - Khi đăng ký, chỉ để trường name (bỏ first name và last name)
         
 - Khách sạn:
     - Một khách sạn có thể có nhiều phòng

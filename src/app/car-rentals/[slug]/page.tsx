@@ -10,7 +10,7 @@ import carDetail3 from "@images/cars/detail-3.png";
 import carDetail4 from "@images/cars/detail-4.png";
 
 import { DetailCarContent, FeedbackSection } from "@/components/car/detail";
-import { useCommonStore } from "@/store/commonStore";
+import { useCommonStore } from "@/store/common-store";
 import { TrendItem } from "@/types/general";
 import certified from "@images/cars/certified.png";
 import guaranteeDark from "@images/cars/guarantee-dark.png";

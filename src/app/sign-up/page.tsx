@@ -1,99 +1,52 @@
 "use client";
 
-import { InputField, ModelAuth } from "@/components/auth";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/components/ui";
-import Link from "next/link";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import authApi from "@/api-client/auth-api";
+import { ModelAuth } from "@/components/auth";
+import { BaseFormRegister } from "@/components/auth/BaseFormRegister";
+import { LINKS_URL } from "@/constants/link-url.const";
+import {
+  RegisterSchema,
+  RegisterSchemaType,
+} from "@/models/schemas/register.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-
-const SignUpSchema = z.object({
-  firstName: z.string().min(1, "This field is required"),
-  lastName: z.string().min(1, "This field is required"),
-  email: z.string().email("This email is invalid"),
-  password: z.string().min(8, "Password must have at least 8 characters"),
-});
-
-type SignUpSchemaType = z.infer<typeof SignUpSchema>;
+import { useRouter } from "next/navigation";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 export default function SignUpPage() {
-  const {
-    control,
-    handleSubmit,
-    formState: { isValid, errors },
-  } = useForm<SignUpSchemaType>({
+  const form = useForm<RegisterSchemaType>({
     mode: "onSubmit",
-    resolver: zodResolver(SignUpSchema),
+    resolver: zodResolver(RegisterSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+      confirm_password: "",
+      terms: false,
+    },
   });
 
-  const handleSignUp: SubmitHandler<FieldValues> = (values) => {
-    if (!isValid) return;
-    console.log(values);
+  const router = useRouter();
+
+  const handleSignUp: SubmitHandler<RegisterSchemaType> = async (values) => {
+    try {
+      const data = await authApi.register(values);
+      toast.success(data.message);
+      router.push(LINKS_URL.LOGIN);
+    } catch (err) {
+      // Loop errors response and setError with key and value
+      const error = err as unknown as ErrorResponse;
+      for (const [key, value] of Object.entries(error?.errors as ErrorsType)) {
+        form.setError(key as keyof RegisterSchemaType, {
+          message: value.msg,
+        });
+      }
+    }
   };
 
   return (
-    <ModelAuth title="Let’s go" className="w-[520px]">
-      <form autoComplete="false" onSubmit={handleSubmit(handleSignUp)}>
-        <div className="mb-5 flex gap-[14px]">
-          <InputField
-            name="firstName"
-            control={control}
-            label="First name"
-            placeholder="First name"
-            className="w-full flex-1"
-            messageError={errors.firstName && String(errors?.firstName.message)}
-          ></InputField>
-          <InputField
-            name="lastName"
-            control={control}
-            label="Last name"
-            placeholder="Last name"
-            className="w-full flex-1"
-            messageError={errors.lastName && String(errors?.lastName.message)}
-          ></InputField>
-        </div>
-        <InputField
-          name="email"
-          control={control}
-          label="Email"
-          type="email"
-          placeholder="Enter your Email"
-          className="mb-5"
-          messageError={errors.email && String(errors?.email.message)}
-        ></InputField>
-        <InputField
-          name="password"
-          control={control}
-          label="Password"
-          type="password"
-          placeholder="Enter your password"
-          className="mb-5"
-          messageError={errors.password && String(errors?.password.message)}
-        ></InputField>
-        <div className="mb-5 flex gap-[14px]">
-          <span className="pt-2">
-            <Checkbox />
-          </span>
-          <p className="max-w-[262px] text-sm dark:text-grayF3">
-            I’ve read and accepted{" "}
-            <span className="text-primary">
-              Terms of Service and Privacy Policy
-            </span>
-          </p>
-        </div>
-        <div className="mb-5">
-          <Button variant="auth" size="full" type="submit">
-            Sign up
-          </Button>
-        </div>
-        <div className="flex justify-center gap-1 text-sm">
-          <span className="dark:text-grayC3">Already have an account?</span>
-          <Link href={"/sign-in"} className="font-medium text-primary">
-            Sign in
-          </Link>
-        </div>
-      </form>
+    <ModelAuth title="Let’s go" className="w-[520px] xl:mt-[88px]">
+      <BaseFormRegister form={form} onFormSubmit={handleSignUp} />
     </ModelAuth>
   );
 }

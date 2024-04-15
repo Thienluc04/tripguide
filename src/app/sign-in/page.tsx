@@ -1,73 +1,48 @@
 "use client";
 
-import { InputField, ModelAuth } from "@/components/auth";
-import { Button } from "@/components/ui";
+import authApi from "@/api-client/auth-api";
+import { ModelAuth } from "@/components/auth";
+import { BaseFormLogin } from "@/components/auth/BaseFormLogin";
+import { LINKS_URL } from "@/constants/link-url.const";
+import { LoginSchema, LoginSchemaType } from "@/models/schemas/login.schema";
+import { useCommonStore } from "@/store/common-store";
+import { saveToken } from "@/utils/handle-token.util";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { z } from "zod";
-
-const SignInSchema = z.object({
-  email: z.string().email("This email is invalid"),
-  password: z.string().min(8, "Password must have at least 8 characters"),
-});
-
-type SignInSchemaType = z.infer<typeof SignInSchema>;
+import { useRouter } from "next/navigation";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 export default function SignInPage() {
-  const {
-    control,
-    handleSubmit,
-    formState: { isValid, errors },
-  } = useForm<SignInSchemaType>({
+  const form = useForm<LoginSchemaType>({
     mode: "onSubmit",
-    resolver: zodResolver(SignInSchema),
+    resolver: zodResolver(LoginSchema),
   });
 
-  const handleSignIn: SubmitHandler<FieldValues> = (values) => {
-    if (!isValid) return;
-    console.log(values);
+  const router = useRouter();
+  const { params, setParams } = useCommonStore();
+
+  const handleSignIn: SubmitHandler<LoginSchemaType> = async (values) => {
+    try {
+      const data = await authApi.login(values);
+      const tokens = data.result as TokensResult;
+      setParams({ ...params, tokens, currentUser: { name: "Thien Luc" } });
+      toast.success(data.message);
+      router.push(LINKS_URL.HOME);
+    } catch (err) {
+      // Loop errors response and setError with key and value
+      const error = err as unknown as ErrorResponse;
+
+      for (const [key, value] of Object.entries(error?.errors as ErrorsType)) {
+        form.setError(key as keyof LoginSchemaType, {
+          message: value.msg,
+        });
+      }
+    }
   };
 
   return (
-    <ModelAuth>
-      <form onSubmit={handleSubmit(handleSignIn)}>
-        <InputField
-          name="email"
-          control={control}
-          label="Email address"
-          placeholder="Enter your email"
-          type="email"
-          className="mb-5"
-          messageError={errors.email && String(errors?.email.message)}
-        />
-        <InputField
-          name="password"
-          control={control}
-          label="Password"
-          placeholder="Enter your password"
-          type="password"
-          className="mb-3"
-          messageError={errors.password && String(errors?.password.message)}
-        />
-        <div className="mb-5 text-right">
-          <Link
-            href={"/pass-recovery"}
-            className="text-sm font-medium text-primary"
-          >
-            Forgot your password?
-          </Link>
-        </div>
-        <Button variant="auth" size="full" type="submit" className="mb-5">
-          Sign In
-        </Button>
-        <div className="flex justify-center gap-1 text-sm">
-          <span className="dark:text-grayF6">Don’t have an account?</span>
-          <Link href={"/sign-up"} className="font-medium text-primary">
-            Sign up
-          </Link>
-        </div>
-      </form>
+    <ModelAuth className="w-[466px]">
+      <BaseFormLogin form={form} onFormSubmit={handleSignIn} />
     </ModelAuth>
   );
 }

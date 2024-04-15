@@ -6,32 +6,39 @@ import { ComponentProps, useState } from "react";
 
 interface CheckboxProps extends ComponentProps<"input"> {
   label?: string;
+  valueChecked?: boolean;
+  onValueCheckedChange?: (checked?: boolean) => void;
 }
 
-export function Checkbox({ label, className, ...props }: CheckboxProps) {
-  const [checked, setChecked] = useState<boolean>(false);
-
+export function Checkbox({
+  label,
+  className,
+  valueChecked = false,
+  onValueCheckedChange = () => {},
+  ...props
+}: CheckboxProps) {
   return (
     <label className={cn("cursor-pointer", label && "flex items-center gap-3")}>
       <span>
         <input
           type="checkbox"
-          checked={checked}
+          checked={valueChecked}
           name=""
           id=""
           className={cn("hidden", className)}
           {...props}
-          onChange={() => setChecked(!checked)}
+          onChange={() => onValueCheckedChange(!valueChecked)}
         />
+
         <span
           className={clsx(
-            checked
+            valueChecked
               ? "bg-primary text-white dark:text-black"
               : "border border-grayF3 bg-grayF6 dark:border-black44 dark:bg-transparent",
             "inline-flex h-4 w-4 items-center justify-center rounded",
           )}
         >
-          {checked && (
+          {valueChecked && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-3 w-3"

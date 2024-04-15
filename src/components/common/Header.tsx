@@ -42,11 +42,13 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown";
 import { useRouter } from "next/navigation";
+import { useCommonStore } from "@/store/common-store";
 
 interface HeaderProps extends ComponentProps<"div"> {}
 
 export function Header({ className }: HeaderProps) {
   const router = useRouter();
+  const { params } = useCommonStore();
 
   const handleClickOption = (item: OptionHeader) => {
     if (item.href) {
@@ -260,63 +262,73 @@ export function Header({ className }: HeaderProps) {
         </Popover>
         <div className="h-8 w-[1px] bg-grayF3 dark:bg-black44"></div>
 
-        <Link href={"/sign-in"}>
-          <UserIcon
-            className="flex cursor-pointer items-center justify-center rounded-full bg-grayF3 p-[6px] text-grayC3 dark:bg-black44"
-            height={28}
-            width={28}
-          />
-        </Link>
+        {!params.currentUser && (
+          <Link href={"/sign-in"}>
+            <UserIcon
+              className="flex cursor-pointer items-center justify-center rounded-full bg-grayF3 p-[6px] text-grayC3 dark:bg-black44"
+              height={28}
+              width={28}
+            />
+          </Link>
+        )}
 
         {/* User logged */}
-        {/* <DropdownMenu>
-          <DropdownMenuTrigger className="hidden cursor-pointer items-center gap-2 xl:flex">
-            <Image src={avatar} alt="avatar" width={32} height={32} />
-            <h3 className="hidden font-Roboto text-sm font-medium xl:block">
-              Delowar
-            </h3>
-            <ArrowDownIcon className="hidden xl:block" />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="z-50 flex  flex-col gap-6 rounded-2xl border border-grayF3 bg-white p-5 shadow-[0px_6px_30px_0px_rgba(37,_37,_37,_0.16)] dark:border-black44 dark:bg-black29 xl:mr-7">
-            {listOptions.map((item, index) => (
-              <DropdownMenuItem
-                key={index}
-                className="flex cursor-pointer items-center gap-5 p-0"
-                onClick={() => handleClickOption(item)}
-                aria-hidden
-              >
-                <div className="text-gray90 dark:text-grayC3">{item.icon}</div>
-                <p className="text-black2F dark:text-grayF6">{item.name}</p>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <Popover>
-          <PopoverTrigger className="flex cursor-pointer items-center gap-2 xl:hidden">
-            <Image src={avatar} alt="avatar" width={32} height={32} />
-            <h3 className="hidden font-Roboto text-sm font-medium xl:block">
-              Delowar
-            </h3>
-            <ArrowDownIcon className="hidden xl:block" />
-          </PopoverTrigger>
-          <PopoverContent className="z-50 mr-5 flex w-auto flex-col gap-6 rounded-2xl border border-grayF3 bg-white p-5 shadow-[0px_6px_30px_0px_rgba(37,_37,_37,_0.16)] dark:border-black44 dark:bg-black29">
-            <Command className="gap-4">
-              {listOptions.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex cursor-pointer items-center gap-3 p-0"
-                  onClick={() => handleClickOption(item)}
-                  aria-hidden
-                >
-                  <div className="text-gray90 dark:text-grayC3">
-                    {item.icon}
-                  </div>
-                  <p className="text-black2F dark:text-grayF6">{item.name}</p>
-                </div>
-              ))}
-            </Command>
-          </PopoverContent>
-        </Popover> */}
+        {params.currentUser && (
+          <>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="hidden cursor-pointer items-center gap-2 xl:flex">
+                <Image src={avatar} alt="avatar" width={32} height={32} />
+                <h3 className="hidden font-Roboto text-sm font-medium xl:block">
+                  Delowar
+                </h3>
+                <ArrowDownIcon className="hidden xl:block" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="z-50 flex  flex-col gap-6 rounded-2xl border border-grayF3 bg-white p-5 shadow-[0px_6px_30px_0px_rgba(37,_37,_37,_0.16)] dark:border-black44 dark:bg-black29 xl:mr-7">
+                {listOptions.map((item, index) => (
+                  <DropdownMenuItem
+                    key={index}
+                    className="flex cursor-pointer items-center gap-5 p-0"
+                    onClick={() => handleClickOption(item)}
+                    aria-hidden
+                  >
+                    <div className="text-gray90 dark:text-grayC3">
+                      {item.icon}
+                    </div>
+                    <p className="text-black2F dark:text-grayF6">{item.name}</p>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Popover>
+              <PopoverTrigger className="flex cursor-pointer items-center gap-2 xl:hidden">
+                <Image src={avatar} alt="avatar" width={32} height={32} />
+                <h3 className="hidden font-Roboto text-sm font-medium xl:block">
+                  Delowar
+                </h3>
+                <ArrowDownIcon className="hidden xl:block" />
+              </PopoverTrigger>
+              <PopoverContent className="z-50 mr-5 flex w-auto flex-col gap-6 rounded-2xl border border-grayF3 bg-white p-5 shadow-[0px_6px_30px_0px_rgba(37,_37,_37,_0.16)] dark:border-black44 dark:bg-black29">
+                <Command className="gap-4">
+                  {listOptions.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex cursor-pointer items-center gap-3 p-0"
+                      onClick={() => handleClickOption(item)}
+                      aria-hidden
+                    >
+                      <div className="text-gray90 dark:text-grayC3">
+                        {item.icon}
+                      </div>
+                      <p className="text-black2F dark:text-grayF6">
+                        {item.name}
+                      </p>
+                    </div>
+                  ))}
+                </Command>
+              </PopoverContent>
+            </Popover>
+          </>
+        )}
       </div>
     </div>
   );

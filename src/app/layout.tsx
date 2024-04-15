@@ -1,47 +1,23 @@
-"use client";
-
-import { Header } from "@/components/common";
-import { useCommonStore } from "@/store/commonStore";
-import { DM_Sans } from "next/font/google";
-import { useEffect } from "react";
-import { ToastContainer } from "react-toastify";
+import { MainContainer } from "@/components/container";
 import "react-toastify/dist/ReactToastify.css";
-import { twMerge } from "tailwind-merge";
 import "./globals.scss";
-
-export const dmSans = DM_Sans({
-  weight: ["700", "600", "500", "400"],
-  subsets: ["latin"],
-});
+import { cookies } from "next/headers";
+import { TOKENS_NAME } from "@/constants/token.const";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const { params } = useCommonStore();
-
-  useEffect(() => {
-    if (typeof localStorage !== "undefined") {
-      localStorage?.setItem("theme", params.theme);
-    }
-  }, [params.theme]);
+  const cookieStore = cookies();
+  const access_token = cookieStore.get(TOKENS_NAME.ACCESS_TOKEN)
+    ?.value as string;
+  const refresh_token = cookieStore.get(TOKENS_NAME.REFRESH_TOKEN)
+    ?.value as string;
 
   return (
-    <html lang="en">
-      <body
-        className={twMerge(
-          dmSans.className,
-          params.theme === "dark" ? "dark" : "light",
-          "flex min-h-screen flex-col",
-        )}
-      >
-        <ToastContainer />
-        <Header />
-        <div className="flex h-full flex-1 flex-col bg-grayAFB text-black44 dark:bg-black">
-          {children}
-        </div>
-      </body>
-    </html>
+    <MainContainer tokens={{ access_token, refresh_token }}>
+      {children}
+    </MainContainer>
   );
 }
