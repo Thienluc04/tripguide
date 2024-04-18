@@ -1,6 +1,11 @@
+interface CurrentUser {
+  name: string;
+  avatar: string;
+}
+
 interface CommonParams {
   theme?: "dark" | "light";
-  currentUser?: object;
+  currentUser?: CurrentUser;
   tokens?: TokensResult;
 }
 

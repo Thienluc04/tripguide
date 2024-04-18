@@ -13,3 +13,8 @@ interface ErrorResponse {
     [key: string]: any;
   };
 }
+
+interface ErrorKeyValue {
+  key: string;
+  value: string;
+}

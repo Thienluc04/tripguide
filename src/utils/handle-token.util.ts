@@ -1,4 +1,4 @@
-import { TOKENS_NAME } from "@/constants/token.const";
+import { TOKEN_NAME } from "@/constants/token.const";
 
 export const saveToken = ({
   access_token,
@@ -8,10 +8,10 @@ export const saveToken = ({
   refresh_token?: string;
 }) => {
   if (access_token && access_token?.length > 0) {
-    localStorage.setItem(TOKENS_NAME.ACCESS_TOKEN, access_token);
+    localStorage.setItem(TOKEN_NAME.ACCESS_TOKEN, access_token);
   }
   if (refresh_token && refresh_token?.length > 0) {
-    localStorage.setItem(TOKENS_NAME.REFRESH_TOKEN, refresh_token);
+    localStorage.setItem(TOKEN_NAME.REFRESH_TOKEN, refresh_token);
   }
 };
 

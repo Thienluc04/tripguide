@@ -18,3 +18,4 @@ export * from "./TourUpdateItem";
 export * from "./PaymentItem";
 export * from "./SearchFilter";
 export * from "./CreditCard";
+export * from "./CurrentUserHeader";

@@ -1,21 +1,32 @@
-import { SubmitHandler, UseFormReturn } from "react-hook-form";
-import { InputField } from "./InputField";
-import { LINKS_URL } from "@/constants/link-url.const";
-import { Button } from "../ui";
+import { PAGES } from "@/constants/pages.const";
 import { LoginSchemaType } from "@/models/schemas/login.schema";
 import Link from "next/link";
+import { useEffect } from "react";
+import { SubmitHandler, UseFormReturn } from "react-hook-form";
+import { Button } from "../ui";
+import { InputField } from "./InputField";
 
 interface BaseFormLoginProps {
   form: UseFormReturn<LoginSchemaType>;
   onFormSubmit: SubmitHandler<LoginSchemaType>;
+  isLoading: boolean;
 }
 
-export function BaseFormLogin({ form, onFormSubmit }: BaseFormLoginProps) {
+export function BaseFormLogin({
+  form,
+  onFormSubmit,
+  isLoading,
+}: BaseFormLoginProps) {
   const {
     control,
     handleSubmit,
+    setFocus,
     formState: { errors },
   } = form;
+
+  useEffect(() => {
+    setFocus("email");
+  }, []);
 
   return (
     <form onSubmit={handleSubmit(onFormSubmit)}>
@@ -39,18 +50,24 @@ export function BaseFormLogin({ form, onFormSubmit }: BaseFormLoginProps) {
       />
       <div className="mb-5 text-right">
         <Link
-          href={LINKS_URL.FORGOT_PASSWORD}
+          href={PAGES.FORGOT_PASSWORD}
           className="text-sm font-medium text-primary"
         >
           Forgot your password?
         </Link>
       </div>
-      <Button variant="auth" size="full" type="submit" className="mb-5">
+      <Button
+        isLoading={isLoading}
+        variant="auth"
+        size="full"
+        type="submit"
+        className="mb-5"
+      >
         Sign In
       </Button>
       <div className="flex justify-center gap-1 text-sm">
         <span className="dark:text-grayF6">Don’t have an account?</span>
-        <Link href={LINKS_URL.REGISTER} className="font-medium text-primary">
+        <Link href={PAGES.REGISTER} className="font-medium text-primary">
           Sign up
         </Link>
       </div>

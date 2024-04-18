@@ -9,7 +9,7 @@ export const useCommonStore: UseBoundStore<StoreApi<CommonStore>> = create(
   (set) => ({
     params: {
       theme:
-        new Date().getHours() > 19 || new Date().getHours() < 6
+        new Date().getHours() >= 19 || new Date().getHours() < 6
           ? "dark"
           : "light",
     },

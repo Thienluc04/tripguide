@@ -5,11 +5,15 @@ import { CloseIcon, GoogleIcon } from "../icons";
 
 export interface ModelAuthProps extends ComponentProps<"div"> {
   title?: string;
+  noOauth?: boolean;
+  description?: string;
 }
 
 export function ModelAuth({
   className,
   title = "Welcome Back !",
+  noOauth = false,
+  description,
   children,
 }: PropsWithChildren<ModelAuthProps>) {
   return (
@@ -31,19 +35,30 @@ export function ModelAuth({
           <h2 className="mb-5 text-center text-[30px] font-bold leading-10 text-black dark:text-grayFD xl:text-[40px] xl:leading-none">
             {title}
           </h2>
-          <div className="mb-5 flex items-center gap-3">
-            <div className="flex h-12 flex-1 cursor-pointer items-center justify-center gap-[10px] rounded-lg bg-primary">
-              <GoogleIcon />
-              <span className="font-bold text-white">Sign in with Google</span>
-            </div>
-          </div>
-          <div className="mb-5 flex items-center justify-center gap-[10px]">
-            <div className="h-[1px] w-[96px] bg-grayF3 dark:bg-black44"></div>
-            <span className="text-sm text-gray8B dark:text-grayC3">
-              or continue with
-            </span>
-            <div className="h-[1px] w-[96px] bg-grayF3 dark:bg-black44"></div>
-          </div>
+          {description && (
+            <p className="mb-10 text-center text-base leading-6 text-gray8B dark:text-grayC3">
+              {description}
+            </p>
+          )}
+          {!noOauth && (
+            <>
+              <div className="mb-5 flex items-center gap-3">
+                <div className="flex h-12 flex-1 cursor-pointer items-center justify-center gap-[10px] rounded-lg bg-primary">
+                  <GoogleIcon />
+                  <span className="font-bold text-white">
+                    Sign in with Google
+                  </span>
+                </div>
+              </div>
+              <div className="mb-5 flex items-center justify-center gap-[10px]">
+                <div className="h-[1px] w-[96px] bg-grayF3 dark:bg-black44"></div>
+                <span className="text-sm text-gray8B dark:text-grayC3">
+                  or continue with
+                </span>
+                <div className="h-[1px] w-[96px] bg-grayF3 dark:bg-black44"></div>
+              </div>
+            </>
+          )}
           {children}
         </div>
       </div>

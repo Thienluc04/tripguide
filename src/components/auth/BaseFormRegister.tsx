@@ -4,21 +4,29 @@ import Link from "next/link";
 import { SubmitHandler, UseFormReturn } from "react-hook-form";
 import { Button } from "../ui";
 import { InputField } from "./InputField";
+import { useEffect } from "react";
 
 export interface BaseFormRegisterProps {
   form: UseFormReturn<RegisterSchemaType>;
   onFormSubmit: SubmitHandler<RegisterSchemaType>;
+  isLoading: boolean;
 }
 
 export function BaseFormRegister({
   form,
   onFormSubmit,
+  isLoading,
 }: BaseFormRegisterProps) {
   const {
     control,
     handleSubmit,
+    setFocus,
     formState: { errors },
   } = form;
+
+  useEffect(() => {
+    setFocus("name");
+  }, []);
 
   return (
     <form autoComplete="false" onSubmit={handleSubmit(onFormSubmit)}>
@@ -60,7 +68,7 @@ export function BaseFormRegister({
         }
       />
       <div className="mb-5">
-        <Button variant="auth" size="full" type="submit">
+        <Button isLoading={isLoading} variant="auth" size="full" type="submit">
           Sign up
         </Button>
       </div>
