@@ -34,8 +34,8 @@ export function MainContainer({ children }: MainContainerProps) {
           method: "post",
           body: JSON.stringify({ ...data.result }),
         });
-        const name = getLocalToken(LOCAL_TOKEN_NAME.NAME_USER);
-        const avatar = getLocalToken(LOCAL_TOKEN_NAME.AVATAR);
+        const name = getLocalToken(LOCAL_TOKEN_NAME.NAME_USER) || "";
+        const avatar = getLocalToken(LOCAL_TOKEN_NAME.AVATAR) || "";
         setParams({
           ...params,
           tokens: data.result,
