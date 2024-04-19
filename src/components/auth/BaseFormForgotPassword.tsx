@@ -1,10 +1,8 @@
-import { SubmitHandler, UseFormReturn } from "react-hook-form";
-import { InputField } from "./InputField";
-import { PAGES } from "@/constants/link-url.const";
-import { Button } from "../ui";
-import Link from "next/link";
-import { useEffect } from "react";
 import { ForgotPasswordSchemaType } from "@/models/schemas/forgot-password.schema";
+import { useEffect } from "react";
+import { SubmitHandler, UseFormReturn } from "react-hook-form";
+import { Button } from "../ui";
+import { InputField } from "./InputField";
 
 interface BaseFormForgotPasswordProps {
   form: UseFormReturn<ForgotPasswordSchemaType>;
