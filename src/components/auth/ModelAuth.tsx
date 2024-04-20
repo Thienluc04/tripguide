@@ -2,12 +2,15 @@ import Link from "next/link";
 import { ComponentProps, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 import { CloseIcon, GoogleIcon } from "../icons";
+import { getGoogleAuthUrl } from "@/utils/oauth-google";
 
 export interface ModelAuthProps extends ComponentProps<"div"> {
   title?: string;
   noOauth?: boolean;
   description?: string;
 }
+
+const googleOAuthUrl = getGoogleAuthUrl();
 
 export function ModelAuth({
   className,
@@ -42,14 +45,17 @@ export function ModelAuth({
           )}
           {!noOauth && (
             <>
-              <div className="mb-5 flex items-center gap-3">
+              <Link
+                href={googleOAuthUrl}
+                className="mb-5 flex items-center gap-3"
+              >
                 <div className="flex h-12 flex-1 cursor-pointer items-center justify-center gap-[10px] rounded-lg bg-primary">
                   <GoogleIcon />
                   <span className="font-bold text-white">
                     Sign in with Google
                   </span>
                 </div>
-              </div>
+              </Link>
               <div className="mb-5 flex items-center justify-center gap-[10px]">
                 <div className="h-[1px] w-[96px] bg-grayF3 dark:bg-black44"></div>
                 <span className="text-sm text-gray8B dark:text-grayC3">

@@ -61,6 +61,7 @@ export function CurrentUserHeader(props: CurrentUserHeaderProps) {
                 alt="avatar"
                 width={32}
                 height={32}
+                className="rounded-full"
               />
               <h3 className="hidden font-Roboto text-sm font-medium xl:block">
                 {params.currentUser.name}
@@ -90,6 +91,7 @@ export function CurrentUserHeader(props: CurrentUserHeaderProps) {
                 alt="avatar"
                 width={32}
                 height={32}
+                className="rounded-full"
               />
               <h3 className="hidden font-Roboto text-sm font-medium xl:block">
                 {params.currentUser.name}
