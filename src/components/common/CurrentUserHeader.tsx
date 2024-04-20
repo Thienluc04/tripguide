@@ -15,11 +15,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown";
+import { LOCAL_TOKEN_NAME } from "@/constants/token.const";
+import { removeLocalToken } from "@/utils/general.util";
 
 interface CurrentUserHeaderProps {}
 
 export function CurrentUserHeader(props: CurrentUserHeaderProps) {
   const { params, setParams } = useCommonStore();
+  console.log("CurrentUserHeader ~ params:", params);
   const router = useRouter();
 
   const handleClickOption = async (item: OptionHeader) => {
@@ -30,6 +33,7 @@ export function CurrentUserHeader(props: CurrentUserHeaderProps) {
         const tokens = params.tokens as TokensResult;
         await authApi.logout({ ...tokens });
         setParams({ theme: params.theme });
+        removeLocalToken([LOCAL_TOKEN_NAME.AVATAR, LOCAL_TOKEN_NAME.NAME_USER]);
         router.push(PAGES.HOME);
       } catch (err) {
         setParams({ theme: params.theme });

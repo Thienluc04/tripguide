@@ -36,6 +36,14 @@ export const setLocalToken = (array: { name: string; value: string }[]) => {
   });
 };
 
+export const removeLocalToken = (items: string | string[]) => {
+  if (typeof items === "string") {
+    localStorage.removeItem(items);
+  } else {
+    items.forEach((item) => localStorage.removeItem(item));
+  }
+};
+
 export const getNewTokens = async (
   refresh_token: string,
   params: CommonParams,
