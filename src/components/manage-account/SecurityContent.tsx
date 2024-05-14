@@ -1,29 +1,37 @@
+import { useState } from "react";
 import { DesktopIcon, MobileIcon } from "../icons";
 import { Button } from "../ui";
+import { ChangePassword } from "./ChangePassword";
 
 interface SecurityContentProps {}
 
 export function SecurityContent(props: SecurityContentProps) {
+  const [changePassword, setChangePassword] = useState(false);
+
   return (
     <div className="xl:mt-[70px]">
       <div className="mb-7 border-b border-grayF3 pb-6 dark:border-black29 xl:mb-[50px] xl:pb-[50px]">
         <h2 className="mb-3 text-2xl font-medium leading-9 text-black dark:text-gray8B">
           Login
         </h2>
-        <div className="flex justify-between">
+        <div className="flex items-center justify-between">
           <div>
             <h3 className="mb-2 text-sm font-medium text-black dark:text-grayFD">
               Password
             </h3>
-            <p className="text-xs text-gray8B">Last updated 1 month ago</p>
           </div>
           <Button
             variant={"outline"}
             className="h-[34px] w-auto rounded-full border-grayC3 px-4 py-2 text-sm font-bold text-black2F dark:border-gray8B dark:text-grayC3"
+            disabled={changePassword}
+            onClick={() => setChangePassword(true)}
           >
-            Update password
+            Change password
           </Button>
         </div>
+        {changePassword && (
+          <ChangePassword onCancel={() => setChangePassword(false)} />
+        )}
       </div>
       <div className="mb-10 border-b border-grayF3 pb-10 dark:border-black29 xl:mb-[50px] xl:pb-[50px]">
         <h2 className="mb-3 text-2xl font-medium leading-9 text-black dark:text-grayFD">

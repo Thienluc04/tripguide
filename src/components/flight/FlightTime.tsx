@@ -1,4 +1,4 @@
-import { PlaneHorizontalIcon } from '../icons';
+import { PlaneHorizontalIcon } from "../icons";
 
 interface FlightTimeProps {}
 
@@ -19,7 +19,7 @@ export function FlightTime(props: FlightTimeProps) {
               width="40.5"
               height="0.5"
               stroke="#B1B5C4"
-              stroke-width="0.5"
+              strokeWidth="0.5"
               stroke-dasharray="3 3"
             />
           </svg>
@@ -38,7 +38,7 @@ export function FlightTime(props: FlightTimeProps) {
             />
           </svg>
           <PlaneHorizontalIcon className="absolute bottom-0 left-2/4 -translate-x-2/4 translate-y-2/4 text-blueFE" />
-          <span className="text-gray90 w-10 text-[10px] font-medium absolute top-[14px] left-2/4 -translate-x-2/4">
+          <span className="absolute left-2/4 top-[14px] w-10 -translate-x-2/4 text-[10px] font-medium text-gray90">
             5h 20m
           </span>
         </span>
@@ -55,13 +55,13 @@ export function FlightTime(props: FlightTimeProps) {
               width="40.5"
               height="0.5"
               stroke="#B1B5C4"
-              stroke-width="0.5"
+              strokeWidth="0.5"
               stroke-dasharray="3 3"
             />
           </svg>
         </span>
       </div>
-      <p className="text-grayC3 text-sm font-medium text-center mt-2">
+      <p className="mt-2 text-center text-sm font-medium text-grayC3">
         nonstop
       </p>
     </div>

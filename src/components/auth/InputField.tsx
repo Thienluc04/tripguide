@@ -13,13 +13,14 @@ import {
 import { twMerge } from "tailwind-merge";
 
 interface InputFieldProps<T extends FieldValues>
-  extends ComponentProps<"label"> {
+  extends ComponentProps<"input"> {
   name: Path<T>;
   control: Control<T>;
   label?: string;
   placeholder?: string;
   type?: HTMLInputTypeAttribute;
   messageError?: string;
+  classInput?: string;
 }
 
 export function InputField<T extends FieldValues>({
@@ -30,6 +31,8 @@ export function InputField<T extends FieldValues>({
   type = "text",
   className = "",
   messageError,
+  classInput,
+  ...props
 }: InputFieldProps<T>) {
   const { field } = useController({
     name,
@@ -49,9 +52,12 @@ export function InputField<T extends FieldValues>({
             "h-12 w-full rounded-lg bg-grayF3 px-[14px] dark:bg-black29 dark:text-grayF3 dark:placeholder:text-gray8B",
             messageError && "border border-red57 bg-white",
             type === "password" && "pr-11",
+            props.disabled && "cursor-not-allowed opacity-50",
+            classInput,
           )}
           placeholder={placeholder}
           {...field}
+          {...props}
         />
         {type === "password" && (
           <>

@@ -78,3 +78,4 @@ export * from "./BirthdayIcon";
 export * from "./MaleIcon";
 export * from "./DesktopIcon";
 export * from "./MobileIcon";
+export * from "./FemaleIcon";

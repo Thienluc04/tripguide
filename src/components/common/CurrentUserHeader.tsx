@@ -2,7 +2,7 @@ import authApi from "@/api-client/auth-api";
 import { PAGES } from "@/constants/pages.const";
 import { listOptions } from "@/constants/header.const";
 import { useCommonStore } from "@/store/common-store";
-import avatar from "@images/avatar.png";
+import avatarDefault from "@images/avatar-default.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -22,7 +22,6 @@ interface CurrentUserHeaderProps {}
 
 export function CurrentUserHeader(props: CurrentUserHeaderProps) {
   const { params, setParams } = useCommonStore();
-  console.log("CurrentUserHeader ~ params:", params);
   const router = useRouter();
 
   const handleClickOption = async (item: OptionHeader) => {
@@ -46,7 +45,7 @@ export function CurrentUserHeader(props: CurrentUserHeaderProps) {
   return (
     <>
       {!params.currentUser && (
-        <Link href={"/sign-in"}>
+        <Link href={PAGES.LOGIN}>
           <UserIcon
             className="flex cursor-pointer items-center justify-center rounded-full bg-grayF3 p-[6px] text-grayC3 dark:bg-black44"
             height={28}
@@ -61,11 +60,11 @@ export function CurrentUserHeader(props: CurrentUserHeaderProps) {
           <DropdownMenu>
             <DropdownMenuTrigger className="hidden cursor-pointer items-center gap-2 xl:flex">
               <Image
-                src={params.currentUser.avatar || avatar}
+                src={params.currentUser.avatar || avatarDefault}
                 alt="avatar"
                 width={32}
                 height={32}
-                className="rounded-full"
+                className="h-8 w-8 rounded-full"
               />
               <h3 className="hidden font-Roboto text-sm font-medium xl:block">
                 {params.currentUser.name}
@@ -91,11 +90,11 @@ export function CurrentUserHeader(props: CurrentUserHeaderProps) {
           <Popover>
             <PopoverTrigger className="flex cursor-pointer items-center gap-2 xl:hidden">
               <Image
-                src={params.currentUser.avatar || avatar}
+                src={params.currentUser.avatar || avatarDefault}
                 alt="avatar"
                 width={32}
                 height={32}
-                className="rounded-full"
+                className="h-8 w-8 rounded-full"
               />
               <h3 className="hidden font-Roboto text-sm font-medium xl:block">
                 {params.currentUser.name}

@@ -10,16 +10,6 @@ interface LoginRequest {
   password: string;
 }
 
-interface ForgotPasswordRequest {
-  email: string;
-}
-
-interface ResetPasswordRequest {
-  forgot_password_token: string;
-  password: string;
-  confirm_password: string;
-}
-
 interface RefreshTokenRequest {
-  refresh_token: string
+  refresh_token: string;
 }

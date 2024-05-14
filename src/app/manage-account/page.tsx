@@ -1,16 +1,16 @@
 "use client";
 
-import { Breadcrumb } from "@/components/common";
-import Image, { StaticImageData } from "next/image";
-import personalDetail from "@images/manage-account/personal-detail.png";
-import security from "@images/manage-account/security.png";
+import { ChevronLeftIcon } from "@/components/icons";
+import { PAGES } from "@/constants/pages.const";
 import notifications from "@images/manage-account/notifications.png";
 import paymentPayout from "@images/manage-account/payment-payout.png";
-import privacy from "@images/manage-account/privacy.png";
+import personalDetail from "@images/manage-account/personal-detail.png";
 import preference from "@images/manage-account/preference.png";
-import { useRouter } from "next/navigation";
+import privacy from "@images/manage-account/privacy.png";
+import security from "@images/manage-account/security.png";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { ChevronLeftIcon } from "@/components/icons";
+import { useRouter } from "next/navigation";
 
 interface Item {
   image: string | StaticImageData;
@@ -66,7 +66,10 @@ export default function MangeAccountPage(props: MangeAccountPageProps) {
   return (
     <div className="container pt-[30px] xl:pt-0">
       <div className="mb-11 hidden items-center gap-3 pt-10 xl:flex">
-        <Link href={"/"} className="flex items-center gap-2 dark:text-grayF3">
+        <Link
+          href={PAGES.HOME}
+          className="flex items-center gap-2 dark:text-grayF3"
+        >
           <ChevronLeftIcon />
           <span className="leading-6">Back</span>
         </Link>

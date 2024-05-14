@@ -1,12 +1,12 @@
 ### Các chức năng chính
 
-- Đăng nhập/Đăng ký (có OAuth 2.0 đăng nhập/đăng ký với google hoặc facebook)
-- Đổi mật khẩu
-- Quên mật khẩu
+- Đăng nhập/Đăng ký (có OAuth 2.0 đăng nhập/đăng ký với google) --> Done
+- Đổi mật khẩu --> Done
+- Quên mật khẩu --> Done
 - Tìm kiếm, lọc hotel, flight, car
 - Đánh giá về hotel và car -> Rating, Comment
 - Booking khách sạn, máy bay, thuê xe.
-- Edit profile
+- Edit profile --> Done
 - Danh sách booking, lọc bookings theo upcoming (sắp tới), cancelled (đã hủy)
 
 ## Các chức năng bổ sung

@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import { TOKEN_NAME } from "./constants/token.const";
 import { PAGES } from "./constants/pages.const";
+import { TOKEN_NAME } from "./constants/token.const";
 
 const authPaths = [
   "/sign-up",
   "/sign-in",
   "/forgot-password",
   "/reset-password",
+  "/profile",
+  "/manage-account",
 ];
 
 export function middleware(req: NextRequest) {
@@ -21,5 +23,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/sign-up", "/sign-in"],
+  matcher: ["/", "/sign-in", "/sign-up"],
 };

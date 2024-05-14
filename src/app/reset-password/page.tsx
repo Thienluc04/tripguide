@@ -1,6 +1,6 @@
 "use client";
 
-import authApi from "@/api-client/auth-api";
+import userApi from "@/api-client/user-api";
 import { BaseFormResetPassword, ModelAuth } from "@/components/auth";
 import { PAGES } from "@/constants/pages.const";
 import {
@@ -9,7 +9,7 @@ import {
 } from "@/models/schemas/reset-password.schema";
 import { wrapCheckErrorForm } from "@/utils/wrap-check-error.util";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -24,14 +24,14 @@ export default function ForgotPasswordPage() {
   const searchParams = useSearchParams();
   const [forgotPassLoading, setForgotPassLoading] = useState(false);
 
-  const handleSignIn: SubmitHandler<ResetPasswordSchemaType> = async (
+  const handleResetPassword: SubmitHandler<ResetPasswordSchemaType> = async (
     values,
   ) => {
     setForgotPassLoading(true);
     await wrapCheckErrorForm(
       async () => {
         const token = searchParams.get("token");
-        const { message } = await authApi.resetPassword({
+        const { message } = await userApi.resetPassword({
           ...values,
           forgot_password_token: token as string,
         });
@@ -53,7 +53,7 @@ export default function ForgotPasswordPage() {
     >
       <BaseFormResetPassword
         form={form}
-        onFormSubmit={handleSignIn}
+        onFormSubmit={handleResetPassword}
         isLoading={forgotPassLoading}
       />
     </ModelAuth>

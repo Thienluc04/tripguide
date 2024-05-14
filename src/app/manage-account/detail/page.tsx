@@ -1,5 +1,7 @@
 "use client";
 
+import userApi from "@/api-client/user-api";
+import Loading from "@/app/loading";
 import { ChevronDownIcon, ChevronLeftIcon } from "@/components/icons";
 import {
   NotificationsContent,
@@ -18,7 +20,10 @@ import {
   SelectValue,
 } from "@/components/ui";
 import { listNavItem } from "@/constants/manage-account.const";
+import { PAGES } from "@/constants/pages.const";
 import { cn } from "@/lib/utils";
+import { useCommonStore } from "@/store/common-store";
+import { User } from "@/types/user";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -28,6 +33,8 @@ interface ManageAccountDetailProps {}
 export default function ManageAccountDetail(props: ManageAccountDetailProps) {
   const [currentTag, setCurrentTag] = useState<CurrentTag>("");
   const router = useRouter();
+  const { params } = useCommonStore();
+  const [profile, setProfile] = useState<User>();
 
   useEffect(() => {
     if (global.window) {
@@ -41,18 +48,31 @@ export default function ManageAccountDetail(props: ManageAccountDetailProps) {
     }
   }, [currentTag]);
 
+  useEffect(() => {
+    (async () => {
+      const access_token = params.tokens?.access_token as string;
+      if (access_token) {
+        const { result } = await userApi.getProfile(access_token);
+        setProfile(result);
+      }
+    })();
+  }, [params]);
+
   const handleClickNavItem = (item: NavItem) => {
     setCurrentTag(item.tag as CurrentTag);
   };
 
-  if (!currentTag) {
-    return "loading...";
+  if (!currentTag || !profile) {
+    return <Loading />;
   }
 
   return (
     <div className="container pt-10 xl:pt-0">
       <div className="mb-11 hidden items-center gap-3 pt-10 xl:flex">
-        <Link href={"/"} className="flex items-center gap-2 dark:text-grayF3">
+        <Link
+          href={PAGES.MANAGE_ACCOUNT}
+          className="flex items-center gap-2 dark:text-grayF3"
+        >
           <ChevronLeftIcon />
           <span className="leading-6">Back</span>
         </Link>
@@ -107,7 +127,9 @@ export default function ManageAccountDetail(props: ManageAccountDetailProps) {
         </Select>
       </div>
       <div className="mx-5 xl:mx-0 xl:w-[740px]">
-        {currentTag === "personal-info" && <PersonalInfoContent />}
+        {currentTag === "personal-info" && (
+          <PersonalInfoContent userInfo={profile as User} />
+        )}
         {currentTag === "security" && <SecurityContent />}
         {currentTag === "notifications" && <NotificationsContent />}
         {currentTag === "payment-payout" && <PaymentContent />}

@@ -6,6 +6,7 @@ import { PAGES } from "@/constants/pages.const";
 import { LOCAL_TOKEN_NAME } from "@/constants/token.const";
 import { LoginSchema, LoginSchemaType } from "@/models/schemas/login.schema";
 import { useCommonStore } from "@/store/common-store";
+import { LoginResponse } from "@/types/user";
 import { setLocalToken } from "@/utils/general.util";
 import { wrapCheckErrorForm } from "@/utils/wrap-check-error.util";
 import { zodResolver } from "@hookform/resolvers/zod";

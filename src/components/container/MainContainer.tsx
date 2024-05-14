@@ -7,9 +7,10 @@ import { ToastContainer } from "react-toastify";
 
 import { PATH_API } from "@/constants/path-api.const";
 import { useCommonStore } from "@/store/common-store";
-import { getNewTokens } from "@/utils/general.util";
+import { getNewTokens, setLocalToken } from "@/utils/general.util";
 import { DM_Sans } from "next/font/google";
 import { useEffect } from "react";
+import { LOCAL_TOKEN_NAME } from "@/constants/token.const";
 
 export interface MainContainerProps {
   children: React.ReactNode;
@@ -48,6 +49,18 @@ export function MainContainer({ children }: MainContainerProps) {
       1000 * 60 * 10,
     );
     return () => clearInterval(interval);
+  }, [params]);
+
+  useEffect(() => {
+    if (params.currentUser) {
+      const name = params.currentUser.name;
+      const avatar = params.currentUser.avatar;
+
+      setLocalToken([
+        { name: LOCAL_TOKEN_NAME.NAME_USER, value: name },
+        { name: LOCAL_TOKEN_NAME.AVATAR, value: avatar },
+      ]);
+    }
   }, [params]);
 
   return (

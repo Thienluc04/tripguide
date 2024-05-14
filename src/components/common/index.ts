@@ -19,3 +19,4 @@ export * from "./PaymentItem";
 export * from "./SearchFilter";
 export * from "./CreditCard";
 export * from "./CurrentUserHeader";
+export * from "./UploadImage";

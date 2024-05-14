@@ -1,4 +1,5 @@
 import { PATH_API } from "@/constants/path-api.const";
+import { LoginResponse } from "@/types/user";
 import axiosClient from "./axios-client";
 
 const authApi = {
@@ -42,21 +43,7 @@ const authApi = {
 
     return response.data;
   },
-  forgotPassword: async (payload: ForgotPasswordRequest) => {
-    const response = await axiosClient.post<CommonResponse<void>>(
-      PATH_API.FORGOT_PASSWORD,
-      payload,
-    );
 
-    return response.data;
-  },
-  resetPassword: async (payload: ResetPasswordRequest) => {
-    const response = await axiosClient.post<CommonResponse<void>>(
-      PATH_API.RESET_PASSWORD,
-      payload,
-    );
-    return response.data;
-  },
   refreshToken: async (payload: RefreshTokenRequest) => {
     const response = await axiosClient.post<CommonResponse<TokensResult>>(
       PATH_API.REFRESH_TOKEN,

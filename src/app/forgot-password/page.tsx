@@ -1,6 +1,6 @@
 "use client";
 
-import authApi from "@/api-client/auth-api";
+import userApi from "@/api-client/user-api";
 import { BaseFormForgotPassword, ModelAuth } from "@/components/auth";
 import { PAGES } from "@/constants/pages.const";
 import {
@@ -29,7 +29,7 @@ export default function ForgotPasswordPage() {
     setForgotPassLoading(true);
     await wrapCheckErrorForm(
       async () => {
-        const { message } = await authApi.forgotPassword(values);
+        const { message } = await userApi.forgotPassword(values);
         toast.success(message);
         setForgotPassLoading(false);
         router.push(PAGES.LOGIN);
