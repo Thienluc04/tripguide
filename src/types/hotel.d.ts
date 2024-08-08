@@ -53,13 +53,30 @@ interface HotelParams {
   };
 }
 
+interface Amenity {
+  icon: string;
+  name: string;
+}
+
 interface Hotel {
-  image: string | StaticImageData;
-  title: string;
+  _id?: string;
+  name: string;
+  address: string;
   rating: number;
-  totalRate: number;
-  location: string;
-  place: string;
-  date: string;
-  plane: string;
+  total_rating: number;
+  features: Feature[];
+  reviews: Review[];
+  list_image: string[];
+  amenities: Amenity[];
+  utilities: string[];
+  description: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+  created_at?: Date;
+  updated_at?: Date;
+}
+
+interface ListHotelResponse extends Pagination {
+  hotels: Hotel[];
 }

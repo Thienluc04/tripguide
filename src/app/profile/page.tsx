@@ -8,6 +8,7 @@ import { User } from "@/types/user";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Loading from "../loading";
+import { PAGES } from "@/constants/pages.const";
 
 export default function ProfilePage() {
   const { params } = useCommonStore();
@@ -29,7 +30,7 @@ export default function ProfilePage() {
         <div className="container">
           <div className="mb-11 hidden items-center gap-3 pt-10 xl:flex">
             <Link
-              href={"/"}
+              href={PAGES.HOME}
               className="flex items-center gap-2 dark:text-grayF3"
             >
               <ChevronLeftIcon />

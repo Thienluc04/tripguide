@@ -54,7 +54,7 @@ export function UploadImage({ avatar }: UploadImageProps) {
           className="mx-auto h-[170px] w-[170px] rounded-full object-cover text-center"
         />
       ) : (
-        <div className="flex h-[170px] w-[170px] items-center justify-center rounded-full border border-black44">
+        <div className="flex h-[170px] w-[170px] items-center justify-center rounded-full border border-grayC3 dark:border-black44">
           <div className="h-10 w-10 animate-spin rounded-full border-2 border-primary border-t-transparent"></div>
         </div>
       )}

@@ -1,5 +1,9 @@
-import Link from "next/link";
+"use client";
+
 import { Checkbox } from "@/components/ui/checkbox";
+import { useState } from "react";
+import { Button } from "../ui";
+import { custom } from "zod";
 
 interface CheckboxFiltersProps {
   title: string;
@@ -16,6 +20,15 @@ export function CheckboxFilter({
   listLabel,
   last,
 }: CheckboxFiltersProps) {
+  const [checkValue, setCheckValue] = useState<string[]>([]);
+  const [customLimit, setCustomLimit] = useState(limit);
+
+  const handleCheckedValue = (value: string) => {
+    checkValue.includes(value)
+      ? setCheckValue(checkValue.filter((item) => item !== value))
+      : setCheckValue([...checkValue, value]);
+  };
+
   return (
     <div>
       <h3 className="mb-3 text-lg font-medium text-black dark:text-white">
@@ -24,16 +37,16 @@ export function CheckboxFilter({
       <div className="flex flex-col gap-[14px]">
         {limit
           ? !listLabel &&
-            listData.map((data, index) => {
-              if (index < limit) {
-                return (
-                  <Checkbox
-                    className="dark:border-gray8B"
-                    key={index}
-                    label={data}
-                  />
-                );
-              }
+            listData.slice(0, customLimit).map((data, index) => {
+              return (
+                <Checkbox
+                  className="dark:border-gray8B"
+                  key={index}
+                  label={data}
+                  valueChecked={checkValue.includes(data)}
+                  onValueCheckedChange={() => handleCheckedValue(data)}
+                />
+              );
             })
           : !listLabel &&
             listData.map((data, index) => (
@@ -41,39 +54,50 @@ export function CheckboxFilter({
                 className="dark:border-gray8B"
                 key={index}
                 label={data}
+                valueChecked={checkValue.includes(data)}
+                onValueCheckedChange={() => handleCheckedValue(data)}
               />
             ))}
         {limit
           ? listLabel &&
-            listData.map((data, index) => {
-              if (index < limit) {
-                return (
-                  <div key={index} className="flex justify-between">
-                    <Checkbox className="dark:border-gray8B" label={data} />
-                    <span className="leading-6 text-gray8B dark:text-gray90">
-                      {listLabel[index]}
-                    </span>
-                  </div>
-                );
-              }
+            listData.slice(0, customLimit).map((data, index) => {
+              return (
+                <div key={index} className="flex justify-between">
+                  <Checkbox
+                    className="dark:border-gray8B"
+                    label={data}
+                    valueChecked={checkValue.includes(data)}
+                    onValueCheckedChange={() => handleCheckedValue(data)}
+                  />
+                  <span className="leading-6 text-gray8B dark:text-gray90">
+                    {listLabel[index]}
+                  </span>
+                </div>
+              );
             })
           : listLabel &&
             listData.map((data, index) => (
               <div key={index} className="flex justify-between">
-                <Checkbox className="dark:border-gray8B" label={data} />
+                <Checkbox
+                  className="dark:border-gray8B"
+                  label={data}
+                  valueChecked={checkValue.includes(data)}
+                  onValueCheckedChange={() => handleCheckedValue(data)}
+                />
                 <span className="leading-6 text-gray8B dark:text-gray90">
                   {listLabel[index]}
                 </span>
               </div>
             ))}
       </div>
-      {limit && limit < listData.length && (
-        <Link
-          href={"/"}
-          className="mt-4 inline-block font-medium leading-6 text-primary"
+      {customLimit && limit && customLimit < listData.length && (
+        <Button
+          variant={"link"}
+          className="mt-4 inline-block h-auto w-auto border-none p-0 font-medium leading-6 text-primary hover:no-underline"
+          onClick={() => setCustomLimit(customLimit + limit)}
         >
           See More
-        </Link>
+        </Button>
       )}
       {!last && <div className="mt-4 h-[1px] bg-grayF2 dark:bg-black44"></div>}
     </div>

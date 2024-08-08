@@ -10,22 +10,21 @@ import {
 } from "@/components/common";
 import { HotelItem } from "@/components/hotel";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
+import hotelApi from "@/api-client/hotel-api";
+import { useCommonStore } from "@/store/common-store";
 import loadingImage from "@images/loading.png";
-import hotelFirst from "@images/hotels/hotel-1.png";
-import hotelSecond from "@images/hotels/hotel-2.png";
-import hotelThird from "@images/hotels/hotel-3.png";
 
 const listPopular: string[] = [
   "Hotels",
   "Breakfast and Dinner",
   "Free Cancellation",
   "No prepayment",
-  "",
+  "Test",
 ];
 
-const listProperty: string[] = ["Hotels", "Apartments", "Resorts", ""];
+const listProperty: string[] = ["Hotels", "Apartments", "Resorts", "Test"];
 
 const listBudget: string[] = [
   "Less than $75",
@@ -42,11 +41,32 @@ const listFacilities: string[] = [
   "Room Service",
   "Swimming Pool",
   "Spa",
-  "",
 ];
+
+const LIMIT_PER_PAGE = 3;
 
 export default function ListHotelPage() {
   const [price, setPrice] = useState<number>(50);
+  const [hotels, setHotels] = useState<Hotel[]>([]);
+  const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const { params } = useCommonStore();
+
+  useEffect(() => {
+    (async () => {
+      setIsLoading(true);
+      const access_token = params.tokens?.access_token;
+      if (access_token) {
+        const data = await hotelApi.getListHotel(access_token, {
+          limit: LIMIT_PER_PAGE,
+          page,
+        });
+        setHotels(data.result?.hotels as Hotel[]);
+        setIsLoading(false);
+      }
+    })();
+  }, [params.tokens]);
 
   return (
     <>
@@ -70,7 +90,7 @@ export default function ListHotelPage() {
           <CheckboxFilter
             title="Property Type"
             listData={listProperty}
-            listLabel={["108", "141", "108"]}
+            listLabel={["108", "141", "108", "100"]}
             limit={3}
           />
           <CheckboxFilter title="Your budget" listData={listBudget} />
@@ -78,47 +98,46 @@ export default function ListHotelPage() {
             title="Facilities"
             listData={listFacilities}
             listLabel={["108", "141", "108", "108", "141", "108"]}
-            limit={6}
+            limit={5}
             last
           />
         </SidebarFilter>
-        <div className="flex flex-col gap-[50px]">
-          <HotelItem
-            hotel={{
-              image: hotelFirst,
-              title: "Zuich, Switzerland",
-              rating: 4.8,
-              totalRate: 122,
-              location: "Zuich town, Switzerland",
-              place: "Zuich Hotel, Switzerland",
-              date: "15.05.2021-16.05.2021",
-              plane: "Depature from zuich",
-            }}
-          />
-          <HotelItem
-            hotel={{
-              image: hotelSecond,
-              title: "Zuich, Switzerland",
-              rating: 4.8,
-              totalRate: 122,
-              location: "Zuich town, Switzerland",
-              place: "Zuich Hotel, Switzerland",
-              date: "15.05.2021-16.05.2021",
-              plane: "Depature from zuich",
-            }}
-          />
-          <HotelItem
-            hotel={{
-              image: hotelThird,
-              title: "Zuich, Switzerland",
-              rating: 4.8,
-              totalRate: 122,
-              location: "Zuich town, Switzerland",
-              place: "Zuich Hotel, Switzerland",
-              date: "15.05.2021-16.05.2021",
-              plane: "Depature from zuich",
-            }}
-          />
+        <div className="flex flex-1 flex-col gap-[50px]">
+          {isLoading &&
+            new Array(3).fill(0).map((_, index) => (
+              <div
+                key={index}
+                className="flex flex-1 flex-col rounded-2xl border border-slate-700 p-4 shadow"
+              >
+                <div className="flex animate-pulse space-x-4">
+                  <div className="h-[400px] w-[400px] rounded-xl bg-slate-700"></div>
+                  <div className="flex-1 space-y-6 py-1">
+                    <div className="mt-5 h-10 rounded bg-slate-700"></div>
+                    <div className="mb-10 flex gap-5">
+                      <div className="h-5 w-[200px] rounded bg-slate-700"></div>
+                      <div className="h-5 w-[200px] rounded bg-slate-700"></div>
+                    </div>
+                    <div className="mb-10 flex gap-5">
+                      <div className="h-5 w-[200px] rounded bg-slate-700"></div>
+                      <div className="h-5 w-[200px] rounded bg-slate-700"></div>
+                    </div>
+                    <div className="flex gap-10">
+                      <div className="flex flex-col gap-5">
+                        <div className="h-5 w-[100px] rounded bg-slate-700"></div>
+                        <div className="h-5 w-[100px] rounded bg-slate-700"></div>
+                        <div className="h-5 w-[100px] rounded bg-slate-700"></div>
+                      </div>
+                      <div className="flex flex-col gap-5">
+                        <div className="h-10 w-[200px] rounded-full bg-slate-700"></div>
+                        <div className="h-10 w-[200px] rounded-full bg-slate-700"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          {hotels.length > 0 &&
+            hotels.map((hotel) => <HotelItem key={hotel._id} hotel={hotel} />)}
           <div className="mx-auto flex w-full items-center justify-center gap-4 rounded-xl border border-grayC3 p-[10px] xl:w-[176px] xl:rounded-3xl">
             <Image src={loadingImage} alt="loading" width={18} height={18} />
             <span className="font-medium leading-6 text-black dark:text-white">

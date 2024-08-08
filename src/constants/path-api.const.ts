@@ -15,4 +15,6 @@ export const PATH_API = {
   RESEND_VERIFY_EMAIL: "/users/resend-verify-email",
   UPDATE_PROFILE: "/users/me",
   UPLOAD_IMAGE: "/medias/upload-image",
+  GET_LIST_HOTEL: "/hotels",
+  GET_HOTEL_DETAILS: "/hotels/:hotelId",
 } as const;

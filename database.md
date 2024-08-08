@@ -210,7 +210,7 @@ interface Discount {
 - listImage(array): Danh sách ảnh về xe
 - status(number): Tình trạng xe (VD: có sẵn)
 - type(number): Loại xe
-- featuredList(array): Danh sách những điều đặc sắc của xe :|
+- features(array): Danh sách những điều đặc sắc của xe :|
   - icon(string)
   - name(string)
 - infoList(array): Các thông tin về xe
@@ -243,7 +243,7 @@ interface CarRental {
   listImage: string[];
   status: number;
   type: number;
-  featuredList: Featured[];
+  features: Features[];
   infoList: string[];
   description: string;
   location: string;
@@ -254,7 +254,7 @@ interface CarRental {
   listReview: Review[];
 }
 
-interface Featured {
+interface Features {
   icon: string;
   name: string;
 }
@@ -409,3 +409,14 @@ enum Language {
   English,
 }
 ```
+
+# Reviews
+
+- parent_id(ObjectId): Id của hotel hoặc car khi review
+- rating(number): Số sao đánh giá
+- content(string): Nội dung
+- author(object): Lấy từ bảng users
+  - name,
+  - avatar,
+  - address
+- created_at(Date): Ngày tạo đánh giá

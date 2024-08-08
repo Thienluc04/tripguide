@@ -7,7 +7,7 @@ import { ComponentProps, useState } from "react";
 interface CheckboxProps extends ComponentProps<"input"> {
   label?: string;
   valueChecked?: boolean;
-  onValueCheckedChange?: (checked?: boolean) => void;
+  onValueCheckedChange?: () => void;
 }
 
 export function Checkbox({
@@ -27,7 +27,7 @@ export function Checkbox({
           id=""
           className={cn("hidden", className)}
           {...props}
-          onChange={() => onValueCheckedChange(!valueChecked)}
+          onChange={onValueCheckedChange}
         />
 
         <span

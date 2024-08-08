@@ -7,6 +7,12 @@ const authPaths = [
   "/sign-in",
   "/forgot-password",
   "/reset-password",
+];
+
+const mainPaths = [
+  "/hotels",
+  "/flights",
+  "/car-rentals",
   "/profile",
   "/manage-account",
 ];
@@ -19,9 +25,13 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL(PAGES.HOME, req.url));
   }
 
+  if (mainPaths.some((path) => pathname.startsWith(path)) && !accessToken) {
+    return NextResponse.redirect(new URL(PAGES.LOGIN, req.url));
+  }
+
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/", "/sign-in", "/sign-up"],
+  matcher: [...authPaths, ...mainPaths],
 };

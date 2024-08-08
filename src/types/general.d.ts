@@ -21,3 +21,10 @@ type PaymentItemType =
   | "discover";
 
 type BookingType = "hotel" | "flight" | "car" | "";
+
+interface Pagination {
+  limit: number;
+  page: number;
+  total_items: number;
+  total_pages: number;
+}
